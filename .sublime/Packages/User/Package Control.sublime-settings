@@ -1,0 +1,26 @@
+{
+	"auto_upgrade_last_run": 1353490260,
+	"installed_packages":
+	[
+		"Alignment",
+		"CoffeeScript",
+		"DetectSyntax",
+		"FileDiffs",
+		"Git",
+		"JavaScriptNext - ES6 Syntax",
+		"LESS",
+		"Package Control",
+		"Quick File Creator",
+		"Rails Related Files",
+		"RubyTest",
+		"Schemr",
+		"SCSS",
+		"SideBarEnhancements",
+		"Simple Rails Navigator",
+		"Switch View in Group",
+		"Theme - Soda",
+		"Themr",
+		"Twig",
+		"Whitespace Corrector"
+	]
+}

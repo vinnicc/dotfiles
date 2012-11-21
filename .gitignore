@@ -37,6 +37,10 @@
 .sh_history
 .sqlite_history
 .ssh/
+.sublime/Packages/User/RubyTest.last-run
+.sublime/Packages/User/RubyTest.sublime-settings
+.sublime/Packages/User/themr.sublime-settings
+.sublime/Packages/User/themr.sublime-workspace
 .swp
 .viminfo
 .vim-tmp
@@ -67,3 +71,4 @@ android-sdks/
 bin/
 dwhelper/
 workspace/
+dotfiles.sublime-workspace

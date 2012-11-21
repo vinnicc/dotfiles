@@ -1,0 +1,44 @@
+{
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				// Just exclude enough stuff to prevent global searches from getting slow
+				".Trash",
+				".android",
+				".composer",
+				".config",
+				".dropbox",
+				".config",
+				".filezilla",
+				".fontconfig",
+				".fonts",
+				".gem",
+				".local",
+				".npm",
+				".rvm",
+				".vim/backups",
+				".vim/swaps",
+				".vim/undo",
+				".vim-fuf-data",
+				"Calibre Library",
+				"Desktop",
+				"Documents",
+				"Downloads",
+				"Dropbox",
+				"Library",
+				"Movies",
+				"Music",
+				"Pictures",
+				"Public",
+				"Sites",
+				"android-sdks",
+				"bin",
+				"dwhelper",
+				"workspace"
+			],
+			"path": "/Users/vinnicc"
+		}
+	]
+}

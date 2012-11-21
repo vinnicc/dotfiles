@@ -1,0 +1,22 @@
+[
+  { "keys": ["ctrl+tab"], "command": "next_view_in_group" }, // cycle only inside a specific group
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view_in_group" },
+
+  { "keys": ["super+shift+c"], "command": "toggle_comment", "args": { "block": false } },
+  { "keys": ["super+shift+alt+c"], "command": "toggle_comment", "args": { "block": true } },
+
+  { "keys": ["super+f"], "command": "noop" }, // use vim's / instead
+  { "keys": ["super+j"], "command": "noop" }, // use vim's J instead
+
+  { "keys": ["super+t"], "command": "switch_between_code_and_test", "args": {"split_view": false}, "context" : [
+    { "key": "selector", "operator": "equal", "operand": "source.ruby", "match_all": true }
+  ]}, // switch between code and test in single mode
+
+  { "keys": ["k", "j"], "command": "exit_insert_mode",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": false },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  }
+]
