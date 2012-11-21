@@ -19,6 +19,13 @@
       { "key": "setting.is_widget", "operand": false }
     ]
   },
+  { "keys": [",", "a", "h"], "command": "git_add_selected_hunk",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
   { "keys": [",", "a", "x"], "command": "git_add_choice",
     "context":
     [
