@@ -12,6 +12,156 @@
     { "key": "selector", "operator": "equal", "operand": "source.ruby", "match_all": true }
   ]}, // switch between code and test in single mode
 
+  { "keys": [",", "a", "a"], "command": "git_add",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "a", "x"], "command": "git_add_choice",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "b", "l"], "command": "git_blame",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "c", "i"], "command": "git_commit",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "c", "a"], "command": "git_commit_amend",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "c", "x"], "command": "git_custom",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "d", "d"], "command": "git_diff",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "d", "a"], "command": "git_diff_all",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "d", "c"], "command": "git_diff_commit",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "g", "g"], "command": "git_graph",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "g", "a"], "command": "git_graph_all",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "l", "l"], "command": "git_log",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "l", "a"], "command": "git_log_all",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "s", "t"], "command": "git_status",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "u", "a"], "command": "git_reset_head_all",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+  { "keys": [",", "u", "u"], "command": "git_reset_head",
+    "context":
+    [
+      { "key": "setting.command_mode", "operand": true },
+      { "key": "setting.is_widget", "operand": false }
+    ]
+  },
+
+  // "git_init"
+  // "git_new_tag"
+  // "git_show_tags"
+  // "git_push_tags"
+  // "git_diff_tool"
+  // "git_diff_tool_all"
+  // "git_quick_commit"
+  // "git_open_modified_files"
+  // "git_new_branch"
+  // "git_branch"
+  // "git_merge"
+  // "git_delete_branch"
+  // "git_stash"
+  // "git_stash_pop"
+  // "git_stash_apply"
+  // "git_stash_drop"
+  // "git_checkout"
+  // "git_fetch"
+  // "git_pull"
+  // "git_pull_current_branch"
+  // "git_push"
+  // "git_push_current_branch"
+  // "git_show"
+  // "git_toggle_annotations"
+  // "git_flow_feature_start"
+  // "git_flow_feature_finish"
+  // "git_flow_release_start"
+  // "git_flow_release_finish"
+  // "git_flow_hotfix_start"
+  // "git_flow_hotfix_finish"
+  // "git_open_file"
+  // "git_reset_hard_head"
+  // "git_add_selected_hunk"
+  // "git_commit_selected_hunk"
+  // "git_gitk"
+  // "git_commit_history"
+
   { "keys": ["k", "j"], "command": "exit_insert_mode",
     "context":
     [
