@@ -1,18 +1,11 @@
 [
-  { "keys": ["ctrl+tab"], "command": "next_view_in_group" }, // cycle only inside a specific group
-  { "keys": ["ctrl+shift+tab"], "command": "prev_view_in_group" },
-
   { "keys": ["super+shift+c"], "command": "toggle_comment", "args": { "block": false } },
   { "keys": ["super+shift+alt+c"], "command": "toggle_comment", "args": { "block": true } },
   { "keys": ["super+shift+t"], "command": "reopen_last_file" }, // override RubyTest's run_all_ruby_test
-
   { "keys": ["super+f"], "command": "noop" }, // use vim's / instead
   { "keys": ["super+j"], "command": "noop" }, // use vim's J instead
 
-  { "keys": ["super+t"], "command": "switch_between_code_and_test", "args": {"split_view": false}, "context" : [
-    { "key": "selector", "operator": "equal", "operand": "source.ruby", "match_all": true }
-  ]}, // switch between code and test in single mode
-
+  // Git
   { "keys": [",", "a", "a"], "command": "git_add",
     "context":
     [
@@ -170,6 +163,28 @@
   // "git_gitk"
   // "git_commit_history"
 
+  // Quick File Creator
+  { "keys": [",", "f", "n"], "command": "quick_create_file" },
+  { "keys": [",", "f", "N"], "command": "quick_create_directory" },
+
+  // RubyTest
+  { "keys": ["super+t"], "command": "switch_between_code_and_test", "args": {"split_view": false}, "context" : [
+    { "key": "selector", "operator": "equal", "operand": "source.ruby", "match_all": true }
+  ]},
+
+  // SideBarEnhancements
+  { "keys": [",", "f", "c"], "command": "side_bar_copy_name" },
+  { "keys": [",", "f", "C"], "command": "side_bar_copy_path" },
+  { "keys": [",", "f", "d"], "command": "side_bar_duplicate" },
+  { "keys": [",", "f", "D"], "command": "side_bar_delete" },
+  { "keys": [",", "f", "m"], "command": "side_bar_move" },
+  { "keys": [",", "f", "r"], "command": "side_bar_rename" },
+
+  // Switch View in Group
+  { "keys": ["ctrl+tab"], "command": "next_view_in_group" },
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view_in_group" },
+
+  // Vintage
   { "keys": ["k", "j"], "command": "exit_insert_mode",
     "context":
     [
