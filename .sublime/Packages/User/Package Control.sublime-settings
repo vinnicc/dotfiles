@@ -6,6 +6,7 @@
 		"CoffeeScript",
 		"DetectSyntax",
 		"FileDiffs",
+		"FindKeyConflicts",
 		"Git",
 		"JavaScriptNext - ES6 Syntax",
 		"LESS",

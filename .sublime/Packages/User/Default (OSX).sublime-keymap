@@ -4,6 +4,7 @@
 
   { "keys": ["super+shift+c"], "command": "toggle_comment", "args": { "block": false } },
   { "keys": ["super+shift+alt+c"], "command": "toggle_comment", "args": { "block": true } },
+  { "keys": ["super+shift+t"], "command": "reopen_last_file" }, // override RubyTest's run_all_ruby_test
 
   { "keys": ["super+f"], "command": "noop" }, // use vim's / instead
   { "keys": ["super+j"], "command": "noop" }, // use vim's J instead
