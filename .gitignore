@@ -37,6 +37,7 @@
 .sh_history
 .sqlite_history
 .ssh/
+.sublime/Packages/Color Scheme - Default/*.cache
 .sublime/Packages/User/RubyTest.last-run
 .sublime/Packages/User/RubyTest.sublime-settings
 .sublime/Packages/User/themr.sublime-settings

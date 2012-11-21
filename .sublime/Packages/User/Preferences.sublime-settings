@@ -1,8 +1,8 @@
 {
 	"auto_indent": true,
-	"caret_style": "phase",
+	"caret_style": "wide",
 	"close_windows_when_empty": true,
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"color_scheme": "Packages/User/Color Scheme/IR_Black.tmTheme",
 	"detect_indentation": true,
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
