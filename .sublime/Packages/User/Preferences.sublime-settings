@@ -1,6 +1,6 @@
 {
 	"auto_indent": true,
-	"caret_style": "wide",
+	"caret_style": "phase",
 	"close_windows_when_empty": true,
 	"color_scheme": "Packages/User/Color Scheme/IR_Black.tmTheme",
 	"detect_indentation": true,
