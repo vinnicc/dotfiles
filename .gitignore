@@ -2,11 +2,14 @@
 .CFUserTextEncoding
 .Trash/
 .Xauthority
+.adobe/
 .aliases
 .android/
 .bash_history
 .brew
+.cache/
 .composer/
+.config/
 .dropbox/
 .exports
 .extra
@@ -28,6 +31,7 @@
 .local/
 .mysql_history
 .netrc
+.NERDTreeBookmarks
 .npm/
 .osx
 .pearrc
@@ -37,20 +41,14 @@
 .sh_history
 .sqlite_history
 .ssh/
-.sublime/Packages/Color Scheme - Default/*.cache
-.sublime/Packages/User/RubyTest.last-run
-.sublime/Packages/User/RubyTest.sublime-settings
-.sublime/Packages/User/themr.sublime-settings
-.sublime/Packages/User/themr.sublime-workspace
 .swp
 .viminfo
 .vim-tmp
 .vim/.netrwhist
 .vim/backups
+.vim/bundle
 .vim/swaps
 .vim/undo
-.vim-fuf-data
-.vimfuzzyfinder
 .viminfo
 .vimprojects
 .vimrc.backup
