@@ -55,9 +55,17 @@ map <Leader>ll :Glog -10 -- %<CR>
 map <Leader>ua :Git reset HEAD <CR>
 map <Leader>uu :Git reset HEAD <C-r><C-g><CR>
 
+Bundle 'gregsexton/gitv'
+let g:Gitv_OpenHorizontal = 1
+let g:Gitv_WipeAllOnClose = 1
+map <Leader>ga :Gitv --all<CR>
+map <Leader>gg :Gitv! --all<CR>
+
+Bundle 'mileszs/ack.vim'
+map <C-f> :Ack<Space>
+
 Bundle 'L9'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'mileszs/ack.vim'
 Bundle 'mnoble/tomorrow-night-vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-eunuch'
