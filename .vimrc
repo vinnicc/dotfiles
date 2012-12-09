@@ -6,7 +6,7 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-let mapleader=','
+let mapleader = ','
 
 Bundle 'gmarik/vundle'
 nmap <Leader>V :tabedit $MYVIMRC<CR>
@@ -45,7 +45,7 @@ map <Leader>ax :Gstatus<CR>
 map <Leader>bl :Gblame<CR>
 map <Leader>ca :Gcommit --amend<CR>
 map <Leader>ci :Gcommit<CR>
-map <Leader>da :Git diff<CRing
+map <Leader>da :Git diff<CR>
 map <Leader>dc :Git diff --cached<CR>
 map <Leader>dd :Gdiff<CR>
 map <Leader>dD <C-w>h<C-w>c<CR> " Just saving keystrokes when closing diff
