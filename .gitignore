@@ -19,7 +19,6 @@
 .functions
 .gem/
 .gitk
-.gvimrc
 .heroku/
 .hgignore
 .hgignore_global
