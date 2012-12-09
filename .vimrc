@@ -14,6 +14,7 @@ nmap <Leader>vv :source $MYVIMRC<CR>
 nmap <Leader>vg :source $MYGVIMRC<CR>
 
 Bundle 'kien/ctrlp.vim'
+let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
 let g:ctrlp_max_height = 30
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
@@ -106,10 +107,10 @@ set title
 set ttyfast
 set wildmenu
 
-set backupdir=~/.vim/backups
-set directory=~/.vim/swaps
+set backupdir=~/.tmp
+set directory=~/.tmp
 if exists("&undodir")
-	set undodir=~/.vim/undo
+	set undodir=~/.tmp
 endif
 
 " Strip trailing whitespace (,ss)

@@ -7,7 +7,6 @@
 .android/
 .bash_history
 .brew
-.cache/
 .composer/
 .config/
 .dropbox/
@@ -41,13 +40,11 @@
 .sqlite_history
 .ssh/
 .swp
+.tmp/
 .viminfo
 .vim-tmp
+.vim/bundle/
 .vim/.netrwhist
-.vim/backups
-.vim/bundle
-.vim/swaps
-.vim/undo
 .viminfo
 .vimprojects
 .vimrc.backup
