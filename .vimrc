@@ -142,12 +142,14 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
-" Save a file as root (,W)
-noremap <Leader>W :w !sudo tee % > /dev/null<CR>
+" Switch to alternate file
 nnoremap <Leader><Leader> <C-^>
 
+" Save a file as root (,W)
+noremap <Leader>W :w !sudo tee % > /dev/null<CR>
+
 " Reindent whole file
-map <Leader>ii mmgg=G`m<CR>
+map <Leader>i mmgg=G`m<CR>
 
 " Let's be reasonable, shall we?
 nmap j gj

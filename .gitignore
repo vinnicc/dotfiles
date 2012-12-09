@@ -71,5 +71,4 @@ android-sdks/
 bin/
 dwhelper/
 workspace/
-dotfiles.sublime-workspace
 *.pyc
