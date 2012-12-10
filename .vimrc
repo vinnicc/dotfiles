@@ -1,6 +1,7 @@
 " vinnicc's vimrc.
 
 set nocompatible
+syntax on
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
@@ -35,6 +36,7 @@ let NERDTreeChDirMode = 2 " Always :cd to the tree's root
 let NERDTreeMinimalUI = 1
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>N :NERDTreeFind<CR>
+map <Leader>P :NERDTreeFromBookmark<Space>
 if has("autocmd")
 	autocmd vimenter * if !argc() | NERDTree | endif
 endif
@@ -96,7 +98,7 @@ set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set linespace=1
 set list
 set modeline
-set modelines=4 " Enable syntax highlighting syntax on
+set modelines=4 
 set mouse=a
 set noerrorbells
 " set noeol
