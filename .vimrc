@@ -19,9 +19,9 @@ let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
 let g:ctrlp_max_height = 30
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
-map <C-p> :CtrlP<CR>
-map <C-b> :CtrlPBuffer<CR>
-map <Leader><C-p> :ClearCtrlPCache<CR>:CtrlP<CR>
+noremap <C-p> :CtrlPCurWD<CR>
+noremap <C-b> :CtrlPBuffer<CR>
+noremap <Leader><C-p> :ClearCtrlPCache<CR>:CtrlPCurWD<CR>
 
 Bundle 'Lokaltog/vim-easymotion'
 " let g:EasyMotion_do_mapping = 0
@@ -34,9 +34,9 @@ let g:EasyMotion_mapping_T = '<Leader>T'
 Bundle 'scrooloose/nerdtree'
 let NERDTreeChDirMode = 2 " Always :cd to the tree's root
 let NERDTreeMinimalUI = 1
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>N :NERDTreeFind<CR>
-map <Leader>P :NERDTreeFromBookmark<Space>
+noremap <Leader>n :NERDTreeToggle<CR>
+noremap <Leader>N :NERDTreeFind<CR>
+noremap <Leader>P :NERDTreeFromBookmark<Space>
 if has("autocmd")
 	autocmd vimenter * if !argc() | NERDTree | endif
 endif
