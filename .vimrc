@@ -37,9 +37,6 @@ let NERDTreeMinimalUI = 1
 noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>N :NERDTreeFind<CR>
 noremap <Leader>P :NERDTreeFromBookmark<Space>
-if has("autocmd")
-	autocmd vimenter * if !argc() | NERDTree | endif
-endif
 
 Bundle 'tpope/vim-fugitive'
 map <Leader>aa :Gwrite<CR>
