@@ -16,10 +16,10 @@ nmap <Leader>vg :source $MYGVIMRC<CR>
 
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
+let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_max_height = 30
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
-noremap <C-p> :CtrlPCurWD<CR>
 noremap <C-b> :CtrlPBuffer<CR>
 noremap <Leader><C-p> :ClearCtrlPCache<CR>:CtrlPCurWD<CR>
 
@@ -37,6 +37,10 @@ let NERDTreeMinimalUI = 1
 noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>N :NERDTreeFind<CR>
 noremap <Leader>P :NERDTreeFromBookmark<Space>
+
+Bundle 'tpope/vim-eunuch'
+nnoremap <Leader>em :Move <C-r>=expand('%:p')<CR>
+nnoremap <Leader>ed :saveas <C-r>=expand('%:p')<CR>
 
 Bundle 'tpope/vim-fugitive'
 map <Leader>aa :Gwrite<CR>
@@ -67,7 +71,6 @@ Bundle 'L9'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mnoble/tomorrow-night-vim'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -130,12 +133,22 @@ function! StripTrailingWhitespace()
 endfunction
 noremap <Leader>ss :call StripTrailingWhitespace()<CR>
 
+" Clear the search buffer when hitting return
+function! MapCR()
+	nnoremap <CR> :nohlsearch<CR>
+endfunction
+call MapCR()
+
 " Automatic commands
 if has("autocmd")
 	" Enable file type detection
 	filetype on
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
+
+	" Do not change return key behavior on command line windows
+	autocmd! CmdwinEnter * :unmap <CR>
+	autocmd CmdwinLeave * :call MapCR()
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -150,11 +163,17 @@ map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
+" Reverse join line
+nnoremap <Leader>j ddpgkJ
+
 " Switch to alternate file
 nnoremap <Leader><Leader> <C-^>
 
 " Save a file as root (,W)
 noremap <Leader>W :w !sudo tee % > /dev/null<CR>
+
+" Expand filename
+cnoremap %% <C-r>=expand('%:h').'/'<CR>
 
 " Reindent whole file
 map <Leader>i mmgg=G`m<CR>
@@ -163,7 +182,11 @@ map <Leader>i mmgg=G`m<CR>
 nmap j gj
 nmap k gk
 
-command! Q q " Bind :Q to :q
+" Keep cursor position after yanking on visual mode
+vmap y ygv<Esc>
+
+" Bind :Q to :q
+command! Q q 
 command! Qall qall 
 
 " Disable Ex mode
@@ -185,12 +208,6 @@ nnoremap <C-l> <C-w>l
 
 " Insert a hash rocket with <C-l>
 imap <C-l> <Space>=><Space>
-
-" Clear the search buffer when hitting return
-function! MapCR()
-	nnoremap <CR> :nohlsearch<CR>
-endfunction
-call MapCR()
 
 " map <Leader>gr :topleft :split config/routes.rb<CR>
 " map <Leader>gg :topleft 100 :split Gemfile<CR>
