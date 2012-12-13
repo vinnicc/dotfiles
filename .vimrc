@@ -1,4 +1,4 @@
-" vinnicc's vimrc.
+" Vinni Caños's .vimrc file
 
 set nocompatible
 syntax on
@@ -70,6 +70,7 @@ map <C-f> :Ack<Space>
 Bundle 'L9'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mnoble/tomorrow-night-vim'
+Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
@@ -94,11 +95,11 @@ set hlsearch
 set ignorecase smartcase
 set incsearch
 set laststatus=2
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_ " Show 'invisible' characters
 set linespace=1
 set list
 set modeline
-set modelines=4 
+set modelines=4
 set mouse=a
 set noerrorbells
 " set noeol
@@ -111,7 +112,7 @@ set shiftround " When at 3 spaces and I hit >>, go to 4, not 5
 set shortmess=atI
 set showcmd
 set showmode
-" Make tabs as wide as two spaces set tabstop=2 " Show “invisible” characters
+" set tabstop=2 " Make tabs as wide as two spaces
 set t_Co=256
 set title
 set ttyfast
@@ -155,8 +156,8 @@ endif
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Because there are times when it's easier
 inoremap kj <Esc>
-inoremap jk <Esc>
 
 map <Left> <Nop>
 map <Right> <Nop>
@@ -186,8 +187,8 @@ nmap k gk
 vmap y ygv<Esc>
 
 " Bind :Q to :q
-command! Q q 
-command! Qall qall 
+command! Q q
+command! Qall qall
 
 " Disable Ex mode
 map Q <Nop>
@@ -195,12 +196,13 @@ map Q <Nop>
 " Disable K looking stuff up
 map K <Nop>
 
+" For consistent behavior with C, D, ...
 nnoremap Y y$
 map <Leader>y "*y
 " inoremap <C-c> <Esc>
 " nnoremap <C-c> <Esc>`^
 
-" Move around splits with <C-hjkl>
+" Move around splits faster
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
