@@ -34,9 +34,9 @@ let g:EasyMotion_mapping_T = '<Leader>T'
 Bundle 'scrooloose/nerdtree'
 let NERDTreeChDirMode = 2 " Always :cd to the tree's root
 let NERDTreeMinimalUI = 1
+let NERDTreeShowHidden = 1
 noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>N :NERDTreeFind<CR>
-noremap <Leader>P :NERDTreeFromBookmark<Space>
 
 Bundle 'tpope/vim-eunuch'
 nnoremap <Leader>em :Move <C-r>=expand('%:p')<CR>
@@ -72,6 +72,8 @@ Bundle 'Lokaltog/vim-distinguished'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'mnoble/tomorrow-night-vim'
 Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'nelstrom/vim-qargs'
+Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
