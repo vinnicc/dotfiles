@@ -1,0 +1,137 @@
+# Handle the fact that this file will be used with multiple OSs
+platform=`uname`
+if [[ $platform == 'Linux' ]]; then
+    alias a='ls -lrth --color'
+elif [[ $platform == 'Darwin' ]]; then
+    alias a='ls -lrthG'
+fi
+
+alias aliases='vim ~/.aliases'
+alias amend='git commit --amend'
+alias bake='bundle exec rake'
+alias be='bundle exec'
+alias bi='bundle install'
+alias bu='bundle update'
+alias flush='dscacheutil -flushcache'
+alias g='git'
+alias gad='git add .'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gcaa='git commit -a --amend -C HEAD'
+alias gci='git commit -m'
+alias gcl='git clone'
+alias gco='git checkout'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gl='git l'
+alias gpr='git pull --rebase'
+alias gpsuh='git push'
+alias grake='rspec --drb spec/ && cucumber --drb features/'
+alias grc='git rebase --continue'
+alias h='heroku'
+alias hpush='git push heroku'
+alias ios='open -a /Applications/Xcode.app/Contents/Applications/iPhone\ Simulator.app'
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
+alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
+alias j='jobs'
+alias killruby='killall -9 ruby'
+alias l='ls -l ${colorflag}'
+alias la='ls -la ${colorflag}'
+alias localip='ipconfig getifaddr en1'
+alias ls='command ls ${colorflag}'
+alias lsd='ls -l ${colorflag} | grep "^d"'
+alias o='open'
+alias oo='open .'
+alias pc='production-console'
+alias plistbuddy='/usr/libexec/PlistBuddy'
+alias rc='rails console'
+alias reload='source ~/.bash_profile'
+alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
+alias rework="killall tmux; tmuxinator start workspace" 
+alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+alias rs='bundle install && rails server -p'
+# alias safepush='git pull --rebase && bundle install && rdm && rake && git push'
+alias sc='staging-console'
+alias spotoff='sudo mdutil -a -i off'
+alias spoton='sudo mdutil -a -i on'
+alias ss='ruby app.rb'
+alias staging='git push heroku-staging master'
+alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
+alias sudo='sudo '
+alias u='cd ..'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; npm update npm -g; npm update -g'
+alias v='vim'
+alias vi='ci'
+alias vi='vim'
+alias w='cd ~/workspace'
+alias whois='whois -h whois-servers.net'
+
+# Heroku staging
+alias staging-console='heroku run console --remote staging'
+alias staging-tail='heroku logs --tail --remote staging'
+
+# Heroku production
+alias production-console='heroku run console --remote production'
+alias production-tail='heroku logs --tail --remote production'
+
+# # Heroku databases
+alias db-pull-staging='heroku db:pull --remote staging --confirm `basename $PWD`-staging'
+alias db-pull-production='heroku db:pull --remote production --confirm `basename $PWD`-production'
+alias db-copy-production-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging  --confirm `basename $PWD`-staging'
+alias db-backup-production='heroku pgbackups:capture --remote production'
+alias db-backups='heroku pgbackups --remote production'
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+    colorflag='--color'
+else # OS X `ls`
+    colorflag='-G'
+fi
+
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+    alias "$method"="lwp-request -m '$method'"
+done
+
+# Clean up LaunchServices to remove duplicates in the “Open With” menu
+alias lscleanup='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'
+
+# Canonical hex dump; some systems have this symlinked
+command -v hd > /dev/null || alias hd='hexdump -C'
+
+# OS X has no `md5sum`, so use `md5` as a fallback
+command -v md5sum > /dev/null || alias md5sum='md5'
+
+# Trim new lines and copy to clipboard
+alias c="tr -d '\n' | pbcopy"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# File size
+if stat -c '' . > /dev/null 2>&1; then
+    # GNU `stat`
+    alias fs="stat -c \"%s bytes\""
+else
+    # OS X `stat`
+    alias fs="stat -f \"%z bytes\""
+fi
+
+# Empty the Trash on all mounted volumes and the main HDD
+# Also, clear Apple’s System Logs to improve shell startup speed
+alias emptytrash='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl'
+
+# Show/hide hidden files in Finder
+alias show='defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder'
+alias hide='defaults write com.apple.Finder AppleShowAllFiles -bool false && killall Finder'
+
+# Hide/show all desktop icons (useful when presenting)
+alias hidedesktop='defaults write com.apple.finder CreateDesktop -bool false && killall Finder'
+alias showdesktop='defaults write com.apple.finder CreateDesktop -bool true && killall Finder'
+
+# URL-encode strings
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
+
+# Merge PDF files
+# Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
+alias mergepdf='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
