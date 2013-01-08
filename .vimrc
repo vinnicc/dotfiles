@@ -67,10 +67,10 @@ map <Leader>gg :Gitv! --all<CR>
 Bundle 'mileszs/ack.vim'
 map <C-f> :Ack<Space>
 
+Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'L9'
 Bundle 'Lokaltog/vim-distinguished'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'mnoble/tomorrow-night-vim'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
