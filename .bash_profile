@@ -18,7 +18,7 @@ export LC_ALL="en_US.UTF-8"
 export LESS_TERMCAP_md="$COLOR_YELLOW"
 export MANPAGER="less -X"
 
-export path="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$path"
+export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/git/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
 export COLOR_BLACK="\[\e[1;30m\]"
