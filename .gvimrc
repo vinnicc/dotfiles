@@ -20,4 +20,8 @@ if has("gui_macvim")
 	macm Window.Select\ Previous\ Tab key=<C-S-Tab>
 	macm Window.Select\ Next\ Tab key=<C-Tab>
 	macm Window.Toggle\ Full\ Screen\ Mode key=<C-D-f>
+
+	" maximize on startup
+	set columns=999
+	set lines=999
 endif
