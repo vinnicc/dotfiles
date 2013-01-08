@@ -78,6 +78,7 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-scripts/taglist.vim'
 
 filetype plugin indent on " required
 

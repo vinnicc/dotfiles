@@ -12,6 +12,7 @@ alias bake='bundle exec rake'
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
+alias ctags="`brew --prefix`/bin/ctags"
 alias flush='dscacheutil -flushcache'
 alias g='git'
 alias gad='git add .'
