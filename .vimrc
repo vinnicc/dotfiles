@@ -17,6 +17,11 @@ nmap <Leader>vg :source $MYGVIMRC<CR>
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
 let g:ctrlp_cmd = 'CtrlPCurWD'
+unlet g:ctrlp_custom_ignore " Unset first 
+let g:ctrlp_custom_ignore = {
+			\ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+			\ 'file': '\.exe$\|\.so$\|\.dat$'
+			\ }
 let g:ctrlp_max_height = 30
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
@@ -159,9 +164,6 @@ endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Because there are times when it's easier
-inoremap kj <Esc>
 
 map <Left> <Nop>
 map <Right> <Nop>
