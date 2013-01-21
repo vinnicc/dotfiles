@@ -37,6 +37,7 @@ let g:EasyMotion_mapping_t = '<Leader>t'
 let g:EasyMotion_mapping_T = '<Leader>T'
 
 Bundle 'scrooloose/nerdtree'
+let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeChDirMode = 2 " Always :cd to the tree's root
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1
