@@ -17,7 +17,6 @@ nmap <Leader>vg :source $MYGVIMRC<CR>
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
 let g:ctrlp_cmd = 'CtrlPCurWD'
-unlet g:ctrlp_custom_ignore " Unset first 
 let g:ctrlp_custom_ignore = {
 			\ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
 			\ 'file': '\.exe$\|\.so$\|\.dat$'
