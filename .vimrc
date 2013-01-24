@@ -160,6 +160,8 @@ if has("autocmd")
 	" Do not change return key behavior on command line windows
 	autocmd! CmdwinEnter * :unmap <CR>
 	autocmd CmdwinLeave * :call MapCR()
+
+	autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
