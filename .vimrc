@@ -164,6 +164,33 @@ if has("autocmd")
 	autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
 endif
 
+if has("gui_macvim")
+	" Remove scroll bars and tool bar
+	set guioptions-=r
+	set guioptions-=L
+	set guioptions-=T
+
+	" Do not use modal alerts
+	set guioptions+=c
+
+	set guifont=Monaco:h12
+
+	" Expand width in fullscreen
+	set fuoptions=maxvert,maxhorz
+
+	" Hide tab bar
+	set showtabline=0
+
+	" Change key bindings
+	macm Window.Select\ Previous\ Tab key=<C-S-Tab>
+	macm Window.Select\ Next\ Tab key=<C-Tab>
+	macm Window.Toggle\ Full\ Screen\ Mode key=<C-D-f>
+
+	" Maximize on startup
+	set columns=999
+	set lines=999
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
