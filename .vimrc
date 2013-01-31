@@ -109,7 +109,7 @@ set linespace=1
 set list
 set modeline
 set modelines=4
-set mouse=a
+set mouse= " Prioritize mouse from tmux
 set noerrorbells
 " set noeol
 set nofoldenable " No code folding
