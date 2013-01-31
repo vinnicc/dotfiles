@@ -172,13 +172,13 @@ if has("gui_macvim")
 	" Do not use modal alerts
 	set guioptions+=c
 
+	" Do not use gui tabline
+	set guioptions-=e
+
 	set guifont=Monaco:h12
 
 	" Expand width in fullscreen
 	set fuoptions=maxvert,maxhorz
-
-	" Hide tab bar
-	set showtabline=0
 
 	" Change key bindings
 	macm Window.Select\ Previous\ Tab key=<C-S-Tab>
