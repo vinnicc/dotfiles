@@ -60,7 +60,7 @@ alias sc='staging-console'
 alias spotoff='sudo mdutil -a -i off'
 alias spoton='sudo mdutil -a -i on'
 alias ss='ruby app.rb'
-alias staging='git push heroku-staging master'
+alias staging='git push staging master'
 alias startpostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log stop'
 alias sudo='sudo '
@@ -77,6 +77,10 @@ alias z='zeus'
 alias zs='zeus start'
 alias zt='zeus test'
 
+# Rake development and test
+alias dtmigrate='rake db:migrate RAILS_ENV=development && rake db:migrate RAILS_ENV=test'
+alias dtrollback='rake db:rollback RAILS_ENV=development && rake db:rollback RAILS_ENV=test'
+
 # Heroku staging
 alias staging-console='heroku run console --remote staging'
 alias staging-tail='heroku logs --tail --remote staging'
@@ -88,7 +92,7 @@ alias production-tail='heroku logs --tail --remote production'
 # Heroku databases
 alias db-pull-staging='heroku db:pull --remote staging --confirm `basename $PWD`-staging'
 alias db-pull-production='heroku db:pull --remote production --confirm `basename $PWD`-production'
-alias db-copy-production-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging  --confirm `basename $PWD`-staging'
+alias db-copy-production-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging --confirm `basename $PWD`-staging'
 alias db-backup-production='heroku pgbackups:capture --remote production'
 alias db-backups='heroku pgbackups --remote production'
 
