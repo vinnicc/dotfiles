@@ -66,6 +66,7 @@ alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres
 alias sudo='sudo '
 alias ta='tmux attach'
 alias tmuxconf='vim ~/.tmux.conf'
+alias tmuxsetup='vim ~/.tmuxinator/workspace.yml' 
 alias u='cd ..'
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; npm update npm -g; npm update -g'
 alias v='vim'
@@ -74,7 +75,7 @@ alias vi='vim'
 alias w='cd ~/workspace'
 alias whois='whois -h whois-servers.net'
 alias z='zeus'
-alias zs='zeus start'
+alias zs='rm .zeus.sock; zeus start'
 alias zt='zeus test'
 
 # Rake development and test
