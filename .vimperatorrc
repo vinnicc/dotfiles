@@ -20,8 +20,6 @@ let mapleader = ','
 	liberator.execute('autocmd LocationChange .* js modes.passAllKeys = /(' + sites_re.join('|') + ')/.test(buffer.URL)');
 EOF
 
-noremap <C-j> <S-Esc>
-
 " Disable accesskey
 " set! ui.key.generalAccessKey=0
 
