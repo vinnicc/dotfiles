@@ -28,12 +28,9 @@ noremap <C-b> :CtrlPBuffer<CR>
 noremap <Leader><C-p> :ClearCtrlPCache<CR>:CtrlPCurWD<CR>
 
 Bundle 'Lokaltog/vim-easymotion'
-" let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_leader_key = '<Leader>m'
 let g:EasyMotion_mapping_f = '<Leader>f'
 let g:EasyMotion_mapping_F = '<Leader>F'
-let g:EasyMotion_mapping_t = '<Leader>t'
-let g:EasyMotion_mapping_T = '<Leader>T'
 
 Bundle 'scrooloose/nerdtree'
 let NERDTreeAutoDeleteBuffer = 1
@@ -53,8 +50,8 @@ map <Leader>ax :Gstatus<CR>
 map <Leader>bl :Gblame<CR>
 map <Leader>ca :Gcommit --amend<CR>
 map <Leader>ci :Gcommit<CR>
-map <Leader>da :Git diff<CR>
-map <Leader>dc :Git diff --cached<CR>
+map <Leader>da :!clear && Git diff<CR>
+map <Leader>dc :!clear && Git diff --cached<CR>
 map <Leader>dd :Gdiff<CR>
 map <Leader>dD <C-w>h<C-w>c<CR> " Just saving keystrokes when closing diff
 map <Leader>ee :Gedit<CR>
@@ -72,17 +69,18 @@ map <Leader>gg :Gitv! --all<CR>
 Bundle 'mileszs/ack.vim'
 map <C-f> :Ack<Space>
 
-Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'L9'
-Bundle 'Lokaltog/vim-distinguished'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'chriskempson/base16-vim'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim'}
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/taglist.vim'
 
 filetype plugin indent on " required
@@ -91,7 +89,7 @@ filetype plugin indent on " required
 " BASIC CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-color distinguished
+color base16-default
 
 set background=dark
 set backspace=indent,eol,start
@@ -263,6 +261,11 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <C-r>=InsertTabWrapper()<CR>
 inoremap <S-Tab> <C-n>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RAISE INSPECTED VARIABLE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap <C-k> <Esc>^Iraise <Esc>A.inspect<Esc>^==:w<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PROMOTE VARIABLE TO RSPEC LET
