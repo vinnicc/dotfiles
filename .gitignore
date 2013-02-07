@@ -50,6 +50,7 @@
 .viminfo
 .viminfo
 .vimprojects
+.vimperator/
 .vimrc.backup
 .vimrc.old
 .wgetrc
