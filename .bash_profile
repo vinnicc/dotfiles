@@ -23,9 +23,9 @@ export MANPATH="/usr/local/man:/usr/local/mysql/man:/usr/local/git/man:$MANPATH"
 
 export COLOR_BLACK="\[\e[1;30m\]"
 export COLOR_RED="\[\e[1;31m\]"
-export COLOR_GREEN="\[\e[1;32m\]"
+export COLOR_GREEN="\[\e[0;32m\]"
 export COLOR_YELLOW="\[\e[1;33m\]"
-export COLOR_BLUE="\[\e[1;34m\]"
+export COLOR_BLUE="\[\e[0;34m\]"
 export COLOR_MAGENTA="\[\e[1;35m\]"
 export COLOR_CYAN="\[\e[1;36m\]"
 export COLOR_WHITE="\[\e[37m\]"
@@ -34,7 +34,7 @@ export COLOR_RESET="\[\e[0m\]"
 ##########
 # PROMPT #
 ##########
-export PS1=${COLOR_BLUE}"\u "${COLOR_GREEN}"\w $ "${COLOR_RESET}
+export PS1=${COLOR_BLUE}"\u "${COLOR_BLUE}"\w $ "${COLOR_RESET}
 export PS2=${COLOR_GREEN}"→ "${COLOR_RESET}
 
 ########
