@@ -71,7 +71,7 @@ map <C-f> :Ack<Space>
 
 Bundle 'L9'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'chriskempson/base16-vim'
+Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
@@ -89,9 +89,9 @@ filetype plugin indent on " required
 " BASIC CONFIGURATION
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-color base16-default
-
+color Tomorrow-Night
 set background=dark
+
 set backspace=indent,eol,start
 set binary
 set clipboard=unnamed
