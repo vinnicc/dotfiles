@@ -75,6 +75,7 @@ alias vi='vim'
 alias w='cd ~/workspace'
 alias whois='whois -h whois-servers.net'
 alias z='zeus'
+alias zc='zeus cucumber'
 alias zs='rm .zeus.sock; zeus start'
 alias zt='zeus test'
 
