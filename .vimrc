@@ -72,6 +72,7 @@ map <C-f> :Ack<Space>
 Bundle 'L9'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
@@ -159,6 +160,10 @@ if has("autocmd")
 	autocmd CmdwinLeave * :call MapCR()
 
 	autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+
+	" Show line numbers only on active split
+	au WinEnter * :setlocal number
+	au WinLeave * :setlocal nonumber
 endif
 
 if has("gui_macvim")
