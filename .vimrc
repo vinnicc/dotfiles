@@ -2,7 +2,6 @@
 
 set nocompatible
 syntax on
-filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -84,7 +83,8 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/taglist.vim'
 
-filetype plugin indent on " required
+filetype off " Vundle quirk
+filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC CONFIGURATION
