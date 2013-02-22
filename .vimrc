@@ -125,6 +125,7 @@ set showmode
 set t_Co=256
 set title
 set ttyfast
+set visualbell " Flash instead of beeping
 set wildmenu
 
 set backupdir=~/.tmp
