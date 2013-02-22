@@ -99,6 +99,7 @@ set clipboard=unnamed
 set cursorline
 set encoding=utf-8 nobomb
 set gdefault
+set history=10000
 set hlsearch
 set ignorecase smartcase
 set incsearch
