@@ -159,7 +159,8 @@ if has("autocmd")
 	autocmd! CmdwinEnter * :unmap <CR>
 	autocmd CmdwinLeave * :call MapCR()
 
-	autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+	autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
+	autocmd FileType python set sw=4 sts=4 et
 
 	" Show line numbers only on active split
 	au WinEnter * :setlocal number
