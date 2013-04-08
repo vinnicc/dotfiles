@@ -255,9 +255,6 @@ nnoremap <C-l> <C-w>l
 " Insert a hash rocket with <C-l>
 imap <C-l> <Space>=><Space>
 
-" map <Leader>gr :topleft :split config/routes.rb<CR>
-" map <Leader>gg :topleft 100 :split Gemfile<CR>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
