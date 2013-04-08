@@ -75,6 +75,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'plasticboy/vim-markdown'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim'}
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-rails'
@@ -167,6 +168,8 @@ if has("autocmd")
 	" Show line numbers only on active split
 	au WinEnter * :setlocal number
 	au WinLeave * :setlocal nonumber
+
+	au BufRead * set nofoldenable
 endif
 
 if has("gui_macvim")
