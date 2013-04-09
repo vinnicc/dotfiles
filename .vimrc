@@ -75,6 +75,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
+Bundle 'nono/vim-handlebars'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim'}
 Bundle 'tpope/vim-commentary'
