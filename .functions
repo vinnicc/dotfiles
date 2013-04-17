@@ -135,3 +135,8 @@ function unquarantine() {
 		xattr -r -d "$attribute" "$@"
 	done
 }
+
+# Create a new directory and enter it
+function setwallpaper() {
+	defaults write com.apple.desktop Background "{default = {ImageFilePath = '$@'; }; }"; killall Dock
+}
