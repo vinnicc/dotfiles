@@ -36,6 +36,7 @@ nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>bi :!bundle install<CR>
 nnoremap <Leader>i mmgg=G`m<CR>
 nnoremap <Leader>j ddpgkJ
+nnoremap <Leader>xe Iexpect(<Esc>A).to<Space>
 nnoremap <Leader>y "*y
 nnoremap <Leader>yd :let @*=expand("%:h")<CR>
 nnoremap <Leader>yf :let @*=expand("%:t")<CR>
