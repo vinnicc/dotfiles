@@ -107,6 +107,11 @@ nnoremap <Leader>ll :Glog -10 -- %<CR>
 nnoremap <Leader>ua :Git reset HEAD <CR>
 nnoremap <Leader>uu :Git reset HEAD <C-r><C-g><CR>
 
+Bundle 'tpope/vim-rails'
+nnoremap <Leader>rf :Rfixtures<CR>
+nnoremap <Leader>rm :Rmodel<CR>
+nnoremap <Leader>rt :Runittest<CR>
+
 Bundle 'gregsexton/gitv'
 let g:Gitv_OpenHorizontal = 0
 let g:Gitv_WipeAllOnClose = 1
@@ -131,7 +136,6 @@ Bundle 'nono/vim-handlebars'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
