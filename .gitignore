@@ -32,10 +32,13 @@
 .irssi/
 .lesshst
 .local/
+.mpd/
+.mpdconf
 .mysql_history
 .netrc
 .node-gyp/
 .npm/
+.oh-my-zsh
 .osx
 .pearrc
 .pry_history
@@ -66,8 +69,10 @@
 .vimrc.backup
 .vimrc.old
 .wgetrc
+.zcompdump-Hengsha-4.3.11
 .zlogin
-.zshrc
+.zsh-update
+.zsh_history
 Calibre Library/
 Desktop/
 Documents/
