@@ -140,3 +140,9 @@ function unquarantine() {
 function setwallpaper() {
 	defaults write com.apple.desktop Background "{default = {ImageFilePath = '$@'; }; }"; killall Dock
 }
+
+# Open localhost on port 30xx, where xx is the given argument
+function openport30xx() {
+	local port="${1:00}"
+	open "http://localhost:30$port/"
+}
