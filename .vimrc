@@ -35,6 +35,7 @@ nnoremap <D-k> {
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>bi :!bundle install<CR>
 nnoremap <Leader>i mmgg=G`m<CR>
+nnoremap <Leader>h xf<Space>xxr:
 nnoremap <Leader>j ddpgkJ
 nnoremap <Leader>xe Iexpect(<Esc>A).to<Space>
 nnoremap <Leader>y "*y
@@ -124,6 +125,13 @@ nnoremap <C-f> :Ack<Space>
 Bundle 'Lokaltog/vim-powerline'
 let g:Powerline_colorscheme = 'solarized256'
 
+Bundle 'rosenfeld/conque-term'
+let g:ConqueTerm_TERM = 'xterm-256'
+let g:ConqueTerm_ReadUnfocused=1
+let g:ConqueTerm_InsertOnEnter=1
+let g:ConqueTerm_CWInsert = 1
+let g:ConqueTerm_Color = 0
+
 Bundle 'L9'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'digitaltoad/vim-jade'
@@ -135,6 +143,7 @@ Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'nono/vim-handlebars'
 Bundle 'plasticboy/vim-markdown'
+
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
@@ -222,6 +231,7 @@ if has("autocmd")
 
 	autocmd BufRead * set nofoldenable
 
+	autocmd BufNewFile,BufRead *.jbuilder,Gemfile,Rakefile,Procfile,Guardfile setf ruby
 	autocmd BufNewFile,BufRead *.coffee setf coffee
 	autocmd BufNewFile,BufRead *.handlebars setf handlebars
 	autocmd BufNewFile,BufRead *.json setf json syntax=javascript
