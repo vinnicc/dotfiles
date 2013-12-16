@@ -47,6 +47,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 source ~/.aliases
+source ~/.functions
 
 # Initialize RVM
 PATH=$PATH:$HOME/.rvm/bin
