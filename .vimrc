@@ -184,6 +184,7 @@ set noerrorbells
 " set noeol
 set nofoldenable " No code folding
 set nostartofline
+set number
 set relativenumber
 set ruler
 set scrolloff=3
