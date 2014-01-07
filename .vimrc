@@ -190,7 +190,7 @@ set ruler
 set scrolloff=3
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5
 set shortmess=atI
-binding.pryset showcmd
+set showcmd
 set showmode
 " set tabstop=2 " Make tabs as wide as two spaces
 set t_Co=256
