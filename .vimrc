@@ -16,6 +16,7 @@ cnoremap %% <C-r>=expand('%:h').'/'<CR>
 
 vnoremap y ygv<Esc>
 vnoremap p pgvy<Esc>
+vnoremap s :sort<CR>
 
 inoremap <C-a> <C-o>^
 inoremap <C-e> <C-o>$
@@ -34,11 +35,13 @@ nnoremap <D-j> }
 nnoremap <D-k> {
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>bi :!bundle install<CR>
-nnoremap <Leader>i mmgg=G`m<CR>
 nnoremap <Leader>h xf<Space>xxr:
+nnoremap <Leader>i mmgg=G`m<CR>
 nnoremap <Leader>j ddpgkJ
 nnoremap <Leader>xe Iexpect(<Esc>A).to<Space>
 nnoremap <Leader>y "*y
+nnoremap <Leader>t :tabmove +1<CR>
+nnoremap <Leader>T :tabmove -1<CR>
 nnoremap <Leader>yd :let @*=expand("%:h")<CR>
 nnoremap <Leader>yf :let @*=expand("%:t")<CR>
 nnoremap <Leader>yp :let @*=expand("%")<CR>
@@ -129,14 +132,15 @@ let g:Powerline_colorscheme = 'solarized256'
 
 Bundle 'rosenfeld/conque-term'
 let g:ConqueTerm_TERM = 'xterm-256'
-let g:ConqueTerm_ReadUnfocused=1
-let g:ConqueTerm_InsertOnEnter=1
+let g:ConqueTerm_ReadUnfocused = 1
+let g:ConqueTerm_InsertOnEnter = 1
 let g:ConqueTerm_CWInsert = 1
 let g:ConqueTerm_Color = 0
 
 Bundle 'L9'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'digitaltoad/vim-jade'
+Bundle 'godlygeek/tabular'
 Bundle 'heartsentwined/vim-emblem'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mattn/emmet-vim'
@@ -153,12 +157,9 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/taglist.vim'
 
+" Basic Configuration {{{1
+
 filetype plugin indent on
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" BASIC CONFIGURATION
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 color Tomorrow-Night-Blue
 set background=dark
 
@@ -181,11 +182,12 @@ set modeline
 set modelines=4
 set mouse= " Prioritize mouse from tmux
 set noerrorbells
+set nrformats-=octal
 " set noeol
 set nofoldenable " No code folding
 set nostartofline
-set relativenumber " Enable hybrid line number mode when placed before `set number`
 set number
+set relativenumber " Enable hybrid line number mode when placed before `set number`
 set ruler
 set scrolloff=3
 set shiftround " When at 3 spaces and I hit >>, go to 4, not 5
@@ -237,6 +239,7 @@ if has("autocmd")
 	autocmd BufNewFile,BufRead *.jbuilder,Gemfile,Rakefile,Procfile,Guardfile setf ruby
 	autocmd BufNewFile,BufRead *.coffee setf coffee
 	autocmd BufNewFile,BufRead *.handlebars setf handlebars
+	autocmd BufNewFile,BufRead *.jade setf jade
 	autocmd BufNewFile,BufRead *.json setf json syntax=javascript
 	autocmd BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md,README.md setf markdown
 endif
