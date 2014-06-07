@@ -149,13 +149,13 @@ Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'nono/vim-handlebars'
 Bundle 'plasticboy/vim-markdown'
-
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'wavded/vim-stylus'
 
 " Basic Configuration {{{1
 
@@ -236,12 +236,13 @@ if has("autocmd")
 
 	autocmd BufRead * set nofoldenable
 
-	autocmd BufNewFile,BufRead *.jbuilder,Gemfile,Rakefile,Procfile,Guardfile setf ruby
 	autocmd BufNewFile,BufRead *.coffee setf coffee
 	autocmd BufNewFile,BufRead *.handlebars setf handlebars
 	autocmd BufNewFile,BufRead *.jade setf jade
+	autocmd BufNewFile,BufRead *.jbuilder,*.thor,Gemfile,Rakefile,Procfile,Guardfile setf ruby
 	autocmd BufNewFile,BufRead *.json setf json syntax=javascript
 	autocmd BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md,README.md setf markdown
+	autocmd BufNewFile,BufRead *.styl,stylus setf stylus
 endif
 
 if has("gui_macvim")
