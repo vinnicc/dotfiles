@@ -50,8 +50,6 @@ source ~/.aliases
 source ~/.functions
 
 # Initialize RVM
-PATH=$PATH:$HOME/.rvm/bin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # History config
 export HISTSIZE=100000
@@ -62,3 +60,8 @@ unsetopt share_history # Prevent history sharing
 
 export PGHOST=localhost
 export EDITOR="vim"
+
+# Node executables
+export PATH=/usr/local/share/npm/bin:$PATH
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
