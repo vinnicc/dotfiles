@@ -257,7 +257,7 @@ if has("gui_macvim")
 	" Do not use gui tabline
 	set guioptions-=e
 
-	set guifont=Inconsolata\ for\ Powerline:h14
+	set guifont=Inconsolata\ for\ Powerline:h12
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
