@@ -61,6 +61,8 @@ nnoremap <Leader>vi :BundleInstall<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vu :BundleUpdate<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
+nnoremap <Leader>vx :tabedit ~/.xvimrc<CR>
+nnoremap <Leader>vz :tabedit ~/.zshrc<CR>
 
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'

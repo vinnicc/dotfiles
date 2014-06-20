@@ -1,0 +1,43 @@
+" Vinni Caños's .xvimrc file
+
+set gdefault
+set ignorecase
+set number
+set pasteboard
+set relativenumber
+set smartcase
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" ctrlp!
+nnoremap <C-p> :xccmd openQuickly<CR>
+
+" navigator
+nnoremap ,n :xccmd toggleNavigatorsVisibility<CR>
+nnoremap ,N :xccmd revealInProjectNavigator<CR>
+
+" pseudo-alternate file
+nnoremap ,. :xccmd jumpToNextCounterpart<CR>
+
+" tabs
+nnoremap gt :xccmd selectNextTab<CR>
+nnoremap gT :xccmd selectPreviousTab<CR>
+
+" comments
+nnoremap gcc :xccmd commentAndUncommentCurrentLines<CR>
+vnoremap gc :xccmd commentAndUncommentCurrentLines<CR>
+
+" keep selection after indenting
+vnoremap > >gv
+vnoremap < <gv
+
+" dot should also work in visual mode
+vnoremap . :norm.<CR>
+
+" vcs stuff
+nnoremap ,dd :xccmd changeToVersionEditorComparisonView<CR>
+nnoremap ,bl :xccmd changeToVersionEditorBlameView<CR>
+nnoremap ,ga :xccmd changeToVersionEditorLogView<CR>
