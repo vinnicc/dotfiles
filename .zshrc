@@ -65,3 +65,5 @@ export EDITOR="vim"
 export PATH=/usr/local/share/npm/bin:$PATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
