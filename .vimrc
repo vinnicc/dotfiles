@@ -129,8 +129,9 @@ nnoremap <Leader>gg :Gitv! --all<CR>
 Bundle 'mileszs/ack.vim'
 nnoremap <C-f> :Ack<Space>
 
-Bundle 'Lokaltog/vim-powerline'
-let g:Powerline_colorscheme = 'solarized256'
+Bundle 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 Bundle 'rosenfeld/conque-term'
 let g:ConqueTerm_TERM = 'xterm-256'
