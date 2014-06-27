@@ -163,7 +163,7 @@ Bundle 'wavded/vim-stylus'
 " Basic Configuration {{{1
 
 filetype plugin indent on
-color Tomorrow-Night-Blue
+color Tomorrow-Night
 set background=dark
 
 set autoindent
@@ -260,7 +260,7 @@ if has("gui_macvim")
 	" Do not use gui tabline
 	set guioptions-=e
 
-	set guifont=Inconsolata\ for\ Powerline:h12
+	set guifont=Inconsolata\ for\ Powerline:h14
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -282,8 +282,11 @@ inoremap <S-Tab> <C-n>
 " Bind :Q to :q
 command! Q q
 command! Qall qall
+
 " Insert the current time
 command! InsertTime :normal a<C-r>=strftime('%F %H:%M:%S.0 %z')<CR>
+nnoremap <Leader>xit :InsertTime<CR>
+
 " Show the MD5 of the current buffer
 command! -range Md5 :echo system('echo '.shellescape(join(getline(<line1>, <line2>), '\n')) . '| md5')
 
@@ -295,8 +298,8 @@ function! PromoteToLet()
 	:.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
 	:normal ==
 endfunction
-:command! PromoteToLet :call PromoteToLet()
-:nnoremap <Leader>p :PromoteToLet<CR>
+command! PromoteToLet :call PromoteToLet()
+nnoremap <Leader>p :PromoteToLet<CR>
 
 " Switch between test and production code
 function! OpenTestAlternate()
