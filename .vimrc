@@ -58,6 +58,7 @@ nnoremap <Leader>va :tabedit ~/.aliases<CR>
 nnoremap <Leader>vc :BundleClean<CR>
 nnoremap <Leader>vg :tabedit ~/.gitconfig<CR>
 nnoremap <Leader>vi :BundleInstall<CR>
+nnoremap <Leader>vn :tabedit ~/Dropbox/Notes<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vu :BundleUpdate<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
@@ -74,13 +75,10 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_max_height = 30
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_extensions = ['line', 'dir']
 nnoremap <C-b> :CtrlPBuffer<CR>
+nnoremap <C-n> :CtrlPLine<CR>
 nnoremap <Leader><C-p> :ClearCtrlPCache<CR>:CtrlPCurWD<CR>
-
-Bundle 'Lokaltog/vim-easymotion'
-let g:EasyMotion_mapping_f = '<Leader>f'
-let g:EasyMotion_mapping_F = '<Leader>F'
-let g:EasyMotion_leader_key = '<Leader>Q'
 
 Bundle 'scrooloose/nerdtree'
 let NERDTreeAutoDeleteBuffer = 1
