@@ -1,9 +1,9 @@
 " Vinni Caños's .vimrc file
 
 set nocompatible
-syntax on
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 let mapleader = ','
 
@@ -52,7 +52,7 @@ noremap Y v$hy
 noremap j gj
 noremap k gk
 
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
 nnoremap <Leader>va :tabedit ~/.aliases<CR>
 nnoremap <Leader>vc :BundleClean<CR>
@@ -142,7 +142,7 @@ let g:ConqueTerm_CWInsert = 1
 let g:ConqueTerm_Color = 0
 
 Bundle 'L9'
-Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'digitaltoad/vim-jade'
 Bundle 'godlygeek/tabular'
 Bundle 'heartsentwined/vim-emblem'
@@ -161,9 +161,12 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'wavded/vim-stylus'
 
+call vundle#end()
+filetype plugin indent on
+
 " Basic Configuration {{{1
 
-filetype plugin indent on
+syntax on
 color Tomorrow-Night-Blue
 set background=dark
 

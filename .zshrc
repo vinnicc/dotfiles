@@ -64,6 +64,10 @@ export EDITOR="vim"
 # Node executables
 export PATH=/usr/local/share/npm/bin:$PATH
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+# Add RVM to PATH for scripting
+export PATH=$PATH:$HOME/.rvm/bin
 
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
+# Link Homebrew casks in `/Applications` rather than `~/Applications`
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
