@@ -10,29 +10,30 @@ tap caskroom/versions
 # photoshop
 # office 2011
 
-# cask install google-chrome-canary 2> /dev/null
-# cask install imagealpha 2> /dev/null
-# cask install imageoptim 2> /dev/null
-# cask install miro-video-converter 2> /dev/null
-# cask install the-unarchiver 2> /dev/null
-# cask install torbrowser 2> /dev/null
-# cask install virtualbox 2> /dev/null
-cask install cloud 2> /dev/null
-cask install dropbox 2> /dev/null
-cask install firefox 2> /dev/null
-cask install google-chrome 2> /dev/null
-cask install growlnotify 2> /dev/null
-cask install istat-menus 2> /dev/null
-cask install iterm2 2> /dev/null
-cask install karabiner 2> /dev/null
-cask install macvim 2> /dev/null
-cask install nvalt 2> /dev/null
-cask install quicksilver 2> /dev/null
-cask install seil 2> /dev/null
-cask install skype 2> /dev/null
-cask install spotify 2> /dev/null
-cask install steam 2> /dev/null
-cask install totalspaces 2> /dev/null
-cask install utorrent 2> /dev/null
-cask install vlc 2> /dev/null
-cask install witch 2> /dev/null
+# cask install google-chrome-canary
+# cask install imagealpha
+# cask install imageoptim
+# cask install istat-menus
+# cask install miro-video-converter
+# cask install the-unarchiver
+# cask install torbrowser
+# cask install virtualbox
+cask install cloud
+cask install dropbox
+cask install firefox
+cask install google-chrome
+cask install growlnotify
+cask install iterm2
+cask install karabiner
+cask install macvim
+cask install menumeters
+cask install quicksilver
+cask install seil
+cask install skype
+cask install slate
+cask install spotify
+cask install steam
+cask install totalspaces
+cask install utorrent
+cask install vlc
+cask install witch
