@@ -79,6 +79,9 @@ let g:ctrlp_extensions = ['line', 'dir']
 nnoremap <C-b> :CtrlPBuffer<CR>
 nnoremap <C-n> :CtrlPLine<CR>
 nnoremap <Leader><C-p> :ClearCtrlPCache<CR>:CtrlPCurWD<CR>
+nnoremap <Leader>gc :CtrlP app/controllers<CR>
+nnoremap <Leader>gm :CtrlP app/models<CR>
+nnoremap <Leader>gs :CtrlP app/assets/stylesheets<CR>
 
 Bundle 'scrooloose/nerdtree'
 let NERDTreeAutoDeleteBuffer = 1
@@ -146,7 +149,6 @@ Bundle 'heartsentwined/vim-emblem'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mattn/emmet-vim'
 Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'nono/vim-handlebars'
