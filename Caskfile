@@ -35,6 +35,7 @@ cask install spotify
 cask install steam
 cask install the-unarchiver
 cask install totalspaces
+cask install transmit
 cask install utorrent
 cask install vlc
 cask install witch
