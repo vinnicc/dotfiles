@@ -142,6 +142,7 @@ let g:ConqueTerm_CWInsert = 1
 let g:ConqueTerm_Color = 0
 
 Bundle 'L9'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'digitaltoad/vim-jade'
 Bundle 'godlygeek/tabular'
