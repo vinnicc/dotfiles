@@ -150,6 +150,7 @@ Bundle 'heartsentwined/vim-emblem'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'mattn/emmet-vim'
 Bundle 'michaeljsmith/vim-indent-object'
+Bundle 'morhetz/gruvbox'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'nono/vim-handlebars'
@@ -168,7 +169,7 @@ filetype plugin indent on
 " Basic Configuration {{{1
 
 syntax on
-color Tomorrow-Night-Blue
+color gruvbox
 set background=dark
 
 set autoindent
