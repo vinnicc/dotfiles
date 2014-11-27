@@ -71,3 +71,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Prepend task count on prompt
+PROMPT="%{$fg[red]%}$(task count)%{$reset_color%} $PROMPT"
