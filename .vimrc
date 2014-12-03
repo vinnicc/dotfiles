@@ -145,6 +145,7 @@ Plugin 'nono/vim-handlebars'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
@@ -166,9 +167,9 @@ set clipboard=unnamed
 set cursorline                      " highlight current screen line
 set linespace=1                     " fix line height
 set mouse=                          " prioritize mouse from tmux
-set nostartofline                   " keep cursor in the same column when moving around
-set nowrap                          " soft-wrapping is off by default
-set visualbell                      " flash instead of beeping
+set nostartofline                   " keep cursor in the same columna when moving around
+set wrap                            " always wrap lines
+set visualbell                      " flash instead of beeping 
 
 " Folding
 set foldlevel=1
