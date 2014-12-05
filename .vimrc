@@ -164,50 +164,51 @@ color gruvbox
 set t_Co=256
 set background=dark
 set clipboard=unnamed
-set cursorline                      " highlight current screen line
-set linespace=1                     " fix line height
-set mouse=                          " prioritize mouse from tmux
-set nostartofline                   " keep cursor in the same columna when moving around
-set wrap                            " always wrap lines
-set visualbell                      " flash instead of beeping 
+set cursorline                             " Highlight current screen line
+set linespace=1                            " Fix line height
+set mouse=                                 " Prioritize mouse from tmux
+set nostartofline                          " Keep cursor in the same columna when moving around
+set wrap                                   " Always wrap lines
+set visualbell                             " Flash instead of beeping
+set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_ " Show 'invisible' characters
 
 " Folding
 set foldlevel=1
-set foldmethod=syntax               " fold by the indentation by default
-set foldnestmax=10                  " deepest fold is 10 levels
-set nofoldenable                    " don't fold by default
+set foldmethod=syntax                      " Fold by the indentation by default
+set foldnestmax=10                         " Deepest fold is 10 levels
+set nofoldenable                           " Don't fold by default
 
 " Search
-set gdefault                        " Substitute all matches in a line by default
-set hlsearch                        " highlights search results; ctrl-n or :noh to unhighlight
-set ignorecase                      " ignores case when pattern matching
-set incsearch                       " automatically begins searching as you type
-set smartcase                       " ignores ignorecase when pattern contains uppercase characters
+set gdefault                               " Substitute all matches in a line by default
+set hlsearch                               " Highlights search results; ctrl-n or :noh to unhighlight
+set ignorecase                             " Ignores case when pattern matching
+set incsearch                              " Automatically begins searching as you type
+set smartcase                              " Ignores ignorecase when pattern contains uppercase characters
 
 " Formatting
-set expandtab                       " uses spaces instead of tab characters
-set shiftround                      " When at 3 spaces and I hit >>, go to 4, not 5
-set shiftwidth=2                    " number of spaces to use for autoindent
-set softtabstop=2                   " number of spaces that tabs insert
-set tabstop=2                       " number of spaces that a tab renders as
+set expandtab                              " Uses spaces instead of tab characters
+set shiftround                             " When at 3 spaces and I hit >>, go to 4, not 5
+set shiftwidth=2                           " Number of spaces to use for autoindent
+set softtabstop=2                          " Number of spaces that tabs insert
+set tabstop=2                              " Number of spaces that a tab renders as
 
 " Backups
-set nobackup                        " not worth it
-set nowritebackup                   " don't make a backup before overwriting
-set noswapfile                      " don't litter swap files everywhere
-set directory=/tmp                  " directory for temp files
+set nobackup                               " Not worth it
+set nowritebackup                          " Don't make a backup before overwriting
+set noswapfile                             " Don't litter swap files everywhere
+set directory=/tmp                         " Directory for temp files
 
 " Hud and status info
-set relativenumber                  " enable hybrid line number mode
-set numberwidth=5                   " width of number column
-set cmdheight=1                     " make a little more room for error messages
-set scrolloff=3                     " lines between the current line and the screen edge
-set sidescrolloff=2                 " lines between the current column and the screen edge
-set ttyfast                         " improves redrawing for newer computers
-set lazyredraw                      " will not redraw the screen while running macros (goes faster)
+set relativenumber                         " Enable hybrid line number mode
+set numberwidth=5                          " Width of number column
+set cmdheight=1                            " Make a little more room for error messages
+set scrolloff=3                            " Lines between the current line and the screen edge
+set sidescrolloff=2                        " Lines between the current column and the screen edge
+set ttyfast                                " Improves redrawing for newer computers
+set lazyredraw                             " Will not redraw the screen while running macros (goes faster)
 
 " Menu compilation
-set wildignore+=*.~                 " ignore compiled objects and backups
+set wildignore+=*.~                        " Ignore compiled objects and backups
 set wig+=*.o,*.obj,*.pyc
 set wig+=.sass-cache,tmp
 set wildmode=longest:full,list:full
