@@ -73,4 +73,4 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # Prepend task count on prompt
-PROMPT="%{$fg[yellow]%}$(task count)%{$reset_color%} $PROMPT"
+PROMPT="%{$fg[yellow]%}$(task status:pending count)%{$reset_color%} $PROMPT"
