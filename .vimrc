@@ -170,7 +170,8 @@ set mouse=                                 " Prioritize mouse from tmux
 set nostartofline                          " Keep cursor in the same columna when moving around
 set wrap                                   " Always wrap lines
 set visualbell                             " Flash instead of beeping
-set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_ " Show 'invisible' characters
+set list                                   " Show 'invisible' characters
+set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_ " Strings to use in list mode and for the :list command
 
 " Folding
 set foldlevel=1
