@@ -107,6 +107,7 @@ nnoremap <Leader>ua :Git reset HEAD <CR>
 nnoremap <Leader>uu :Git reset HEAD <C-r><C-g><CR>
 
 Plugin 'tpope/vim-rails'
+nnoremap <Leader>. :A<CR>
 nnoremap <Leader>rc :Rcontroller<CR>
 nnoremap <Leader>rf :Rfixtures<CR>
 nnoremap <Leader>rm :Rmodel<CR>
@@ -146,6 +147,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-sleuth'
