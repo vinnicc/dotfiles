@@ -15,6 +15,9 @@
 /.ember/
 /.fontconfig/
 /.fonts/
+/.fzf.bash
+/.fzf.zsh
+/.fzf/
 /.gem/
 /.gitk
 /.gnupg/
