@@ -1,9 +1,8 @@
 " Vinni Caños's .vimrc file
 
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+set runtimepath+=~/.vim/bundle/neobundle.vim/
+call neobundle#begin(expand('~/.vim/bundle'))
 
 let mapleader = ','
 
@@ -19,8 +18,8 @@ vnoremap p pgvy<Esc>
 vnoremap s :sort<CR>
 
 inoremap <C-a> <C-o>^
-inoremap <C-e> <C-o>$
 inoremap <C-b> <Esc>^Ibinding.pry<Esc>^==:w<CR>
+inoremap <C-e> <C-o>$
 inoremap <C-l> <Space>=><Space>
 inoremap <C-s> <Esc>:w<CR>
 
@@ -33,6 +32,7 @@ nnoremap <C-t> <Esc>:tabnew<CR>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>S :%s/\s\+$//<CR>
 nnoremap <Leader>T :tabmove -1<CR>
+nnoremap <Leader>d /^\(.*\)\n\1$<CR>
 nnoremap <Leader>h xf<Space>xxr:
 nnoremap <Leader>i mmgg=G`m<CR>
 nnoremap <Leader>j ddpgkJ
@@ -42,6 +42,7 @@ nnoremap <Leader>y "*y
 nnoremap <Leader>yd :let @*=expand("%:h")<CR>
 nnoremap <Leader>yf :let @*=expand("%:t")<CR>
 nnoremap <Leader>yp :let @*=expand("%")<CR>
+nnoremap <Space> :w<CR>
 
 noremap K <Nop>
 noremap Q <Nop>
@@ -49,19 +50,48 @@ noremap Y v$hy
 noremap j gj
 noremap k gk
 
-Plugin 'gmarik/Vundle.vim'
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'heartsentwined/vim-emblem'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'michaeljsmith/vim-indent-object'
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'nelstrom/vim-qargs'
+NeoBundle 'nelstrom/vim-visual-star-search'
+NeoBundle 'nono/vim-handlebars'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-projectionist'
+NeoBundle 'tpope/vim-rake'
+NeoBundle 'tpope/vim-sensible'
+NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'wavded/vim-stylus'
+
+NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
 nnoremap <Leader>va :tabedit ~/.aliases<CR>
-nnoremap <Leader>vc :PluginClean<CR>
-nnoremap <Leader>vi :PluginInstall<CR>
-nnoremap <Leader>vu :PluginUpdate<CR>
+nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
+nnoremap <Leader>vc :NeoBundleClean<CR>
+nnoremap <Leader>vi :NeoBundleInstall<CR>
+nnoremap <Leader>vu :NeoBundleUpdate<CR>
 
-Plugin 'kien/ctrlp.vim'
+NeoBundle 'kien/ctrlp.vim'
 let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp\|node_modules\|bower_components$',
       \ 'file': '\.exe$\|\.so$\|\.dat$'
       \ }
 let g:ctrlp_max_height = 30
@@ -75,7 +105,7 @@ nnoremap <Leader>gc :CtrlP app/controllers<CR>
 nnoremap <Leader>gm :CtrlP app/models<CR>
 nnoremap <Leader>gs :CtrlP app/assets/stylesheets<CR>
 
-Plugin 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/nerdtree'
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeChDirMode = 2
 let NERDTreeMinimalUI = 1
@@ -84,12 +114,12 @@ let NERDTreeShowHidden = 1
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>N :NERDTreeFind<CR>
 
-Plugin 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-eunuch'
 nnoremap <Leader>ed :saveas <C-r>=expand('%:p')<CR>
 nnoremap <Leader>em :Move <C-r>=expand('%:p')<CR>
 nnoremap <Leader>ew :SudoWrite<CR>
 
-Plugin 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-fugitive'
 nnoremap <Leader>aa :Gwrite<CR>
 nnoremap <Leader>ac :Gwrite<CR>:Gcommit --amend<CR>:silent wq<CR>
 nnoremap <Leader>bl :Gblame<CR>
@@ -100,13 +130,11 @@ nnoremap <Leader>da :!clear && Git diff<CR>
 nnoremap <Leader>dc :!clear && Git diff --cached<CR>
 nnoremap <Leader>dd :Gdiff<CR>
 nnoremap <Leader>ee :Gedit<CR>
-nnoremap <Leader>la :Glog -10 --<CR>
-nnoremap <Leader>ll :Glog -10 -- %<CR>
-nnoremap <Leader>s :Gstatus<CR>
+nnoremap <Leader>s :Gstatus<CR><C-w>20+
 nnoremap <Leader>ua :Git reset HEAD <CR>
 nnoremap <Leader>uu :Git reset HEAD <C-r><C-g><CR>
 
-Plugin 'tpope/vim-rails'
+NeoBundle 'tpope/vim-rails'
 nnoremap <Leader>. :A<CR>
 nnoremap <Leader>rc :Rcontroller<CR>
 nnoremap <Leader>rf :Rfixtures<CR>
@@ -114,55 +142,29 @@ nnoremap <Leader>rm :Rmodel<CR>
 nnoremap <Leader>rt :Runittest<CR>
 nnoremap <Leader>rv :Rview<CR>
 
-Plugin 'gregsexton/gitv'
+NeoBundle 'gregsexton/gitv'
 let g:Gitv_OpenHorizontal = 0
 let g:Gitv_WipeAllOnClose = 1
-nnoremap <Leader>ga :Gitv --all<CR>
-nnoremap <Leader>gg :Gitv! --all<CR>
+nnoremap <Leader>gl :Gitv --all<CR>
+nnoremap <Leader>gL :Gitv! --all<CR>
 
-Plugin 'mileszs/ack.vim'
+NeoBundle 'mileszs/ack.vim'
 nnoremap <C-f> :Ack<Space>
 
-Plugin 'rosenfeld/conque-term'
+NeoBundle 'rosenfeld/conque-term'
 let g:ConqueTerm_TERM = 'xterm-256'
 let g:ConqueTerm_ReadUnfocused = 1
 let g:ConqueTerm_InsertOnEnter = 1
 let g:ConqueTerm_CWInsert = 1
 let g:ConqueTerm_Color = 0
 
-Plugin 'airblade/vim-gitgutter'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-Plugin 'digitaltoad/vim-jade'
-Plugin 'ervandew/supertab'
-Plugin 'godlygeek/tabular'
-Plugin 'heartsentwined/vim-emblem'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'mattn/emmet-vim'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'morhetz/gruvbox'
-Plugin 'nelstrom/vim-qargs'
-Plugin 'nelstrom/vim-visual-star-search'
-Plugin 'nono/vim-handlebars'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-rake'
-Plugin 'tpope/vim-sensible'
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'vim-scripts/taglist.vim'
-Plugin 'wavded/vim-stylus'
-
-call vundle#end()
+call neobundle#end()
 filetype plugin indent on
+NeoBundleCheck
 
 " Basics - on top of vim-sensible
 " https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-color gruvbox
+color Tomorrow-Night
 set t_Co=256
 set background=dark
 set clipboard=unnamed
@@ -209,12 +211,23 @@ set scrolloff=3                            " Lines between the current line and 
 set sidescrolloff=2                        " Lines between the current column and the screen edge
 set ttyfast                                " Improves redrawing for newer computers
 set lazyredraw                             " Will not redraw the screen while running macros (goes faster)
+set showcmd                                " Show (partial) command in the last line of the screen
 
 " Menu compilation
 set wildignore+=*.~                        " Ignore compiled objects and backups
 set wig+=*.o,*.obj,*.pyc
 set wig+=.sass-cache,tmp
 set wildmode=longest:full,list:full
+
+" GUI-specific options
+if has("gui_running")
+  set guifont=Inconsolata\ for\ Powerline:h12
+  set guioptions-=r " Remove right-hand scrollbar
+  set guioptions-=L " Remove left-hand scrollbar
+  set guioptions-=T " Remove toolbar
+  set guioptions+=c " Use console dialogs instead of popup dialogs
+  set guioptions-=e " Use non-gui tab lines
+endif
 
 " Clear the search buffer when hitting return on normal mode except on command line windows
 function! MapCR()
@@ -224,15 +237,6 @@ call MapCR()
 if has("autocmd")
   autocmd! CmdwinEnter * :unmap <CR>
   autocmd CmdwinLeave * :call MapCR()
-endif
-
-if has("gui_running")
-  set guifont=Inconsolata\ for\ Powerline:h12
-  set guioptions-=r " Remove right-hand scrollbar
-  set guioptions-=L " Remove left-hand scrollbar
-  set guioptions-=T " Remove toolbar
-  set guioptions+=c " Use console dialogs instead of popup dialogs
-  set guioptions-=e " Use non-gui tab lines
 endif
 
 " Insert the current time
@@ -251,16 +255,4 @@ function! PromoteToLet()
   :normal ==
 endfunction
 command! PromoteToLet :call PromoteToLet()
-nnoremap <Leader>p :PromoteToLet<CR>
-
-" Open a split for each dirty file in git
-function! OpenChangedFiles()
-  only " Close all windows, unless they're modified
-  let status = system('git status -s | grep "^ \?\(M\|A\|UU\)" | sed "s/^.\{3\}//"')
-  let filenames = split(status, "\n")
-  exec "edit " . filenames[0]
-  for filename in filenames[1:]
-    exec "sp " . filename
-  endfor
-endfunction
-command! OpenChangedFiles :call OpenChangedFiles()
+nnoremap <Leader>let :PromoteToLet<CR>

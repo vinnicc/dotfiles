@@ -40,16 +40,18 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git chruby)
 
 source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-
 source ~/.aliases
 source ~/.functions
 
-# Initialize RVM
+# Initialize chruby
+if [ -f /usr/local/share/chruby/chruby.sh ]; then
+  source /usr/local/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
+  chruby 2
+fi
 
 # History config
 export HISTSIZE=100000
@@ -60,17 +62,7 @@ unsetopt share_history # Prevent history sharing
 
 export PGHOST=localhost
 export EDITOR="vim"
-
-# Node executables
-export PATH=/usr/local/share/npm/bin:$PATH
-
-# Add RVM to PATH for scripting
-export PATH=$PATH:$HOME/.rvm/bin
-
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
+export PATH=/usr/local/share/npm/bin:$PATH # Node executables
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-# Prepend task count on prompt
-PROMPT="%{$fg[yellow]%}$(task status:pending count)%{$reset_color%} $PROMPT"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
