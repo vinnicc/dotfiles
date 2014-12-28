@@ -81,6 +81,7 @@ NeoBundle 'wavded/vim-stylus'
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
 nnoremap <Leader>va :tabedit ~/.aliases<CR>
+nnoremap <Leader>vb :tabedit ~/bootstrap<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
 nnoremap <Leader>vc :NeoBundleClean<CR>
