@@ -219,16 +219,6 @@ set wig+=*.o,*.obj,*.pyc
 set wig+=.sass-cache,tmp
 set wildmode=longest:full,list:full
 
-" GUI-specific options
-if has("gui_running")
-  set guifont=Inconsolata\ for\ Powerline:h12
-  set guioptions-=r " Remove right-hand scrollbar
-  set guioptions-=L " Remove left-hand scrollbar
-  set guioptions-=T " Remove toolbar
-  set guioptions+=c " Use console dialogs instead of popup dialogs
-  set guioptions-=e " Use non-gui tab lines
-endif
-
 " Clear the search buffer when hitting return on normal mode except on command line windows
 function! MapCR()
   nnoremap <CR> :nohlsearch<CR>
