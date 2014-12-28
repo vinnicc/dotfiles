@@ -21,10 +21,8 @@ tap caskroom/versions
 cask install cloud
 cask install colorpicker-hex
 cask install disk-inventory-x
-cask install dropbox
 cask install firefox
 cask install google-chrome
-cask install growlnotify
 cask install iterm2
 cask install karabiner
 cask install menumeters
