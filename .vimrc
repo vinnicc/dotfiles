@@ -78,15 +78,17 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'wavded/vim-stylus'
 
+
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
 nnoremap <Leader>va :tabedit ~/.aliases<CR>
 nnoremap <Leader>vb :tabedit ~/bootstrap<CR>
-nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
-nnoremap <Leader>vv :source ~/.vimrc<CR>
 nnoremap <Leader>vc :NeoBundleClean<CR>
 nnoremap <Leader>vi :NeoBundleInstall<CR>
+nnoremap <Leader>vl :NeoBundleLog<CR>
+nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vu :NeoBundleUpdate<CR>
+nnoremap <Leader>vv :source ~/.vimrc<CR>
 
 NeoBundle 'kien/ctrlp.vim'
 let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
@@ -114,6 +116,10 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeShowHidden = 1
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>N :NERDTreeFind<CR>
+
+NeoBundle 'tpope/vim-dispatch'
+nnoremap <Leader>` :Dispatch<Space>
+nnoremap <Leader>~ :Dispatch!<Space>
 
 NeoBundle 'tpope/vim-eunuch'
 nnoremap <Leader>ed :saveas <C-r>=expand('%:p')<CR>
@@ -165,7 +171,7 @@ NeoBundleCheck
 
 " Basics - on top of vim-sensible
 " https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-color Tomorrow-Night
+color Tomorrow-Night-Blue
 set t_Co=256
 set background=dark
 set clipboard=unnamed
