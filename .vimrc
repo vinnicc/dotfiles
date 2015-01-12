@@ -78,7 +78,6 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'wavded/vim-stylus'
 
-
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
 nnoremap <Leader>va :tabedit ~/.aliases<CR>
@@ -157,13 +156,6 @@ nnoremap <Leader>gL :Gitv! --all<CR>
 
 NeoBundle 'mileszs/ack.vim'
 nnoremap <C-f> :Ack<Space>
-
-NeoBundle 'rosenfeld/conque-term'
-let g:ConqueTerm_TERM = 'xterm-256'
-let g:ConqueTerm_ReadUnfocused = 1
-let g:ConqueTerm_InsertOnEnter = 1
-let g:ConqueTerm_CWInsert = 1
-let g:ConqueTerm_Color = 0
 
 call neobundle#end()
 filetype plugin indent on
