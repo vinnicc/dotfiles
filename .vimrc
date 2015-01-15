@@ -52,6 +52,7 @@ noremap k gk
 
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
@@ -76,15 +77,6 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'wavded/vim-stylus'
-
-NeoBundle 'christoomey/vim-tmux-navigator'
-let g:tmux_navigator_no_mappings = 1
-if exists('g:loaded_tmux_navigator')
-  nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
-  nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
-  nnoremap <silent> <C-k> :TmuxNavigateUp<CR>
-  nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
-endif
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
