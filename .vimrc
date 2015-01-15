@@ -64,7 +64,6 @@ NeoBundle 'nelstrom/vim-qargs'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-haml'
@@ -124,6 +123,10 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeShowHidden = 1
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>N :NERDTreeFind<CR>
+
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 
 NeoBundle 'tpope/vim-dispatch'
 nnoremap <Leader>` :Dispatch<Space>
