@@ -78,6 +78,15 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'wavded/vim-stylus'
 
+NeoBundle 'christoomey/vim-tmux-navigator'
+let g:tmux_navigator_no_mappings = 1
+if exists('g:loaded_tmux_navigator')
+  nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
+  nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
+  nnoremap <silent> <C-k> :TmuxNavigateUp<CR>
+  nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
+endif
+
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
 nnoremap <Leader>va :tabedit ~/.aliases<CR>
@@ -163,7 +172,7 @@ NeoBundleCheck
 
 " Basics - on top of vim-sensible
 " https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-color Tomorrow-Night-Blue
+color Tomorrow-Night
 set t_Co=256
 set background=dark
 set clipboard=unnamed
