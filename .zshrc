@@ -66,3 +66,7 @@ export PATH=/usr/local/share/npm/bin:$PATH # Node executables
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+function precmd() {
+  jobs
+}
