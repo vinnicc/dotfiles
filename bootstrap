@@ -91,13 +91,16 @@ cask_packages=(
   # steam
   # torbrowser
   # virtualbox
+  bartender
   cloud
   colorpicker-hex
   disk-inventory-x
+  feeds
   firefox
   google-chrome
   iterm2
   karabiner
+  macdown
   menumeters
   ntfs-free
   quicksilver
@@ -105,6 +108,7 @@ cask_packages=(
   sketch
   sketch-toolbox
   skype
+  slack
   slate
   spotify
   the-unarchiver
