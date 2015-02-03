@@ -55,7 +55,6 @@
 /.ssh/
 /.subversion/
 /.swp
-/.task/
 /.tilemill/
 /.tmp/
 /.tmuxinator/
