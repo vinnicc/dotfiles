@@ -1,16 +1,16 @@
 # Handle the fact that this file will be used with multiple OSs
 platform=`uname`
 if [[ $platform == 'Linux' ]]; then
-    alias a='ls -lrth --color'
+    alias a='ls -larth --color'
 elif [[ $platform == 'Darwin' ]]; then
-    alias a='ls -lrthG'
+    alias a='ls -larthG'
 fi
 
 alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 alias b='bundle'
 alias bake='bundle exec rake'
 alias be='bundle exec'
-alias bi='bundle install'
+alias bi='bundle install --verbose'
 alias bo='bundle open'
 alias bootstrap='~/bootstrap'
 alias brci='brew cask install'
@@ -33,7 +33,7 @@ alias gco='git checkout'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias getnewrelic='curl https://gist.github.com/rwdaigle/2253296/raw/newrelic.yml > config/newrelic.yml'
-alias gl='git l'
+alias gl="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gp='git pull'
 alias gphm='git push heroku master'
 alias gpod='git push origin develop'
@@ -53,6 +53,7 @@ alias hc='heroku run console'
 alias hf="history | awk '{CMD[\$2]++;count++;}END { for (a in CMD)print CMD[a] \" \" CMD[a]/count*100 \"% \" a;}' | grep -v \"./\" | column -c3 -s \" \" -t | sort -nr | nl |  head -n20"
 alias hg='heroku config'
 alias hr='heroku run'
+alias icloud='~/Library/Mobile\ Documents/com~apple~CloudDocs'
 alias ios='open -a /Applications/Xcode.app/Contents/Applications/iPhone\ Simulator.app'
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
@@ -81,7 +82,6 @@ alias rgm='rails generate migration '
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
 alias rs='bundle exec rspec spec'
 alias rsp='rails server -p'
-alias s='openport30xx'
 alias sc='staging-console'
 alias sg='staging-config'
 alias sl='staging-tail'
@@ -95,7 +95,7 @@ alias stopspotlight='sudo mdutil -a -i on'
 alias t='task'
 alias ta='task add'
 alias tma='tmux attach'
-alias top='glances'
+alias torrents='~/Downloads/_completed'
 alias tsp='killall tmux; tmuxinator start $(basename $(pwd))'
 alias u='cd ..'
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; brew cask cleanup; npm update npm -g; npm update -g; upgrade_oh_my_zsh; ~/.fzf/install'
@@ -105,6 +105,7 @@ alias vb='vim ~/bootstrap'
 alias vf='vim ~/.functions'
 alias vg='vim ~/.gitignore'
 alias vh='sudo vim /etc/hosts'
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 alias vo='vim ~/.osx'
 alias vs='vim ~/.slate'
 alias vt='vim ~/.tmux.conf'
@@ -187,7 +188,14 @@ else
     alias fs="stat -f \"%z bytes\""
 fi
 
-alias emptytrash='sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl' # Also, clear Apple’s System Logs to improve shell startup speed Empty the Trash on all mounted volumes and the main HDD
+alias emptytrash='sudo rm -rfv /Volumes/*/.Trashes;
+                  sudo rm -rfv ~/.Trash;
+                  sudo rm -rfv ~/Desktop/*;
+                  sudo rm -rfv ~/Documents/ViberDownloads;
+                  sudo rm -rfv ~/Movies/*;
+                  sudo rm -rfv ~/Music/*;
+                  sudo rm -rfv ~/Public/*;
+                  sudo rm -rfv /private/var/log/asl/*.asl' # Also, clear Apple’s System Logs to improve shell startup speed Empty the Trash on all mounted volumes and the main HDD
 
 # Show/hide hidden files in Finder
 alias show='defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder'
