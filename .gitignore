@@ -60,7 +60,6 @@
 /.tmuxinator/
 /.travis/
 /.vegas/
-/.vifm/
 /.vim-tmp
 /.vim/.netrwhist
 /.vim/bundle/
@@ -71,22 +70,15 @@
 /.zlogin
 /.zsh-update
 /.zsh_history
+/Applications (Parallels)/
 /Applications/
-/Calibre Library/
-/Desktop/
 /Documents/
 /Downloads/
 /Dropbox/
 /Library/
-/Movies/
 /Music/
 /Pictures/
-/Public/
-/Sites
 /android-sdks/
-/bin/hasher
-/bin/youtube-dl
-/dwhelper/
 /npm-debug.log
 /src/
 /tags
