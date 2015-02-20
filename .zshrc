@@ -70,3 +70,6 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 function precmd() {
   jobs
 }
+
+# Export Docker environment variables
+eval `boot2docker shellinit 2>/dev/null`
