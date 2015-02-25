@@ -23,6 +23,12 @@ inoremap <C-e> <C-o>$
 inoremap <C-l> <Space>=><Space>
 inoremap <C-s> <Esc>:w<CR>
 
+" Allow normal regex
+nnoremap ? ?\v
+nnoremap / /\v
+vnoremap / /\v
+vnoremap ? ?\v
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -50,6 +56,7 @@ noremap Y v$hy
 noremap j gj
 noremap k gk
 
+NeoBundle 'SirVer/ultisnips'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'christoomey/vim-tmux-navigator'
@@ -57,6 +64,7 @@ NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'heartsentwined/vim-emblem'
+NeoBundle 'honza/vim-snippets'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'michaeljsmith/vim-indent-object'
@@ -77,6 +85,7 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'wavded/vim-stylus'
+NeoBundle 'whatyouhide/vim-gotham'
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
@@ -118,7 +127,10 @@ nnoremap <Leader>N :NERDTreeFind<CR>
 
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+
+NeoBundle 'Lokaltog/vim-easymotion'
+let g:EasyMotion_do_mapping = 0
+nmap s <Plug>(easymotion-s)
 
 NeoBundle 'tpope/vim-dispatch'
 nnoremap <Leader>` :Dispatch<Space>
@@ -264,3 +276,11 @@ function! s:ZoomToggle() abort
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <Leader>z :ZoomToggle<CR>
+
+highlight ColorColumn ctermfg=red ctermbg=bg
+if exists("*matchadd")
+  augroup colorColumn
+    autocmd!
+    autocmd VimEnter,WinEnter * call matchadd('ColorColumn', '\%81v.\+', 100)
+  augroup END
+endif
