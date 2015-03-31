@@ -80,6 +80,7 @@ alias reload='source ~/.zshrc'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias rgm='rails generate migration '
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
+alias rr='rake routes'
 alias rs='bundle exec rspec spec'
 alias rsp='rails server -p'
 alias sc='staging-console'
@@ -94,7 +95,7 @@ alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres
 alias stopspotlight='sudo mdutil -a -i on'
 alias tma='tmux attach'
 alias torrents='~/Downloads/_completed'
-alias tsp='killall tmux; tmuxinator start $(basename $(pwd))'
+alias tsp='killall ruby; killall tmux; tmuxinator start $(basename $(pwd))'
 alias u='cd ..'
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; brew cask cleanup; npm update npm -g; npm update -g; upgrade_oh_my_zsh; ~/.fzf/install'
 alias v='vim'
@@ -117,6 +118,7 @@ alias wjoin='networksetup -setairportnetwork en0'
 alias wlist='/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport scan'
 alias wof='networksetup -setairportpower en0 off; echo "Wi-Fi turned off."'
 alias won='networksetup -setairportpower en0 on; echo "Wi-Fi turned on."'
+alias x='exit'
 alias yt='youtube-dl --no-part --title --auto-number --retries 9999 --restrict-filenames --console-title'
 alias yta='yt --download-archive'
 
@@ -148,6 +150,7 @@ alias db-migrate-production='heroku run rake db:migrate --remote production && h
 alias db-pull-staging='curl -o latest.dump `heroku pgbackups:url --remote staging`'
 alias db-pull-production='curl -o latest.dump `heroku pgbackups:url --remote production`'
 alias db-copy-production-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging --confirm `basename $PWD`-staging'
+alias db-backup-staging='heroku pgbackups:capture --expire --remote staging'
 alias db-backup-production='heroku pgbackups:capture --expire --remote production'
 alias db-backups='heroku pgbackups --remote production'
 
@@ -188,7 +191,6 @@ fi
 
 alias emptytrash='sudo rm -rfv /Volumes/*/.Trashes;
                   sudo rm -rfv ~/.Trash;
-                  sudo rm -rfv ~/Desktop/*;
                   sudo rm -rfv ~/Documents/ViberDownloads;
                   sudo rm -rfv ~/Movies/*;
                   sudo rm -rfv ~/Music/*;
