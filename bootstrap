@@ -92,9 +92,10 @@ cask_packages=(
   # torbrowser
   # virtualbox
   bartender
-  cloud
   colorpicker-hex
   disk-inventory-x
+  diskmaker-x
+  dupeguru
   feeds
   firefox
   google-chrome
@@ -102,6 +103,7 @@ cask_packages=(
   karabiner
   macdown
   menumeters
+  minbox
   ntfs-free
   quicksilver
   seil
