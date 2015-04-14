@@ -64,6 +64,7 @@ packages=(
   sqlmap
   ssh-copy-id
   tmux
+  the_silver_searcher
   tree
   ucspi-tcp # `tcpserver` et al.
   unrar
@@ -96,9 +97,9 @@ cask_packages=(
   disk-inventory-x
   diskmaker-x
   dupeguru
-  feeds
   firefox
   google-chrome
+  google-drive
   iterm2
   karabiner
   macdown
