@@ -170,8 +170,8 @@ let g:Gitv_WipeAllOnClose = 1
 nnoremap <Leader>gl :Gitv --all<CR>
 nnoremap <Leader>gL :Gitv! --all<CR>
 
-NeoBundle 'mileszs/ack.vim'
-nnoremap <C-f> :Ack<Space>
+NeoBundle 'rking/ag.vim'
+nnoremap <C-f> :Ag<Space>
 
 call neobundle#end()
 filetype plugin indent on
