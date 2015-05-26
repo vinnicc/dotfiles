@@ -73,6 +73,7 @@ NeoBundle 'nelstrom/vim-qargs'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-haml'
@@ -161,6 +162,9 @@ nnoremap <Leader>. :A<CR>
 nnoremap <Leader>rc :Rcontroller<CR>
 nnoremap <Leader>rf :Rfixtures<CR>
 nnoremap <Leader>rm :Rmodel<CR>
+nnoremap <Leader>rM :Rmigration<CR>
+nnoremap <Leader>rS :Rschema<CR>
+nnoremap <Leader>rs :Rstylesheet<Space>
 nnoremap <Leader>rt :Runittest<CR>
 nnoremap <Leader>rv :Rview<CR>
 
