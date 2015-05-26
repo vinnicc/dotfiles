@@ -147,12 +147,17 @@ alias production-newrelic='heroku addons:open newrelic --remote production'
 # Heroku databases
 alias db-migrate-staging='heroku run rake db:migrate --remote staging && heroku restart --remote staging'
 alias db-migrate-production='heroku run rake db:migrate --remote production && heroku restart --remote production'
-alias db-pull-staging='curl -o latest.dump `heroku pgbackups:url --remote staging`'
-alias db-pull-production='curl -o latest.dump `heroku pgbackups:url --remote production`'
-alias db-copy-production-to-staging='heroku pgbackups:restore DATABASE `heroku pgbackups:url --remote production` --remote staging --confirm `basename $PWD`-staging'
-alias db-backup-staging='heroku pgbackups:capture --expire --remote staging'
-alias db-backup-production='heroku pgbackups:capture --expire --remote production'
-alias db-backups='heroku pgbackups --remote production'
+alias db-pull-staging='curl -o latest.dump `heroku pg:backups public-url --remote staging`'
+alias db-pull-production='curl -o latest.dump `heroku pg:backups public-url --remote production`'
+alias db-copy-production-to-staging='heroku pg:copy `basename $PWD`-production::DATABASE DATABASE --remote staging --confirm `basename $PWD`-staging'
+alias db-backup-staging='heroku pg:backups capture --remote staging'
+alias db-backup-production='heroku pg:backups capture --remote production'
+alias db-schedule-staging='heroku pg:backups schedule DATABASE_URL --remote staging'
+alias db-schedule-production='heroku pg:backups schedule DATABASE_URL --remote production'
+alias db-info-staging='heroku pg:backups --remote production'
+alias db-info-production='heroku pg:backups --e production'
+alias db-url-staging='heroku pg:backups public-url --remote staging'
+alias db-url-production='heroku pg:backups public-url --remote production'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
