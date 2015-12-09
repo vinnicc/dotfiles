@@ -4,10 +4,14 @@
 /.Xauthority
 /.adobe/
 /.android/
+/.atom/
+/.boot2docker/
+/.passenger/
 /.bash_history
 /.brew
 /.cache/
 /.config/
+/.cordova
 /.cpan/
 /.dropbox/
 /.emacs.d/
@@ -75,9 +79,11 @@
 /Documents/
 /Downloads/
 /Dropbox/
+/Google Drive/
 /Library/
 /Music/
 /Pictures/
+/VirtualBox VMs/
 /android-sdks/
 /npm-debug.log
 /src/
