@@ -67,11 +67,13 @@ NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'mhumeSF/one-dark.vim'
 NeoBundle 'michaeljsmith/vim-indent-object'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'nelstrom/vim-qargs'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'nono/vim-handlebars'
+NeoBundle 'othree/yajs.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'slim-template/vim-slim'
@@ -129,6 +131,9 @@ nnoremap <Leader>N :NERDTreeFind<CR>
 
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_ruby_checkers = ['mri']
+let g:syntastic_ruby_mri_exec = '~/.rubies/ruby-2.2.2/bin/ruby'
+let g:syntastic_ruby_rubocop_exec = '~/.gem/ruby/2.2.2/bin/rubocop'
 
 NeoBundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
@@ -160,14 +165,14 @@ nnoremap <Leader>uu :Git reset HEAD <C-r><C-g><CR>
 
 NeoBundle 'tpope/vim-rails'
 nnoremap <Leader>. :A<CR>
-nnoremap <Leader>rc :Rcontroller<CR>
-nnoremap <Leader>rf :Rfixtures<CR>
-nnoremap <Leader>rm :Rmodel<CR>
-nnoremap <Leader>rM :Rmigration<CR>
-nnoremap <Leader>rS :Rschema<CR>
-nnoremap <Leader>rs :Rstylesheet<Space>
-nnoremap <Leader>rt :Runittest<CR>
-nnoremap <Leader>rv :Rview<CR>
+nnoremap <Leader>rc :Econtroller<CR>
+nnoremap <Leader>rf :Efixtures<CR>
+nnoremap <Leader>rm :Emodel<CR>
+nnoremap <Leader>rM :Emigration<CR>
+nnoremap <Leader>rS :Eschema<CR>
+nnoremap <Leader>rs :Estylesheet<Space>
+nnoremap <Leader>rt :Eunittest<CR>
+nnoremap <Leader>rv :Eview<CR>
 
 NeoBundle 'gregsexton/gitv'
 let g:Gitv_OpenHorizontal = 0
