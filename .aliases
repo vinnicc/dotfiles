@@ -18,6 +18,7 @@ alias brcu='brew cask uninstall'
 alias bri='brew install'
 alias bru='brew uninstall'
 alias bu='bundle update'
+alias cellar="cd `brew --cellar`"
 alias ctags="`brew --prefix`/bin/ctags"
 alias downloads='cd ~/Downloads'
 alias et='emptytrash; find ~/workspace -name "*.log" -type f -print0 | xargs -0 rm'
@@ -41,6 +42,10 @@ alias gpom='git push origin master'
 alias gpr='git pull --rebase'
 alias gprod='git pull --rebase origin develop'
 alias gprom='git pull --rebase origin master'
+alias gprud='git pull --rebase upstream develop'
+alias gprum='git pull --rebase upstream master'
+alias gpud='git push origin develop'
+alias gpum='git push origin master'
 alias grc='git rebase --continue'
 alias gri='git rebase -i'
 alias griom='git rebase -i origin/master'
@@ -159,6 +164,9 @@ alias db-info-production='heroku pg:backups --e production'
 alias db-url-staging='heroku pg:backups public-url --remote staging'
 alias db-url-production='heroku pg:backups public-url --remote production'
 
+# Deployments
+alias deploy-to-both='echo "-> rs && gpom && staging && git push production master"; rs && gpom && staging && git push production master'
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag='--color'
@@ -196,11 +204,11 @@ fi
 
 alias emptytrash='sudo rm -rfv /Volumes/*/.Trashes;
                   sudo rm -rfv ~/.Trash;
-                  sudo rm -rfv ~/Documents/ViberDownloads;
                   sudo rm -rfv ~/Movies/*;
                   sudo rm -rfv ~/Music/*;
                   sudo rm -rfv ~/Public/*;
-                  sudo rm -rfv /private/var/log/asl/*.asl' # Also, clear Apple’s System Logs to improve shell startup speed Empty the Trash on all mounted volumes and the main HDD
+                  sudo rm -rfv /private/var/log/asl/*.asl'; 
+                  sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
 
 # Show/hide hidden files in Finder
 alias show='defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder'
