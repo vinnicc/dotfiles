@@ -150,6 +150,7 @@ alias production-config='heroku config --remote production'
 alias production-newrelic='heroku addons:open newrelic --remote production'
 
 # Heroku databases
+alias db-migrate-qa='heroku run rake db:migrate --remote qa && heroku restart --remote qa'
 alias db-migrate-staging='heroku run rake db:migrate --remote staging && heroku restart --remote staging'
 alias db-migrate-production='heroku run rake db:migrate --remote production && heroku restart --remote production'
 alias db-pull-staging='curl -o latest.dump `heroku pg:backups public-url --remote staging`'
