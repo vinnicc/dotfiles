@@ -40,7 +40,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git chruby)
+plugins=(git chruby zsh-navigation-tools)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
@@ -65,6 +65,8 @@ export EDITOR="vim"
 export PATH=/usr/local/share/npm/bin:$PATH # Node executables
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+# Opt out of anonymouse analytics
+export HOMEBREW_NO_ANALYTICS=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 function precmd() {
