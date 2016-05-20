@@ -62,7 +62,10 @@ unsetopt share_history # Prevent history sharing
 
 export PGHOST=localhost
 export EDITOR="vim"
+
 export PATH=/usr/local/share/npm/bin:$PATH # Node executables
+export PATH=~/.cabal/bin:$PATH # Cabal executables
+
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Opt out of anonymouse analytics
