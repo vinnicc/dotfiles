@@ -26,11 +26,11 @@ bind c:ctrl;alt;shift ${bottom-right}
 bind s:ctrl;alt;shift ${maximized}
 
 # Move between screens
-bind /:ctrl;alt;cmd       throw next
+bind /:ctrl;alt;shift  throw next
 
 # Focus Bindings
-bind right:alt;cmd     focus right
-bind left:alt;cmd      focus left
+bind h:ctrl;alt;shift  focus left
+bind l:ctrl;alt;shift  focus right
 bind up:alt;cmd        focus up
 bind down:alt;cmd      focus down
 bind down:ctrl;alt;cmd focus behind
