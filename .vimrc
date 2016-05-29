@@ -61,6 +61,8 @@ NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'heartsentwined/vim-emblem'
@@ -101,6 +103,16 @@ nnoremap <Leader>vl :NeoBundleLog<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vu :NeoBundleUpdate<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
+
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 
 NeoBundle 'kien/ctrlp.vim'
 let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
