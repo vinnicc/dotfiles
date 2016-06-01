@@ -67,6 +67,7 @@ NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'honza/vim-snippets'
+NeoBundle 'jiangmiao/auto-pairs.git'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mhumeSF/one-dark.vim'
@@ -79,6 +80,7 @@ NeoBundle 'othree/yajs.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'slime-lang/vim-slime-syntax'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-haml'
@@ -105,22 +107,22 @@ nnoremap <Leader>vu :NeoBundleUpdate<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
 
 NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
+\   'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
 \     'cygwin' : 'make -f make_cygwin.mak',
 \     'mac' : 'make',
 \     'linux' : 'make',
 \     'unix' : 'gmake',
-\    },
+\   },
 \ }
 
 NeoBundle 'kien/ctrlp.vim'
 let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp\|node_modules\|bower_components$',
-      \ 'file': '\.exe$\|\.so$\|\.dat$'
-      \ }
+\   'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|_build$\|bower_components$\|data$\|deps$\|log$\|node_modules$\|public\/images$\|public\/system$\|tmp$',
+\   'file': '\.exe$\|\.so$\|\.dat$'
+\ }
 let g:ctrlp_max_height = 30
 let g:ctrlp_match_window_bottom = 0
 let g:ctrlp_match_window_reversed = 0
@@ -143,6 +145,8 @@ nnoremap <Leader>N :NERDTreeFind<CR>
 
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_elixir_checkers = ['elixir']
+" let g:syntastic_enable_elixir_checker = 1
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_ruby_mri_exec = '~/.rubies/ruby-2.2.2/bin/ruby'
 let g:syntastic_ruby_rubocop_exec = '~/.gem/ruby/2.2.2/bin/rubocop'
