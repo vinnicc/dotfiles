@@ -1,3 +1,6 @@
+# Why not just initialize the git repo somewhere else?
+# Because I prefer to see what's being changed in my home directory.
+
 .DS_Store
 /.NERDTreeBookmarks
 /.Trash/
@@ -8,6 +11,7 @@
 /.bash_history
 /.boot2docker/
 /.brew
+/.bundle/
 /.byebug_hist
 /.cabal/
 /.cache/
@@ -27,11 +31,13 @@
 /.fzf.zsh
 /.fzf/
 /.gem/
+/.ghc-mod/
 /.ghc/
 /.gitk
 /.gnupg/
 /.guard_history
 /.heroku/
+/.hex/
 /.hgignore
 /.hgignore_global
 /.hushlogin
@@ -42,6 +48,7 @@
 /.lesshst
 /.linkchecker/
 /.local/
+/.mix/
 /.mpd/
 /.mpdconf
 /.mysql_history
@@ -59,6 +66,7 @@
 /.passenger/
 /.pearrc
 /.php_history
+/.pip/
 /.pry_history
 /.psql_history
 /.qgis/
@@ -80,6 +88,7 @@
 /.tmp/
 /.tmuxinator/
 /.travis/
+/.v8flags.*
 /.vegas/
 /.vim-tmp
 /.vim/.netrwhist
