@@ -209,10 +209,9 @@ color Tomorrow-Night
 set t_Co=256
 set background=dark
 set clipboard=unnamed
-set cursorline                             " Highlight current screen line
 set linespace=1                            " Fix line height
 set mouse=                                 " Prioritize mouse from tmux
-set nostartofline                          " Keep cursor in the same columna when moving around
+set nostartofline                          " Keep cursor in the same column when moving around
 set wrap                                   " Always wrap lines
 set visualbell                             " Flash instead of beeping
 set list                                   " Show 'invisible' characters
@@ -253,6 +252,13 @@ set sidescrolloff=2                        " Lines between the current column an
 set ttyfast                                " Improves redrawing for newer computers
 set lazyredraw                             " Will not redraw the screen while running macros (goes faster)
 set showcmd                                " Show (partial) command in the last line of the screen
+
+" Scrolling
+let loaded_matchit=1
+let loaded_matchparen=1
+set noshowmatch
+set nocursorline
+set nocursorcolumn
 
 " Menu compilation
 set wildignore+=*.~                        " Ignore compiled objects and backups
@@ -312,11 +318,3 @@ function! s:ZoomToggle() abort
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <Leader>z :ZoomToggle<CR>
-
-highlight ColorColumn ctermfg=red ctermbg=bg
-if exists("*matchadd")
-  augroup colorColumn
-    autocmd!
-    autocmd VimEnter,WinEnter * call matchadd('ColorColumn', '\%81v.\+', 100)
-  augroup END
-endif
