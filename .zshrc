@@ -40,7 +40,7 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git chruby zsh-navigation-tools)
+plugins=(git chruby zsh-navigation-tools docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
@@ -54,7 +54,7 @@ if [ -f /usr/local/share/chruby/chruby.sh ]; then
 fi
 
 # History config
-export HISTSIZE=100000
+export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
 export HISTCONTROL=ignoreboth
 export HISTIGNORE="&:[ ]*:ls:ll:la:l:cd:pwd:exit:mc:su:df:clear"

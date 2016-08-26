@@ -67,16 +67,18 @@ NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'honza/vim-snippets'
-NeoBundle 'jiangmiao/auto-pairs.git'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'mhumeSF/one-dark.vim'
 NeoBundle 'michaeljsmith/vim-indent-object'
 NeoBundle 'morhetz/gruvbox'
+NeoBundle 'mtscout6/syntastic-local-eslint.vim'
+NeoBundle 'mxw/vim-jsx'
 NeoBundle 'nelstrom/vim-qargs'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'othree/yajs.vim'
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'slim-template/vim-slim'
@@ -120,7 +122,7 @@ NeoBundle 'kien/ctrlp.vim'
 let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
 let g:ctrlp_cmd = 'CtrlPCurWD'
 let g:ctrlp_custom_ignore = {
-\   'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|_build$\|bower_components$\|data$\|deps$\|log$\|node_modules$\|public\/images$\|public\/system$\|tmp$',
+\   'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|_build$\|bower_components$\|deps$\|log$\|node_modules$\|public\/images$\|public\/system$\|tmp$',
 \   'file': '\.exe$\|\.so$\|\.dat$'
 \ }
 let g:ctrlp_max_height = 30
@@ -137,19 +139,20 @@ nnoremap <Leader>gs :CtrlP app/assets/stylesheets<CR>
 NeoBundle 'scrooloose/nerdtree'
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeChDirMode = 2
+let NERDTreeIgnore = ['\.DS_Store$']
 let NERDTreeMinimalUI = 1
-let NERDTreeQuitOnOpen = 1
 let NERDTreeShowHidden = 1
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>N :NERDTreeFind<CR>
 
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_elixir_checkers = ['elixir']
 " let g:syntastic_enable_elixir_checker = 1
 let g:syntastic_ruby_checkers = ['mri']
-let g:syntastic_ruby_mri_exec = '~/.rubies/ruby-2.2.2/bin/ruby'
-let g:syntastic_ruby_rubocop_exec = '~/.gem/ruby/2.2.2/bin/rubocop'
+let g:syntastic_ruby_mri_exec = '~/.rubies/ruby-2.3.0/bin/ruby'
+let g:syntastic_ruby_rubocop_exec = '~/.gem/ruby/2.3.0/bin/rubocop'
 
 NeoBundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
