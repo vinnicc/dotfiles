@@ -38,12 +38,14 @@ nnoremap <C-t> <Esc>:tabnew<CR>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>S :%s/\s\+$//<CR>
 nnoremap <Leader>T :tabmove -1<CR>
+nnoremap <Leader>X :qa!<CR>
 nnoremap <Leader>d /^\(.*\)\n\1$<CR>
 nnoremap <Leader>h xf<Space>xxr:
 nnoremap <Leader>i mmgg=G`m<CR>
 nnoremap <Leader>j ddpgkJ
 nnoremap <Leader>t :tabmove +1<CR>
-nnoremap <Leader>xe Iexpect(<Esc>A).to<Space>
+nnoremap <Leader>xb :bd<CR>
+nnoremap <Leader>xt :tabo<CR>
 nnoremap <Leader>y "*y
 nnoremap <Leader>yd :let @*=expand("%:h")<CR>
 nnoremap <Leader>yf :let @*=expand("%:t")<CR>
@@ -56,7 +58,6 @@ noremap Y v$hy
 noremap j gj
 noremap k gk
 
-NeoBundle 'SirVer/ultisnips'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'christoomey/vim-tmux-navigator'
@@ -66,10 +67,8 @@ NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'heartsentwined/vim-emblem'
-NeoBundle 'honza/vim-snippets'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'mhumeSF/one-dark.vim'
 NeoBundle 'michaeljsmith/vim-indent-object'
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'mtscout6/syntastic-local-eslint.vim'
@@ -78,7 +77,6 @@ NeoBundle 'nelstrom/vim-qargs'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'othree/yajs.vim'
-NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'slim-template/vim-slim'
@@ -95,7 +93,6 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'wavded/vim-stylus'
-NeoBundle 'whatyouhide/vim-gotham'
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
@@ -109,32 +106,33 @@ nnoremap <Leader>vu :NeoBundleUpdate<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
 
 NeoBundle 'Shougo/vimproc.vim', {
-\   'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\   },
-\ }
+  \   'build': {
+  \     'windows': 'tools\\update-dll-mingw',
+  \     'cygwin': 'make -f make_cygwin.mak',
+  \     'mac': 'make',
+  \     'linux': 'make',
+  \     'unix': 'gmake',
+  \   },
+  \ }
 
-NeoBundle 'kien/ctrlp.vim'
-let g:ctrlp_cache_dir = $HOME.'/.tmp/ctrlp'
-let g:ctrlp_cmd = 'CtrlPCurWD'
-let g:ctrlp_custom_ignore = {
-\   'dir': '\.git$\|\.hg$\|\.svn$\|\.yardoc$\|_build$\|bower_components$\|deps$\|log$\|node_modules$\|public\/images$\|public\/system$\|tmp$',
-\   'file': '\.exe$\|\.so$\|\.dat$'
-\ }
-let g:ctrlp_max_height = 30
-let g:ctrlp_match_window_bottom = 0
-let g:ctrlp_match_window_reversed = 0
-let g:ctrlp_extensions = ['line', 'dir']
-nnoremap <C-b> :CtrlPBuffer<CR>
-nnoremap <C-n> :CtrlPLine<CR>
-nnoremap <Leader><C-p> :ClearCtrlPCache<CR>:CtrlPCurWD<CR>
-nnoremap <Leader>gc :CtrlP app/controllers<CR>
-nnoremap <Leader>gm :CtrlP app/models<CR>
-nnoremap <Leader>gs :CtrlP app/assets/stylesheets<CR>
+NeoBundle 'haya14busa/incsearch.vim'
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
+NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+NeoBundle 'junegunn/fzf.vim'
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+let $FZF_DEFAULT_OPTS = '--reverse --inline-info'
+let g:fzf_layout = { 'window': 'enew' }
+nnoremap <C-b> :Buffers<CR>
+nnoremap <C-n> :Lines<CR>
+nnoremap <C-p> :Files<CR>
+nnoremap <C-s> :GFiles?<CR>
+nnoremap <Leader><C-p> :GFiles<CR>
+nnoremap <Leader>gc :Colors<CR>
+nnoremap <Leader>m :Marks<CR>
+nnoremap s :Buffers<CR>
 
 NeoBundle 'scrooloose/nerdtree'
 let NERDTreeAutoDeleteBuffer = 1
@@ -142,21 +140,21 @@ let NERDTreeChDirMode = 2
 let NERDTreeIgnore = ['\.DS_Store$']
 let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1
-nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>N :NERDTreeFind<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 
 NeoBundle 'scrooloose/syntastic'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_elixir_checkers = ['elixir']
 " let g:syntastic_enable_elixir_checker = 1
+function! StrTrim(txt)
+  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+endfunction
+let b:syntastic_javascript_eslint_exec = StrTrim(system('npm-which eslint'))
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_checkers = ['mri']
 let g:syntastic_ruby_mri_exec = '~/.rubies/ruby-2.3.0/bin/ruby'
 let g:syntastic_ruby_rubocop_exec = '~/.gem/ruby/2.3.0/bin/rubocop'
-
-NeoBundle 'Lokaltog/vim-easymotion'
-let g:EasyMotion_do_mapping = 0
-nmap s <Plug>(easymotion-s)
 
 NeoBundle 'tpope/vim-dispatch'
 nnoremap <Leader>` :Dispatch<Space>
@@ -178,7 +176,7 @@ nnoremap <Leader>da :!clear && Git diff<CR>
 nnoremap <Leader>dc :!clear && Git diff --cached<CR>
 nnoremap <Leader>dd :Gdiff<CR>
 nnoremap <Leader>ee :Gedit<CR>
-nnoremap <Leader>s :Gstatus<CR><C-w>20+
+nnoremap <Leader>s :Gstatus<CR><C-w>20+7j
 nnoremap <Leader>ua :Git reset HEAD <CR>
 nnoremap <Leader>uu :Git reset HEAD <C-r><C-g><CR>
 
@@ -222,7 +220,7 @@ set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_ " Strings to use in list mode and
 
 " Folding
 set foldlevel=1
-set foldmethod=syntax                      " Fold by the indentation by default
+set foldmethod=syntax                      " Prefer folding by syntax
 set foldnestmax=10                         " Deepest fold is 10 levels
 set nofoldenable                           " Don't fold by default
 
