@@ -71,14 +71,14 @@ Set 4 spaces and set `⌥+ Number` to switch between:
 
 ## Slate
 
-`⌃⌥⇧+ Q, E, R, A, S, D, Z, X, C` - Adjust window size
+`⌃⌥⇧ + Q, E, R, A, S, D, Z, X, C` - Adjust window size
 
 ## Quicksilver
 
 Set custom triggers `⌃⌥⇧` plus some letter, for example:
 
-* `⌃⌥⇧+ N` - Open Quiver.app
-* `⌃⌥⇧+ M` - Open Spotify.app
-* `⌃⌥⇧+ T` - Open uTorrent.app
-* `⌃⌥⇧+ V` - Open VLC
-* `⌃⌥⇧+ L` - Show contents for Downloads
+* `⌃⌥⇧ + N` - Open Quiver.app
+* `⌃⌥⇧ + M` - Open Spotify.app
+* `⌃⌥⇧ + T` - Open uTorrent.app
+* `⌃⌥⇧ + V` - Open VLC
+* `⌃⌥⇧ + L` - Show contents for Downloads
