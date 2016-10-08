@@ -8,6 +8,8 @@
 /.adobe/
 /.android/
 /.atom/
+/.aws/
+/.babel.json
 /.bash_history
 /.boot2docker/
 /.brew
@@ -15,13 +17,17 @@
 /.byebug_hist
 /.cabal/
 /.cache/
+/.cargo/
 /.composer/
 /.config/
 /.cordova
 /.cpan/
 /.cups/
+/.dbshell
 /.designer/
+/.docker/
 /.dropbox/
+/.elm/
 /.emacs.d/
 /.ember-data/
 /.ember/
@@ -49,6 +55,8 @@
 /.linkchecker/
 /.local/
 /.mix/
+/.mongorc.js
+/.mongotron/
 /.mpd/
 /.mpdconf
 /.mysql_history
@@ -56,10 +64,12 @@
 /.ngrok
 /.ngrok2/
 /.node-gyp/
+/.node_repl_history
 /.npm/
 /.nviminfo
 /.nvimlog
 /.nvimrc
+/.nvm/
 /.oh-my-zsh
 /.oracle_jre_usage/
 /.osx
@@ -67,11 +77,13 @@
 /.pearrc
 /.php_history
 /.pip/
+/.pm2/
 /.pry_history
 /.psql_history
 /.qgis/
 /.rediscli_history
 /.repos/
+/.resin/
 /.rnd
 /.rubies/
 /.rustup/
@@ -95,6 +107,7 @@
 /.vim/bundle/
 /.viminfo
 /.vimperator/
+/.vscode/
 /.wgetrc
 /.zcompdump*
 /.zlogin
@@ -102,6 +115,7 @@
 /.zsh_history
 /Applications (Parallels)/
 /Applications/
+/Desktop/
 /Documents/
 /Downloads/
 /Dropbox/
@@ -111,7 +125,9 @@
 /Pictures/
 /VirtualBox VMs/
 /android-sdks/
+/connections.xml
 /npm-debug.log
+/src/
 /tags
 /tmp/
 /workspace/
