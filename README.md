@@ -6,4 +6,4 @@ I'll be storing cheatsheets and whatnots under [`.docs/`](.docs) because I just 
 
 ## Usage
 
-Steal anything you would find useful.
+Feel free to steal whatever you may find useful.

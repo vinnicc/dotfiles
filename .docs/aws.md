@@ -1,4 +1,6 @@
-Restrict bucket access
+# AWS
+
+## IAM policy to restrict bucket access 
 
 ```json
 {
