@@ -111,6 +111,7 @@ nnoremap <Leader>vi :NeoBundleInstall<CR>
 nnoremap <Leader>vl :NeoBundleLog<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vu :NeoBundleUpdate<CR>
+nnoremap <Leader>vv :source ~/.vimrc<CR>
 
 NeoBundle 'Shougo/vimproc.vim', {
   \   'build': {
