@@ -58,29 +58,39 @@ noremap Y v$hy
 noremap j gj
 noremap k gk
 
-NeoBundle 'airblade/vim-gitgutter'
+" Colors
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'w0ng/vim-hybrid'
+
+" Language Support
 NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'godlygeek/tabular'
 NeoBundle 'heartsentwined/vim-emblem'
+NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'michaeljsmith/vim-indent-object'
-NeoBundle 'morhetz/gruvbox'
-NeoBundle 'mtscout6/syntastic-local-eslint.vim'
+NeoBundle 'ElmCast/elm-vim'
+let g:elm_format_autosave = 1
+let g:elm_setup_keybindings = 0
 NeoBundle 'mxw/vim-jsx'
-NeoBundle 'nelstrom/vim-qargs'
-NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'nono/vim-handlebars'
-NeoBundle 'othree/yajs.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'slime-lang/vim-slime-syntax'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'wavded/vim-stylus'
+
+" Others
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'eagletmt/ghcmod-vim'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'michaeljsmith/vim-indent-object'
+NeoBundle 'morhetz/gruvbox'
+NeoBundle 'nelstrom/vim-qargs'
+NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-haml'
@@ -90,9 +100,7 @@ NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle 'wavded/vim-stylus'
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
@@ -125,14 +133,37 @@ NeoBundle 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 let $FZF_DEFAULT_OPTS = '--reverse --inline-info'
 let g:fzf_layout = { 'window': 'enew' }
+" Selecting mappings
+nmap <Leader><Tab> <plug>(fzf-maps-n)
+omap <Leader><Tab> <plug>(fzf-maps-o)
+xmap <Leader><Tab> <plug>(fzf-maps-x)
+" Insert mode completion
+imap <C-x><C-f> <plug>(fzf-complete-path)
+imap <C-x><C-j> <plug>(fzf-complete-file-ag)
+imap <C-x><C-k> <plug>(fzf-complete-word)
+imap <C-x><C-l> <plug>(fzf-complete-line)
+" Other helpers
 nnoremap <C-b> :Buffers<CR>
 nnoremap <C-n> :Lines<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :GFiles?<CR>
 nnoremap <Leader><C-p> :GFiles<CR>
+nnoremap <Leader>H :History<CR>
+nnoremap <Leader>cL :BCommits<CR>
+nnoremap <Leader>cl :Commits<CR>
 nnoremap <Leader>gc :Colors<CR>
 nnoremap <Leader>m :Marks<CR>
 nnoremap s :Buffers<CR>
+
+NeoBundle 'Lokaltog/vim-easymotion'
+let g:EasyMotion_do_mapping = 0
+nmap s <Plug>(easymotion-s)
+
+NeoBundle 'rizzatti/dash.vim'
+nnoremap - :Dash<CR>
+vnoremap - "0y:<C-u>Dash <C-r>0<CR>
+nnoremap <Leader>- :Dash<Space>
+nnoremap <Leader>_ :DashKeywords<Space>
 
 NeoBundle 'scrooloose/nerdtree'
 let NERDTreeAutoDeleteBuffer = 1
@@ -143,18 +174,21 @@ let NERDTreeShowHidden = 1
 nnoremap <Leader>N :NERDTreeFind<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
-NeoBundle 'scrooloose/syntastic'
-" let g:syntastic_elixir_checkers = ['elixir']
-" let g:syntastic_enable_elixir_checker = 1
-function! StrTrim(txt)
-  return substitute(a:txt, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-endfunction
-let b:syntastic_javascript_eslint_exec = StrTrim(system('npm-which eslint'))
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_ruby_checkers = ['mri']
-let g:syntastic_ruby_mri_exec = '~/.rubies/ruby-2.3.0/bin/ruby'
-let g:syntastic_ruby_rubocop_exec = '~/.gem/ruby/2.3.0/bin/rubocop'
+NeoBundle 'neomake/neomake'
+NeoBundle 'benjie/neomake-local-eslint.vim'
+let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+let b:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_elixir_enabled_makers = ['elixir', 'credo']
+let g:neomake_warning_sign = {
+  \ 'text': 'W',
+  \ 'texthl': 'WarningMsg',
+  \ }
+let g:neomake_error_sign = {
+  \ 'text': 'E',
+  \ 'texthl': 'ErrorMsg',
+  \ }
+autocmd! BufWritePost * Neomake
 
 NeoBundle 'tpope/vim-dispatch'
 nnoremap <Leader>` :Dispatch<Space>
@@ -246,7 +280,7 @@ set directory=/tmp                         " Directory for temp files
 
 " Hud and status info
 set relativenumber                         " Enable hybrid line number mode
-set numberwidth=5                          " Width of number column
+set numberwidth=1                          " Width of number column
 set cmdheight=1                            " Make a little more room for error messages
 set scrolloff=3                            " Lines between the current line and the screen edge
 set sidescrolloff=2                        " Lines between the current column and the screen edge
