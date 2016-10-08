@@ -111,7 +111,6 @@ nnoremap <Leader>vi :NeoBundleInstall<CR>
 nnoremap <Leader>vl :NeoBundleLog<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vu :NeoBundleUpdate<CR>
-nnoremap <Leader>vv :source ~/.vimrc<CR>
 
 NeoBundle 'Shougo/vimproc.vim', {
   \   'build': {
@@ -153,6 +152,7 @@ nnoremap <Leader>cL :BCommits<CR>
 nnoremap <Leader>cl :Commits<CR>
 nnoremap <Leader>gc :Colors<CR>
 nnoremap <Leader>m :Marks<CR>
+nnoremap <Leader>vd :FZF ~/.docs<CR>
 nnoremap s :Buffers<CR>
 
 NeoBundle 'Lokaltog/vim-easymotion'
