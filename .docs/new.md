@@ -62,7 +62,7 @@ Then:
 
 ## TotalSpaces
 
-Set 4 spaces and set `⌥+ Number` to switch between:
+Set 4 spaces and set `⌥ + Number` to switch between:
 
 * `1` - iTerm2
 * `2` - Google Chrome
@@ -75,7 +75,7 @@ Set 4 spaces and set `⌥+ Number` to switch between:
 
 ## Quicksilver
 
-Set custom triggers `⌃⌥⇧` plus some letter, for example:
+Set custom triggers `⌃⌥⇧ + Letter`, for example:
 
 * `⌃⌥⇧ + N` - Open Quiver.app
 * `⌃⌥⇧ + M` - Open Spotify.app
