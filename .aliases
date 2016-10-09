@@ -109,6 +109,7 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 alias v='nvim'
 alias va='v ~/.aliases'
 alias vb='v ~/bootstrap'
+alias vd='v $(ag ~/.docs -g "" | fzf)'
 alias vf='v ~/.functions'
 alias vg='v ~/.gitignore'
 alias vh='sudo vim /etc/hosts'

@@ -75,7 +75,7 @@ Set 4 spaces and set `⌥ + Number` to switch between:
 
 ## Quicksilver
 
-Set custom triggers `⌃⌥⇧ + Letter`, for example:
+Set custom triggers `⌃⌥⇧ + Something`, for example:
 
 * `⌃⌥⇧ + N` - Open Quiver.app
 * `⌃⌥⇧ + M` - Open Spotify.app
