@@ -77,6 +77,7 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'powerman/vim-plugin-AnsiEsc'
+let g:no_plugin_maps = 1
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'slashmili/alchemist.vim'
 NeoBundle 'slim-template/vim-slim'
@@ -219,8 +220,6 @@ nnoremap <Leader>dc :!clear && Git diff --cached<CR>
 nnoremap <Leader>dd :Gdiff<CR>
 nnoremap <Leader>ee :Gedit<CR>
 nnoremap <Leader>s :Gstatus<CR><C-w>20+7j
-" Conflicting map
-unmap <Leader>swp
 nnoremap <Leader>ua :Git reset HEAD <CR>
 nnoremap <Leader>uu :Git reset HEAD <C-r><C-g><CR>
 
