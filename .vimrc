@@ -21,7 +21,6 @@ inoremap <C-a> <C-o>^
 inoremap <C-b> <Esc>^Ibinding.pry<Esc>^==:w<CR>
 inoremap <C-e> <C-o>$
 inoremap <C-l> <Space>=><Space>
-inoremap <C-s> <Esc>:w<CR>
 
 " Allow normal regex
 nnoremap ? ?\v
@@ -33,17 +32,16 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <C-s> :w<CR>
-nnoremap <C-t> <Esc>:tabnew<CR>
 nnoremap <Leader><Leader> <C-^>
 nnoremap <Leader>S :%s/\s\+$//<CR>
-nnoremap <Leader>T :tabmove -1<CR>
 nnoremap <Leader>X :qa!<CR>
 nnoremap <Leader>d /^\(.*\)\n\1$<CR>
+nnoremap <Leader>gT :tabmove -1<CR>
+nnoremap <Leader>gt :tabmove +1<CR>
 nnoremap <Leader>h xf<Space>xxr:
 nnoremap <Leader>i mmgg=G`m<CR>
 nnoremap <Leader>j ddpgkJ
-nnoremap <Leader>t :tabmove +1<CR>
+nnoremap <Leader>t <Esc>:tabnew<CR>
 nnoremap <Leader>xb :bd<CR>
 nnoremap <Leader>xt :tabo<CR>
 nnoremap <Leader>y "*y
@@ -59,36 +57,43 @@ noremap j gj
 noremap k gk
 
 " Colors
+"
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+NeoBundle 'morhetz/gruvbox'
 NeoBundle 'w0ng/vim-hybrid'
 
 " Language Support
+"
+NeoBundle 'ElmCast/elm-vim'
+let g:elm_format_autosave = 1
+let g:elm_setup_keybindings = 0
 NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'ElmCast/elm-vim'
-let g:elm_format_autosave = 1
-let g:elm_setup_keybindings = 0
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'powerman/vim-plugin-AnsiEsc'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'slashmili/alchemist.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'slime-lang/vim-slime-syntax'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'wavded/vim-stylus'
 
 " Others
+"
+NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'michaeljsmith/vim-indent-object'
-NeoBundle 'morhetz/gruvbox'
 NeoBundle 'nelstrom/vim-qargs'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'tpope/vim-abolish'
@@ -128,6 +133,8 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
+" FZF
+"
 NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 NeoBundle 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
@@ -148,12 +155,12 @@ nnoremap <C-n> :Lines<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :GFiles?<CR>
 nnoremap <Leader><C-p> :GFiles<CR>
+nnoremap <Leader>D :FZF ~/.docs<CR>
 nnoremap <Leader>H :History<CR>
 nnoremap <Leader>cL :BCommits<CR>
 nnoremap <Leader>cl :Commits<CR>
 nnoremap <Leader>gc :Colors<CR>
 nnoremap <Leader>m :Marks<CR>
-nnoremap <Leader>vd :FZF ~/.docs<CR>
 nnoremap s :Buffers<CR>
 
 NeoBundle 'Lokaltog/vim-easymotion'
@@ -212,6 +219,8 @@ nnoremap <Leader>dc :!clear && Git diff --cached<CR>
 nnoremap <Leader>dd :Gdiff<CR>
 nnoremap <Leader>ee :Gedit<CR>
 nnoremap <Leader>s :Gstatus<CR><C-w>20+7j
+" Conflicting map
+unmap <Leader>swp
 nnoremap <Leader>ua :Git reset HEAD <CR>
 nnoremap <Leader>uu :Git reset HEAD <C-r><C-g><CR>
 
