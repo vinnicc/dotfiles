@@ -66,6 +66,8 @@ export EDITOR="vim"
 export PATH=/usr/local/share/npm/bin:$PATH # Node executables
 export PATH=~/.cabal/bin:$PATH # Cabal executables
 
+export PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B λ%b '
+
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Opt out of anonymouse analytics
@@ -82,3 +84,6 @@ eval `boot2docker shellinit 2>/dev/null`
 # Export NVM directory
 export NVM_DIR="/Users/vinnicc/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# kiex (Elixir version manager)
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
