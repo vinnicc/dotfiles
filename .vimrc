@@ -67,17 +67,24 @@ NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'ElmCast/elm-vim'
 let g:elm_format_autosave = 1
 let g:elm_setup_keybindings = 0
+
+NeoBundle 'powerman/vim-plugin-AnsiEsc'
+let g:no_plugin_maps = 1
+
+" Javascript
+NeoBundle 'isRuslan/vim-es6'
+NeoBundle 'mxw/vim-jsx'
+" NeoBundle 'othree/javascript-libraries-syntax.vim'
+NeoBundle 'pangloss/vim-javascript'
+
+NeoBundle 'c-brenn/phoenix.vim'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'heartsentwined/vim-emblem'
-NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'mxw/vim-jsx'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'powerman/vim-plugin-AnsiEsc'
-let g:no_plugin_maps = 1
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'slashmili/alchemist.vim'
 NeoBundle 'slim-template/vim-slim'
@@ -87,8 +94,6 @@ NeoBundle 'wavded/vim-stylus'
 
 " Others
 "
-NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'ervandew/supertab'
@@ -108,6 +113,9 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-scripts/taglist.vim'
 
+NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+let g:deoplete#enable_at_startup = 1
+
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
 nnoremap <Leader>va :tabedit ~/.aliases<CR>
@@ -115,6 +123,7 @@ nnoremap <Leader>vb :tabedit ~/bootstrap<CR>
 nnoremap <Leader>vc :NeoBundleClean<CR>
 nnoremap <Leader>vi :NeoBundleInstall<CR>
 nnoremap <Leader>vl :NeoBundleLog<CR>
+nnoremap <Leader>vn :tabedit ~/Google\ Drive/Personal/notes.txt<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vu :NeoBundleUpdate<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
@@ -183,12 +192,15 @@ let NERDTreeShowHidden = 1
 nnoremap <Leader>N :NERDTreeFind<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
-NeoBundle 'neomake/neomake'
 NeoBundle 'benjie/neomake-local-eslint.vim'
 let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
 let b:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_elixir_enabled_makers = ['elixir', 'credo']
+
+NeoBundle 'neomake/neomake'
+" neomake - General
+" let g:neomake_open_list=0
+" let g:neomake_verbose = 3
+" let g:neomake_logfile="neomake.log"
 let g:neomake_warning_sign = {
   \ 'text': 'W',
   \ 'texthl': 'WarningMsg',
@@ -198,6 +210,15 @@ let g:neomake_error_sign = {
   \ 'texthl': 'ErrorMsg',
   \ }
 autocmd! BufWritePost * Neomake
+" neomake - JavaScript
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_jsx_enabled_makers = ['eslint']
+let g:neomake_javascript_eslint_maker = {
+    \ 'args': ['--no-color', '--format', 'compact'],
+    \ 'errorformat': '%f: line %l\, col %c\, %m'
+    \ }
+" neomake - Elixir
+let g:neomake_elixir_enabled_makers = ['elixir', 'credo']
 
 NeoBundle 'tpope/vim-dispatch'
 nnoremap <Leader>` :Dispatch<Space>
@@ -333,6 +354,9 @@ endif
 " Insert the current time
 command! InsertTime :normal a<C-r>=strftime('%F %H:%M:%S.0 %z')<CR>
 nnoremap <Leader>xit :InsertTime<CR>
+
+command! InsertDeployment :normal o<Esc>CDeployed - [staging] @ [<C-r>=strftime('%F %H:%M:%S.0 %z')<CR>]
+nnoremap <Leader>xid :InsertDeployment<CR>dd
 
 " Show the MD5 of the current buffer
 command! -range Md5 :echo system('echo '.shellescape(join(getline(<line1>, <line2>), '\n')) . '| md5')
