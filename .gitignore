@@ -1,12 +1,13 @@
 # Why not just initialize the git repo somewhere else?
 # Because I prefer to see what's being changed in my home directory.
 
-.DS_Store
+/.DS_Store
 /.NERDTreeBookmarks
 /.Trash/
 /.Xauthority
 /.adobe/
 /.android/
+/.asdf/
 /.atom/
 /.aws/
 /.babel.json
@@ -33,6 +34,7 @@
 /.ember-data/
 /.ember/
 /.erlang.cookie
+/.ethash/
 /.fontconfig/
 /.fonts/
 /.fzf.bash
@@ -54,6 +56,7 @@
 /.irb-history
 /.irssi/
 /.jspm/
+/.lbryum/
 /.lesshst
 /.linkchecker/
 /.local/
@@ -62,6 +65,7 @@
 /.mongotron/
 /.mpd/
 /.mpdconf
+/.multirust
 /.mysql_history
 /.netrc
 /.ngrok
@@ -81,6 +85,7 @@
 /.php_history
 /.pip/
 /.pm2/
+/.profile
 /.pry_history
 /.psql_history
 /.qgis/
@@ -97,6 +102,7 @@
 /.sqlite_history
 /.ssh/
 /.stack/
+/.stratisnode/
 /.subversion/
 /.swp
 /.tilemill/
@@ -115,10 +121,12 @@
 /.wgetrc
 /.zcompdump*
 /.zlogin
+/.zprofile
 /.zsh-update
 /.zsh_history
 /Applications (Parallels)/
 /Applications/
+/Creative Cloud Files/
 /Desktop/
 /Documents/
 /Downloads/
