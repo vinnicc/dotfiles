@@ -40,24 +40,17 @@ DISABLE_AUTO_TITLE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git chruby zsh-navigation-tools docker docker-compose)
+plugins=(git zsh-navigation-tools docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.aliases
 source ~/.functions
 
-# Initialize chruby
-if [ -f /usr/local/share/chruby/chruby.sh ]; then
-  source /usr/local/share/chruby/chruby.sh
-  source /usr/local/share/chruby/auto.sh
-  chruby 2
-fi
-
 # History config
 export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="&:[ ]*:ls:ll:la:l:cd:pwd:exit:mc:su:df:clear"
+export HISTIGNORE="&:[ ]*:ls:ls -la:ll:la:l:cd:pwd:exit:mc:su:df:clear:gs:a:gl"
 unsetopt share_history # Prevent history sharing
 
 export PGHOST=localhost
@@ -65,11 +58,14 @@ export EDITOR="vim"
 
 export PATH=/usr/local/share/npm/bin:$PATH # Node executables
 export PATH=~/.cabal/bin:$PATH # Cabal executables
+export PATH="./bin:$PATH"
 
+# Modify prompt style
 export PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B λ%b '
 
 # Link Homebrew casks in `/Applications` rather than `~/Applications`
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # Opt out of anonymouse analytics
 export HOMEBREW_NO_ANALYTICS=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -81,9 +77,6 @@ function precmd() {
 # Export Docker environment variables
 eval `boot2docker shellinit 2>/dev/null`
 
-# Export NVM directory
-export NVM_DIR="/Users/vinnicc/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# kiex (Elixir version manager)
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+# The asdf version manager
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
