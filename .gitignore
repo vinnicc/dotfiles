@@ -1,7 +1,8 @@
 # Why not just initialize the git repo somewhere else?
 # Because I prefer to see what's being changed in my home directory.
 
-/.DS_Store
+.DS_Store
+/.CFUserTextEncoding
 /.NERDTreeBookmarks
 /.Trash/
 /.Xauthority
@@ -12,6 +13,7 @@
 /.aws/
 /.babel.json
 /.bash_history
+/.bash_sessions/
 /.boot2docker/
 /.brew
 /.bundle/
@@ -70,6 +72,8 @@
 /.netrc
 /.ngrok
 /.ngrok2/
+/.nix-defexpr/
+/.nix-profile
 /.node-gyp/
 /.node_repl_history
 /.npm/
@@ -108,6 +112,8 @@
 /.tilemill/
 /.tmp/
 /.tmuxinator/
+/.tool-versions
+/.tool-versions-e
 /.travis/
 /.v8flags.*
 /.vegas/
@@ -119,6 +125,7 @@
 /.vscode/
 /.weechat/
 /.wgetrc
+/.yarnrc
 /.zcompdump*
 /.zlogin
 /.zprofile
@@ -133,8 +140,10 @@
 /Dropbox/
 /Google Drive/
 /Library/
+/Movies/
 /Music/
 /Pictures/
+/Public/
 /VirtualBox VMs/
 /android-sdks/
 /connections.xml
