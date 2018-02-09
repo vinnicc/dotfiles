@@ -309,7 +309,7 @@ set noswapfile                             " Don't litter swap files everywhere
 set directory=/tmp                         " Directory for temp files
 
 " Hud and status info
-set relativenumber                         " Enable hybrid line number mode
+set number                                 " Enable normal line number mode
 set numberwidth=1                          " Width of number column
 set cmdheight=1                            " Make a little more room for error messages
 set scrolloff=3                            " Lines between the current line and the screen edge
