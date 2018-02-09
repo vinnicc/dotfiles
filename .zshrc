@@ -57,8 +57,11 @@ export PGHOST=localhost
 export EDITOR="vim"
 
 export PATH=/usr/local/share/npm/bin:$PATH # Node executables
-export PATH=~/.cabal/bin:$PATH # Cabal executables
-export PATH="./bin:$PATH"
+export PATH="./bin:$PATH" # Local executables
+export PATH="$(brew --prefix qt@5.5)/bin:$PATH" # Fix capybara-webkit (https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
+export PATH="$HOME/.cargo/bin:$PATH" # Rust cargo
+export PATH="$HOME/.cabal/bin:$PATH" # Haskell cabal
+export PATH="$HOME/.local/bin:$PATH" # Haskell stack (and other things)
 
 # Modify prompt style
 export PROMPT='$(git_custom_status)%{$fg[cyan]%}[%~% ]%{$reset_color%}%B λ%b '
@@ -70,13 +73,13 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 export HOMEBREW_NO_ANALYTICS=1
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-function precmd() {
-  jobs
-}
-
 # Export Docker environment variables
 eval `boot2docker shellinit 2>/dev/null`
 
-# The asdf version manager
+# asdf version manager
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+
+function precmd() {
+  jobs
+}
