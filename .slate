@@ -30,6 +30,8 @@ bind /:ctrl;alt;shift  throw next
 
 # Focus Bindings
 bind h:ctrl;alt;shift  focus left
+bind j:ctrl;alt;shift  focus down
+bind k:ctrl;alt;shift  focus up
 bind l:ctrl;alt;shift  focus right
 bind up:alt;cmd        focus up
 bind down:alt;cmd      focus down
