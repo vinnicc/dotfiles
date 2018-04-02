@@ -83,6 +83,7 @@ NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'neovimhaskell/haskell-vim'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'pbrisbin/vim-syntax-shakespeare'
 NeoBundle 'plasticboy/vim-markdown'
@@ -90,6 +91,7 @@ NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'slashmili/alchemist.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'slime-lang/vim-slime-syntax'
+NeoBundle 'tomlion/vim-solidity'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'wavded/vim-stylus'
 
@@ -215,9 +217,9 @@ autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 let g:neomake_jsx_enabled_makers = ['eslint']
 let g:neomake_javascript_eslint_maker = {
-    \ 'args': ['--no-color', '--format', 'compact'],
-    \ 'errorformat': '%f: line %l\, col %c\, %m'
-    \ }
+  \ 'args': ['--no-color', '--format', 'compact'],
+  \ 'errorformat': '%f: line %l\, col %c\, %m'
+  \ }
 " neomake - Elixir
 let g:neomake_elixir_enabled_makers = ['elixir', 'credo']
 
@@ -271,7 +273,7 @@ NeoBundleCheck
 
 " Basics - on top of vim-sensible
 " https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
-color Tomorrow-Night
+color gruvbox
 set t_Co=256
 set background=dark
 set clipboard=unnamed
