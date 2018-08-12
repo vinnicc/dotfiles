@@ -1,5 +1,6 @@
-# Why not just initialize the git repo somewhere else?
-# Because I prefer to see what's being changed in my home directory.
+# Why not just initialize the git repo somewhere else? While this approach
+# takes more effort, I appreciate how it lets me track changes in my home
+# directory.
 
 .DS_Store
 /.CFUserTextEncoding
@@ -144,11 +145,11 @@
 /Music/
 /Pictures/
 /Public/
+/Standard Notes Backups/
 /VirtualBox VMs/
 /android-sdks/
 /connections.xml
 /npm-debug.log
-/src/
 /tags
 /tmp/
 /workspace/
