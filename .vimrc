@@ -78,6 +78,7 @@ NeoBundle 'mxw/vim-jsx'
 NeoBundle 'pangloss/vim-javascript'
 
 NeoBundle 'c-brenn/phoenix.vim'
+NeoBundle 'cespare/vim-toml'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'elixir-lang/vim-elixir'
