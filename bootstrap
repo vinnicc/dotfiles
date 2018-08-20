@@ -101,13 +101,14 @@ cask_packages=(
   google-chrome
   google-drive
   iterm2
-  karabiner
+  karabiner-elements
   macdown
   menumeters
   minbox
   ntfs-free
   quicksilver
   seil
+  showyedge
   sketch
   sketch-toolbox
   skype
