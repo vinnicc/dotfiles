@@ -80,6 +80,9 @@ eval `boot2docker shellinit 2>/dev/null`
 export ASDF_DATA_DIR=`brew --prefix asdf`
 source $ASDF_DATA_DIR/asdf.sh
 
+# Fix neovim locale warning
+export LC_ALL=en_US.UTF-8
+
 function precmd() {
   jobs
 }
