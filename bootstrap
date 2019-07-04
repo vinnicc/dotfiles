@@ -72,39 +72,16 @@ packages=(
 )
 
 cask_packages=(
-  # Apps not covered:
-  #
-  # battle.net
-  # photoshop
-  # office 2011
-
-  # google-chrome-canary
   # imagealpha
   # imageoptim
-  # istat-menus
-  # miro-video-converter
   # steam
-  # torbrowser
   # virtualbox
-  bartender
   colorpicker-hex
-  disk-inventory-x
-  diskmaker-x
-  dupeguru
-  firefox
   google-chrome
-  google-drive
+  google-backup-and-install
   iterm2
   karabiner-elements
-  macdown
-  menumeters
-  minbox
-  ntfs-free
-  quicksilver
-  seil
   showyedge
-  sketch
-  sketch-toolbox
   skype
   slack
   slate
@@ -112,9 +89,7 @@ cask_packages=(
   the-unarchiver
   totalspaces
   transmit
-  utorrent
   vlc
-  witch
 
   # caskroom/fonts
   font-inconsolata
