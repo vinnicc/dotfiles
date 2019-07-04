@@ -77,8 +77,8 @@ export HOMEBREW_NO_ANALYTICS=1
 eval `boot2docker shellinit 2>/dev/null`
 
 # asdf version manager
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+export ASDF_DATA_DIR=`brew --prefix asdf`
+source $ASDF_DATA_DIR/asdf.sh
 
 function precmd() {
   jobs
