@@ -83,6 +83,9 @@ source $ASDF_DATA_DIR/asdf.sh
 # Fix neovim locale warning
 export LC_ALL=en_US.UTF-8
 
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=~/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
+
 function precmd() {
   jobs
 }

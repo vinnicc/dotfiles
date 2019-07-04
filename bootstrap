@@ -5,13 +5,18 @@ taps=(
   homebrew/versions
   caskroom/cask
   caskroom/fonts
+  heroku/brew
 )
 
 packages=(
   # caskroom/cask
   brew-cask
 
+  # heroku/brew
+  heroku
+
   ack
+  asdf
   coreutils
   dnstop
   dos2unix
@@ -67,6 +72,7 @@ packages=(
   wdiff
   webkit2png
   wget
+  yarn
   youtube-dl
   zopfli
 )
@@ -76,6 +82,8 @@ cask_packages=(
   # imageoptim
   # steam
   # virtualbox
+  adobe-creative-cloud
+  brave-browser
   colorpicker-hex
   google-chrome
   google-backup-and-install
@@ -130,6 +138,13 @@ do
   log "brew cask install ${=name_and_args}"
   brew cask install "${=name_and_args}"
 done
+
+log "Adding asdf plugins..."
+asdf plugin-add ruby
+asdf plugin-add erlang
+asdf plugin-add elixir
+asdf plugin-add postgres
+asdf plugin-add redis
 
 log "brew cleanup"
 brew cleanup

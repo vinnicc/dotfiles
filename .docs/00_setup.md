@@ -1,6 +1,6 @@
 # Setup
 
-Putting this here to just to help me setup new hardware. This guide could get
+Putting this here to just to help me set up new hardware. This guide could get
 outdated pretty quick though.
 
 ```sh
