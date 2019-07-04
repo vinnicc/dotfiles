@@ -12,7 +12,6 @@ packages=(
   brew-cask
 
   ack
-  chruby
   coreutils
   dnstop
   dos2unix
@@ -39,12 +38,10 @@ packages=(
   lynx
   md5sha1sum
   nmap
-  node # This installs `npm` too using the recommended installation method
   openssl
   phantomjs
   pigz
   pkg-config
-  postgresql
   proctools
   psgrep
   pv
@@ -54,13 +51,10 @@ packages=(
   ranger
   readline
   reattach-to-user-namespace
-  redis
   rename
   rhino
   rtmpdump
-  ruby-install
   s3cmd
-  sqlite
   sqlmap
   ssh-copy-id
   tmux
