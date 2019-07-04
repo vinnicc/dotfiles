@@ -1,4 +1,4 @@
-# New
+# Setup
 
 Putting this here to just to help me setup new hardware. This guide could get
 outdated pretty quick though.
@@ -10,7 +10,7 @@ $ git clone https://github.com/vinnicc/dotfiles.git ~
 Get Homebrew:
 
 ```sh
-$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 Run:
@@ -48,13 +48,10 @@ Then:
 * General > Load preference from a custom folder or URL > Set path to Google Drive
 * General > Save changes to folder when iTerm2 quits > Check
 
-## Seil
-
-* Change Caps Lock to Keycode 53 (Escape)
-
-## Karabiner
+## Karabiner-Elements
 
 * Enable Simultaneous Vi Mode
+* Change Caps Lock to Keycode 53 (Escape)
 * Change Fn Key - Fn to Control_L
 * Change Control_L Key - Control_L to Fn
 * Set Delay Until Repeat - 200ms
@@ -62,23 +59,16 @@ Then:
 
 ## TotalSpaces
 
-Set 4 spaces and set `⌥ + Number` to switch between:
-
-* `1` - iTerm2
-* `2` - Google Chrome
-* `3` - All other windows
-* `4` - Finder
+Set N spaces and set `⌥ + Number` to switch between each one.
 
 ## Slate
 
 `⌃⌥⇧ + Q, E, R, A, S, D, Z, X, C` - Adjust window size
 
-## Quicksilver
+## zsh
 
-Set custom triggers `⌃⌥⇧ + Something`, for example:
+https://github.com/robbyrussell/oh-my-zsh
 
-* `⌃⌥⇧ + N` - Open Quiver.app
-* `⌃⌥⇧ + M` - Open Spotify.app
-* `⌃⌥⇧ + T` - Open uTorrent.app
-* `⌃⌥⇧ + V` - Open VLC
-* `⌃⌥⇧ + L` - Show contents for Downloads
+## MacOS Tweaks
+
+Pick and choose https://github.com/mathiasbynens/dotfiles/blob/master/.macos

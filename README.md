@@ -7,5 +7,3 @@ I will also try to keep cheatsheets and whatnots under [`.docs/`](.docs) for fut
 ## Usage
 
 Feel free to steal whatever you may find useful.
-
-* Pick and choose https://github.com/mathiasbynens/dotfiles/blob/master/.macos
