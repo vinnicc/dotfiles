@@ -117,8 +117,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-scripts/taglist.vim'
 
-NeoBundle 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-let g:deoplete#enable_at_startup = 1
+NeoBundle 'neoclide/coc.nvim', 'release', { 'build': { 'others': 'git checkout release' } }
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
@@ -278,6 +277,7 @@ color gruvbox
 set t_Co=256
 set background=dark
 set clipboard=unnamed
+set hidden                                 " Unsaved changes causes buffers to be hidden instead of closed
 set linespace=1                            " Fix line height
 set mouse=                                 " Prioritize mouse from tmux
 set nostartofline                          " Keep cursor in the same column when moving around
