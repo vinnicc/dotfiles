@@ -50,7 +50,9 @@ source ~/.functions
 export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="&:[ ]*:ls:ls -la:ll:la:l:cd:pwd:exit:mc:su:df:clear:gs:a:gl"
+export HISTCONTROL=erasedups
+export HISTIGNORE='&:ls:ls -la:pwd:history:exit:make*:* --help:a:asdf:be:bg:brew:cd:clear:df:fg:gaa:gci:git:gl:gs:reload:rm:sudo:t:v:vim:w:which'
+
 unsetopt share_history # Prevent history sharing
 
 export PGHOST=localhost
