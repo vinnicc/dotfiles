@@ -118,6 +118,23 @@ NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-scripts/taglist.vim'
 
 NeoBundle 'neoclide/coc.nvim', 'release', { 'build': { 'others': 'git checkout release' } }
+" Improved K for documentation
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+autocmd CursorHold * silent call CocActionAsync('highlight')
+augroup CocGroup
+  autocmd!
+  " Setup formatexpr specified filetype(s)
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Show signature help on placeholder jump
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
