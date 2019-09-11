@@ -1,4 +1,6 @@
+"------------------------------------------------------------------------------
 " Vinni Caños's .vimrc file
+"------------------------------------------------------------------------------
 
 set nocompatible
 set runtimepath+=~/.vim/bundle/neobundle.vim/
@@ -56,14 +58,17 @@ noremap Y v$hy
 noremap j gj
 noremap k gk
 
-" Colors
-"
+"------------------------------------------------------------------------------
+" Theme
+"------------------------------------------------------------------------------
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'w0ng/vim-hybrid'
+nnoremap <Leader>gc :Colors<CR>
 
-" Language Support
-"
+"------------------------------------------------------------------------------
+" Languages
+"------------------------------------------------------------------------------
 NeoBundle 'ElmCast/elm-vim'
 let g:elm_format_autosave = 1
 let g:elm_setup_keybindings = 0
@@ -74,14 +79,15 @@ let g:no_plugin_maps = 1
 " Javascript
 NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'mxw/vim-jsx'
-" NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
 
+" Rest
+NeoBundle 'LnL7/vim-nix'
 NeoBundle 'c-brenn/phoenix.vim'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'elixir-lang/vim-elixir'
+NeoBundle 'elixir-editors/vim-elixir'
 NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'neovimhaskell/haskell-vim'
@@ -96,27 +102,9 @@ NeoBundle 'tomlion/vim-solidity'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'wavded/vim-stylus'
 
-" Others
-"
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'christoomey/vim-tmux-navigator'
-NeoBundle 'ervandew/supertab'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'michaeljsmith/vim-indent-object'
-NeoBundle 'nelstrom/vim-qargs'
-NeoBundle 'nelstrom/vim-visual-star-search'
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'tpope/vim-projectionist'
-NeoBundle 'tpope/vim-rake'
-NeoBundle 'tpope/vim-sensible'
-NeoBundle 'tpope/vim-sleuth'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'vim-scripts/taglist.vim'
-
+"------------------------------------------------------------------------------
+" Intellisense/LS
+"------------------------------------------------------------------------------
 NeoBundle 'neoclide/coc.nvim', 'release', { 'build': { 'others': 'git checkout release' } }
 " Improved K for documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -136,6 +124,9 @@ augroup CocGroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+"------------------------------------------------------------------------------
+" Package Management
+"------------------------------------------------------------------------------
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
 nnoremap <Leader>va :tabedit ~/.aliases<CR>
@@ -163,8 +154,9 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-" FZF
-"
+"------------------------------------------------------------------------------
+" Search
+"------------------------------------------------------------------------------
 NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 NeoBundle 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
@@ -189,13 +181,25 @@ nnoremap <Leader>D :FZF ~/.docs<CR>
 nnoremap <Leader>H :History<CR>
 nnoremap <Leader>cL :BCommits<CR>
 nnoremap <Leader>cl :Commits<CR>
-nnoremap <Leader>gc :Colors<CR>
 nnoremap <Leader>m :Marks<CR>
-nnoremap s :Buffers<CR>
 
 NeoBundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
-nmap s <Plug>(easymotion-s)
+nnoremap s <Plug>(easymotion-s)
+
+NeoBundle 'tpope/vim-rails'
+nnoremap <Leader>. :A<CR>
+nnoremap <Leader>rc :Econtroller<CR>
+nnoremap <Leader>rf :Efixtures<CR>
+nnoremap <Leader>rm :Emodel<CR>
+nnoremap <Leader>rM :Emigration<CR>
+nnoremap <Leader>rS :Eschema<CR>
+nnoremap <Leader>rs :Estylesheet<Space>
+nnoremap <Leader>rt :Eunittest<CR>
+nnoremap <Leader>rv :Eview<CR>
+
+NeoBundle 'rking/ag.vim'
+nnoremap <C-f> :Ag<Space>
 
 NeoBundle 'rizzatti/dash.vim'
 nnoremap - :Dash<CR>
@@ -203,6 +207,9 @@ vnoremap - "0y:<C-u>Dash <C-r>0<CR>
 nnoremap <Leader>- :Dash<Space>
 nnoremap <Leader>_ :DashKeywords<Space>
 
+"------------------------------------------------------------------------------
+" Files
+"------------------------------------------------------------------------------
 NeoBundle 'scrooloose/nerdtree'
 let NERDTreeAutoDeleteBuffer = 1
 let NERDTreeChDirMode = 2
@@ -212,43 +219,14 @@ let NERDTreeShowHidden = 1
 nnoremap <Leader>N :NERDTreeFind<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 
-NeoBundle 'benjie/neomake-local-eslint.vim'
-let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
-let b:neomake_javascript_eslint_exe = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
-
-NeoBundle 'neomake/neomake'
-" neomake - General
-" let g:neomake_open_list=0
-" let g:neomake_verbose = 3
-" let g:neomake_logfile="neomake.log"
-let g:neomake_warning_sign = {
-  \ 'text': 'W',
-  \ 'texthl': 'WarningMsg',
-  \ }
-let g:neomake_error_sign = {
-  \ 'text': 'E',
-  \ 'texthl': 'ErrorMsg',
-  \ }
-autocmd! BufWritePost * Neomake
-" neomake - JavaScript
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_javascript_eslint_maker = {
-  \ 'args': ['--no-color', '--format', 'compact'],
-  \ 'errorformat': '%f: line %l\, col %c\, %m'
-  \ }
-" neomake - Elixir
-let g:neomake_elixir_enabled_makers = ['elixir', 'credo']
-
-NeoBundle 'tpope/vim-dispatch'
-nnoremap <Leader>` :Dispatch<Space>
-nnoremap <Leader>~ :Dispatch!<Space>
-
 NeoBundle 'tpope/vim-eunuch'
 nnoremap <Leader>ed :saveas <C-r>=expand('%:p')<CR>
 nnoremap <Leader>em :Move <C-r>=expand('%:p')<CR>
 nnoremap <Leader>ew :SudoWrite<CR>
 
+"------------------------------------------------------------------------------
+" Git
+"------------------------------------------------------------------------------
 NeoBundle 'tpope/vim-fugitive'
 nnoremap <Leader>aa :Gwrite<CR>
 nnoremap <Leader>ac :Gwrite<CR>:Gcommit --amend<CR>:silent wq<CR>
@@ -264,32 +242,52 @@ nnoremap <Leader>s :Gstatus<CR><C-w>20+7j
 nnoremap <Leader>ua :Git reset HEAD <CR>
 nnoremap <Leader>uu :Git reset HEAD <C-r><C-g><CR>
 
-NeoBundle 'tpope/vim-rails'
-nnoremap <Leader>. :A<CR>
-nnoremap <Leader>rc :Econtroller<CR>
-nnoremap <Leader>rf :Efixtures<CR>
-nnoremap <Leader>rm :Emodel<CR>
-nnoremap <Leader>rM :Emigration<CR>
-nnoremap <Leader>rS :Eschema<CR>
-nnoremap <Leader>rs :Estylesheet<Space>
-nnoremap <Leader>rt :Eunittest<CR>
-nnoremap <Leader>rv :Eview<CR>
-
 NeoBundle 'gregsexton/gitv'
 let g:Gitv_OpenHorizontal = 0
 let g:Gitv_WipeAllOnClose = 1
 nnoremap <Leader>gl :Gitv --all<CR>
 nnoremap <Leader>gL :Gitv! --all<CR>
 
-NeoBundle 'rking/ag.vim'
-nnoremap <C-f> :Ag<Space>
+NeoBundle 'airblade/vim-gitgutter'
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+
+"------------------------------------------------------------------------------
+" Remote Commands
+"------------------------------------------------------------------------------
+NeoBundle 'tpope/vim-dispatch'
+nnoremap <Leader>` :Dispatch<Space>
+nnoremap <Leader>~ :Dispatch!<Space>
+
+"------------------------------------------------------------------------------
+" Others
+"------------------------------------------------------------------------------
+NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'ervandew/supertab'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'michaeljsmith/vim-indent-object'
+NeoBundle 'nelstrom/vim-qargs'
+NeoBundle 'nelstrom/vim-visual-star-search'
+NeoBundle 'tpope/vim-abolish'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-haml'
+NeoBundle 'tpope/vim-projectionist'
+NeoBundle 'tpope/vim-rake'
+NeoBundle 'tpope/vim-sensible'
+NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'vim-scripts/taglist.vim'
 
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
+"------------------------------------------------------------------------------
 " Basics - on top of vim-sensible
 " https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
+"------------------------------------------------------------------------------
 color gruvbox
 set t_Co=256
 set background=dark
@@ -352,16 +350,6 @@ set wig+=*.o,*.obj,*.pyc
 set wig+=.sass-cache,tmp
 set wildmode=longest:full,list:full
 
-" GUI-specific options
-if has("gui_running")
-  set guifont=Inconsolata\ for\ Powerline:h12
-  set guioptions-=r " Remove right-hand scrollbar
-  set guioptions-=L " Remove left-hand scrollbar
-  set guioptions-=T " Remove toolbar
-  set guioptions+=c " Use console dialogs instead of popup dialogs
-  set guioptions-=e " Use non-gui tab lines
-endif
-
 " Clear the search buffer when hitting return on normal mode except on command line windows
 function! MapCR()
   nnoremap <CR> :nohlsearch<CR>
@@ -407,3 +395,15 @@ function! s:ZoomToggle() abort
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <Leader>z :ZoomToggle<CR>
+
+"------------------------------------------------------------------------------
+" GUI-specific
+"------------------------------------------------------------------------------
+if has("gui_running")
+  set guifont=Inconsolata\ for\ Powerline:h12
+  set guioptions-=r " Remove right-hand scrollbar
+  set guioptions-=L " Remove left-hand scrollbar
+  set guioptions-=T " Remove toolbar
+  set guioptions+=c " Use console dialogs instead of popup dialogs
+  set guioptions-=e " Use non-gui tab lines
+endif
