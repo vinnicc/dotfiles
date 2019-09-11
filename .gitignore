@@ -59,6 +59,7 @@
 /.irb-history
 /.irssi/
 /.jspm/
+/.kube/
 /.lbryum/
 /.lesshst
 /.linkchecker/
@@ -73,6 +74,7 @@
 /.netrc
 /.ngrok
 /.ngrok2/
+/.nix-channels
 /.nix-defexpr/
 /.nix-profile
 /.node-gyp/
@@ -121,6 +123,7 @@
 /.vim-tmp
 /.vim/.netrwhist
 /.vim/bundle/
+/.vimgolf/
 /.viminfo
 /.vimperator/
 /.vscode/
