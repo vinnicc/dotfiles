@@ -83,6 +83,7 @@ NeoBundle 'pangloss/vim-javascript'
 
 " Rest
 NeoBundle 'LnL7/vim-nix'
+NeoBundle 'ap/vim-css-color'
 NeoBundle 'c-brenn/phoenix.vim'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'digitaltoad/vim-jade'
@@ -90,6 +91,7 @@ NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'elixir-editors/vim-elixir'
 NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'mattn/emmet-vim'
 NeoBundle 'neovimhaskell/haskell-vim'
 NeoBundle 'nono/vim-handlebars'
 NeoBundle 'pbrisbin/vim-syntax-shakespeare'
@@ -99,6 +101,7 @@ NeoBundle 'slashmili/alchemist.vim'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'slime-lang/vim-slime-syntax'
 NeoBundle 'tomlion/vim-solidity'
+NeoBundle 'tpope/vim-haml'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'wavded/vim-stylus'
 
@@ -185,7 +188,7 @@ nnoremap <Leader>m :Marks<CR>
 
 NeoBundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
-nnoremap s <Plug>(easymotion-s)
+nmap s <Plug>(easymotion-s)
 
 NeoBundle 'tpope/vim-rails'
 nnoremap <Leader>. :A<CR>
@@ -265,13 +268,11 @@ nnoremap <Leader>~ :Dispatch!<Space>
 NeoBundle 'christoomey/vim-tmux-navigator'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'mattn/emmet-vim'
 NeoBundle 'michaeljsmith/vim-indent-object'
 NeoBundle 'nelstrom/vim-qargs'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-haml'
 NeoBundle 'tpope/vim-projectionist'
 NeoBundle 'tpope/vim-rake'
 NeoBundle 'tpope/vim-sensible'
