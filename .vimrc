@@ -64,7 +64,7 @@ noremap k gk
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'morhetz/gruvbox'
 NeoBundle 'w0ng/vim-hybrid'
-nnoremap <Leader>gc :Colors<CR>
+nnoremap <Leader>C :Colors<CR>
 
 "------------------------------------------------------------------------------
 " Languages
@@ -139,6 +139,7 @@ nnoremap <Leader>vc :NeoBundleClean<CR>
 nnoremap <Leader>vi :NeoBundleInstall<CR>
 nnoremap <Leader>vl :NeoBundleLog<CR>
 nnoremap <Leader>vn :tabedit ~/Google\ Drive/Personal/notes.txt<CR>
+nnoremap <Leader>vr :tabedit ~/.config/ranger/rc.conf<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vu :NeoBundleUpdate<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
@@ -180,12 +181,16 @@ nnoremap <C-b> :Buffers<CR>
 nnoremap <C-n> :Lines<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :GFiles?<CR>
+nnoremap <Leader>/ :History/<CR>
+nnoremap <Leader><C-d> :call fzf#run(fzf#wrap({'source': 'find ~/Work/* -type d -maxdepth 0'}))<CR>
+nnoremap <Leader><C-h> :History<CR>
+nnoremap <Leader><C-l> :Commits<CR>
 nnoremap <Leader><C-p> :GFiles<CR>
+nnoremap <Leader><C-w> :Windows<CR>
 nnoremap <Leader>D :FZF ~/.docs<CR>
-nnoremap <Leader>H :History<CR>
-nnoremap <Leader>cL :BCommits<CR>
-nnoremap <Leader>cl :Commits<CR>
+nnoremap <Leader>L :BCommits<CR>
 nnoremap <Leader>m :Marks<CR>
+nnoremap <Tab> :Commands<CR>
 
 NeoBundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
@@ -197,9 +202,9 @@ nnoremap <Leader>rc :Econtroller<CR>
 nnoremap <Leader>rf :Efixtures<CR>
 nnoremap <Leader>rm :Emodel<CR>
 nnoremap <Leader>rM :Emigration<CR>
-nnoremap <Leader>rS :Eschema<CR>
 nnoremap <Leader>rs :Estylesheet<Space>
-nnoremap <Leader>rt :Eunittest<CR>
+nnoremap <Leader>rS :Eschema<CR>
+nnoremap <Leader>rt :Esnittest<CR>
 nnoremap <Leader>rv :Eview<CR>
 
 NeoBundle 'rking/ag.vim'

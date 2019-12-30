@@ -25,6 +25,7 @@
 /.composer/
 /.config/*
 !/.config/fish/
+!/.config/ranger/
 /.cordova
 /.cpan/
 /.ctags
