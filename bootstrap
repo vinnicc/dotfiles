@@ -38,11 +38,13 @@ packages=(
   "imagemagick --with-webp"
   ioping
   jq
+  lazygit
   libffi
   libyaml
   lynx
   md5sha1sum
   nmap
+  nvim
   openssl
   phantomjs
   pigz
@@ -60,10 +62,11 @@ packages=(
   rhino
   rtmpdump
   s3cmd
+  shellcheck
   sqlmap
   ssh-copy-id
-  tmux
   the_silver_searcher
+  tmux
   tree
   ucspi-tcp # `tcpserver` et al.
   unrar
@@ -85,10 +88,12 @@ cask_packages=(
   adobe-creative-cloud
   brave-browser
   colorpicker-hex
-  google-chrome
   google-backup-and-install
+  google-chrome
+  iina
   iterm2
   karabiner-elements
+  macs-fan-control
   showyedge
   skype
   slack
@@ -97,7 +102,6 @@ cask_packages=(
   the-unarchiver
   totalspaces
   transmit
-  vlc
 
   # caskroom/fonts
   font-inconsolata

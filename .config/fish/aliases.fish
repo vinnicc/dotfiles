@@ -1,10 +1,10 @@
 # Handle the fact that this file will be used with multiple OSs
-platform=`uname`
-if [[ $platform == 'Linux' ]]; then
+set platform (uname)
+if [ $platform = 'Linux' ]
     alias a='ls -larth --color'
-elif [[ $platform == 'Darwin' ]]; then
+else if [ $platform = 'Darwin' ]
     alias a='ls -larthG'
-fi
+end
 
 alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 alias b='bundle'
@@ -21,8 +21,8 @@ alias bu='bundle update'
 alias cb="cargo build"
 alias cc="cargo check"
 alias cr="cargo run"
-alias cellar="cd `brew --cellar`"
-alias ctags="`brew --prefix`/bin/ctags"
+alias cellar="cd (brew --cellar)"
+alias ctags=(brew --prefix)"/bin/ctags"
 alias doi='docker images'
 alias dops='docker ps'
 alias downloads='cd ~/Downloads'
@@ -74,11 +74,12 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+
 alias j='jobs'
 alias k9='kill -9'
 alias killruby='killall -9 ruby'
-alias l='ls -l ${colorflag}'
-alias la='ls -la ${colorflag}'
+alias l='ls -l $colorflag'
+alias la='ls -la $colorflag'
+alias lg=lazygit
 alias localip='ipconfig getifaddr en1'
-alias ls='command ls ${colorflag}'
-alias lsd='ls -l ${colorflag} | grep "^d"'
+alias ls='command ls $colorflag'
+alias lsd='ls -l $colorflag | grep "^d"'
 alias o='open'
 alias oo='open .'
 alias p='ping 8.8.8.8'
@@ -91,7 +92,7 @@ alias psgrep='ps aux | grep'
 alias r='ranger'
 alias rc='rails console'
 alias rds='rake db:setup'
-alias reload='source ~/.zshrc'
+alias reload='source ~/.config/fish/config.fish'
 alias retag='ctags -R --exclude=.svn --exclude=.git --exclude=log *'
 alias rgm='rails generate migration '
 alias rot13='tr a-zA-Z n-za-mN-ZA-M'
@@ -111,13 +112,13 @@ alias stopspotlight='sudo mdutil -a -i on'
 alias t='tmux'
 alias tma='tmux attach'
 alias torrents='~/Downloads/_completed'
-alias tsp='killall ruby; killall tmux; tmuxinator start $(basename $(pwd))'
+alias tsp='killall ruby; killall tmux'
 alias u='cd ..'
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; brew cask cleanup; npm update npm -g; npm update -g; upgrade_oh_my_zsh; ~/.fzf/install'
 alias v='nvim'
-alias va='v ~/.aliases'
+alias va='v ~/.config/fish/aliases.fish'
 alias vb='v ~/bootstrap'
-alias vd='v $(ag ~/.docs -g "" | fzf)'
+alias vd='v (ag ~/.docs -g "" | fzf)'
 alias ve='v ~/.emacs.d/init.el'
 alias vf='v ~/.functions'
 alias vg='v ~/.gitignore'
@@ -130,7 +131,7 @@ alias vt='v ~/.tmux.conf'
 alias vv='v ~/.vimrc'
 alias vw='v ~/.tmuxinator'
 alias vx='v ~/.xvimrc'
-alias vz='v ~/.zshrc'
+alias vz='v ~/.config/fish/config.fish'
 alias w='cd ~/Work'
 alias whois='whois -h whois-servers.net'
 alias wjoin='networksetup -setairportnetwork en0'
@@ -159,8 +160,8 @@ alias dtro='dtrollback'
 alias dtre='dtredo'
 
 # Elixir development
-alias mix='env $([ -f .env ] && cat .env | xargs) mix'
-alias iex='env $([ -f .env ] && cat .env | xargs) iex'
+alias mix='env ([ -f .env ] && cat .env | xargs) mix'
+alias iex='env ([ -f .env ] && cat .env | xargs) iex'
 
 # Heroku staging
 alias staging-console='heroku run console --remote staging'
@@ -197,14 +198,14 @@ alias deploy-to-both='echo "-> rs && gpom && staging && git push production mast
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
-    colorflag='--color'
+#     colorflag='--color'
 else # OS X `ls`
-    colorflag='-G'
-fi
+#     colorflag='-G'
+end
 
-for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS
     alias "$method"="lwp-request -m '$method'"
-done
+end
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 alias lscleanup='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user && killall Finder'
@@ -228,7 +229,7 @@ if stat -c '' . > /dev/null 2>&1; then
 else
     # OS X `stat`
     alias fs="stat -f \"%z bytes\""
-fi
+end
 
 alias emptytrash='sudo rm -rfv /Volumes/*/.Trashes;
                   sudo rm -rfv ~/.Trash;

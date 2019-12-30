@@ -23,7 +23,8 @@
 /.cache/
 /.cargo/
 /.composer/
-/.config/
+/.config/*
+!/.config/fish/
 /.cordova
 /.cpan/
 /.ctags
@@ -95,6 +96,7 @@
 /.profile
 /.pry_history
 /.psql_history
+/.pyvoc/
 /.qgis/
 /.rediscli_history
 /.repos/

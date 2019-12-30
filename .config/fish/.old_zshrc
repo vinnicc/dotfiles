@@ -1,0 +1,26 @@
+PATH="/usr/local/share/npm/bin:$PATH" # Node executables
+PATH="./bin:$PATH" # Local executables
+PATH="$(brew --prefix qt@5.5)/bin:$PATH" # Fix capybara-webkit (https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
+PATH="$HOME/.cargo/bin:$PATH" # Rust cargo
+PATH="$HOME/.cabal/bin:$PATH" # Haskell cabal
+PATH="$HOME/.local/bin:$PATH" # Haskell stack (and other things)
+PATH="$PWD/node_modules/.bin:$PATH"
+PATH="$PWD/assets/node_modules/.bin:$PATH"
+export PATH
+
+# Link Homebrew casks in "/Applications" rather than "~/Applications"
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
+# Opt out of anonymouse analytics
+export HOMEBREW_NO_ANALYTICS=1
+
+# asdf version manager
+ASDF_DATA_DIR=$(brew --prefix asdf)
+export ASDF_DATA_DIR
+source "$ASDF_DATA_DIR/asdf.sh"
+
+# Fix neovim locale warning
+export LC_ALL=en_US.UTF-8
+
+# Heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=~/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;

@@ -1,8 +1,8 @@
-"------------------------------------------------------------------------------
 " Vinni Caños's .vimrc file
 "------------------------------------------------------------------------------
 
 set nocompatible
+set shell=/bin/bash " Use a fast shell
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 call neobundle#begin(expand('~/.vim/bundle'))
 
@@ -59,7 +59,7 @@ noremap j gj
 noremap k gk
 
 "------------------------------------------------------------------------------
-" Theme
+" Colors
 "------------------------------------------------------------------------------
 NeoBundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 NeoBundle 'morhetz/gruvbox'
@@ -86,6 +86,7 @@ NeoBundle 'LnL7/vim-nix'
 NeoBundle 'ap/vim-css-color'
 NeoBundle 'c-brenn/phoenix.vim'
 NeoBundle 'cespare/vim-toml'
+NeoBundle 'dag/vim-fish'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'elixir-editors/vim-elixir'
@@ -132,7 +133,7 @@ augroup end
 "------------------------------------------------------------------------------
 NeoBundleFetch 'Shougo/neobundle.vim'
 nnoremap <Leader>V :tabedit ~/.vimrc<CR>
-nnoremap <Leader>va :tabedit ~/.aliases<CR>
+nnoremap <Leader>va :tabedit ~/.config/fish/aliases.fish<CR>
 nnoremap <Leader>vb :tabedit ~/bootstrap<CR>
 nnoremap <Leader>vc :NeoBundleClean<CR>
 nnoremap <Leader>vi :NeoBundleInstall<CR>
