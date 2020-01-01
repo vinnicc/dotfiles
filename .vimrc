@@ -137,7 +137,7 @@ nnoremap <Leader>va :tabedit ~/.config/fish/aliases.fish<CR>
 nnoremap <Leader>vb :tabedit ~/bootstrap<CR>
 nnoremap <Leader>vc :NeoBundleClean<CR>
 nnoremap <Leader>vi :NeoBundleInstall<CR>
-nnoremap <Leader>vj :tabedit ~/.config/joplin/<CR>
+nnoremap <Leader>vj :tabedit ~/.config/joplin/keymaps.json<CR>
 nnoremap <Leader>vl :NeoBundleLog<CR>
 nnoremap <Leader>vr :tabedit ~/.config/ranger/rc.conf<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
