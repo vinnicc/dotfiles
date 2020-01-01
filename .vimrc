@@ -137,8 +137,8 @@ nnoremap <Leader>va :tabedit ~/.config/fish/aliases.fish<CR>
 nnoremap <Leader>vb :tabedit ~/bootstrap<CR>
 nnoremap <Leader>vc :NeoBundleClean<CR>
 nnoremap <Leader>vi :NeoBundleInstall<CR>
+nnoremap <Leader>vj :tabedit ~/.config/joplin/<CR>
 nnoremap <Leader>vl :NeoBundleLog<CR>
-nnoremap <Leader>vn :tabedit ~/Google\ Drive/Personal/notes.txt<CR>
 nnoremap <Leader>vr :tabedit ~/.config/ranger/rc.conf<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vu :NeoBundleUpdate<CR>
@@ -247,7 +247,7 @@ nnoremap <Leader>da :!clear && Git diff<CR>
 nnoremap <Leader>dc :!clear && Git diff --cached<CR>
 nnoremap <Leader>dd :Gdiff<CR>
 nnoremap <Leader>ee :Gedit<CR>
-nnoremap <Leader>s :Gstatus<CR><C-w>20+7j
+nnoremap <Leader>s :Gstatus<CR>4j
 nnoremap <Leader>ua :Git reset HEAD <CR>
 nnoremap <Leader>uu :Git reset HEAD <C-r><C-g><CR>
 

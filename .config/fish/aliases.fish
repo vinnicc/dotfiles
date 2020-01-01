@@ -80,6 +80,7 @@ alias lg=lazygit
 alias localip='ipconfig getifaddr en1'
 alias ls='command ls $colorflag'
 alias lsd='ls -l $colorflag | grep "^d"'
+alias n='joplin'
 alias o='open'
 alias oo='open .'
 alias p='ping 8.8.8.8'

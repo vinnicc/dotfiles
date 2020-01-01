@@ -20,10 +20,13 @@ packages=(
   coreutils
   dnstop
   dos2unix
+  emacs
   exiftool
   ffmpeg
+  fish
   freeimage
   freetype
+  fzf
   gist
   "git --with-pcre --with-brewed-curl --with-blk-sha1 --with-gettext --with-brewed-openssl --with-persistent-https"
   git-extras
@@ -38,13 +41,14 @@ packages=(
   "imagemagick --with-webp"
   ioping
   jq
+  joplin
   lazygit
   libffi
   libyaml
   lynx
   md5sha1sum
   nmap
-  nvim
+  neovim
   openssl
   phantomjs
   pigz
@@ -70,7 +74,6 @@ packages=(
   tree
   ucspi-tcp # `tcpserver` et al.
   unrar
-  "vim --override-system-vim"
   watch
   wdiff
   webkit2png

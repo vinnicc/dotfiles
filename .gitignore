@@ -25,6 +25,9 @@
 /.composer/
 /.config/*
 !/.config/fish/
+!/.config/joplin/
+/.config/joplin/*
+!/.config/joplin/keymap.json
 !/.config/ranger/
 /.cordova
 /.cpan/
