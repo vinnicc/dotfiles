@@ -1,10 +1,10 @@
 [
-  { "keys": ["l", "CTRL_L"], "type": "function", "command": "focus_next" },
-  { "keys": ["h", "CTRL_H"], "type": "function", "command": "focus_previous" },
-  { "keys": ["k", "CTRL_K"], "type": "function", "command": "move_up" },
-  { "keys": ["j", "CTRL_J"], "type": "function", "command": "move_down" },
-  { "keys": ["CTRL_B"], "type": "function", "command": "page_up" },
-  { "keys": ["CTRL_F"], "type": "function", "command": "page_down" },
+  { "keys": ["l", "CTRL_L", "CTRL_Wl"], "type": "function", "command": "focus_next" },
+  { "keys": ["h", "CTRL_H", "CTRL_Wh"], "type": "function", "command": "focus_previous" },
+  { "keys": ["k", "CTRL_K", "CTRL_Wk"], "type": "function", "command": "move_up" },
+  { "keys": ["j", "CTRL_J", "CTRL_Wj"], "type": "function", "command": "move_down" },
+  { "keys": ["u"], "type": "function", "command": "page_up" },
+  { "keys": ["d"], "type": "function", "command": "page_down" },
   { "keys": ["/"], "type": "prompt", "command": "search \"\"", "cursorPosition": -2 },
 
   { "keys": ["ENTER", "o"], "type": "function", "command": "activate" },

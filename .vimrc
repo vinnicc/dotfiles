@@ -162,9 +162,9 @@ map g/ <Plug>(incsearch-stay)
 "------------------------------------------------------------------------------
 " Search
 "------------------------------------------------------------------------------
-NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+NeoBundle '/usr/local/opt/fzf'
 NeoBundle 'junegunn/fzf.vim'
-let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore -l -g ""'
 let $FZF_DEFAULT_OPTS = '--reverse --inline-info'
 let g:fzf_layout = { 'window': 'enew' }
 " Selecting mappings

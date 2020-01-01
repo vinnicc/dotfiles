@@ -1,5 +1,8 @@
+# Prioritize speed
+set -x SHELL bash
 set -U EDITOR vim
 
+# Remove welcome message
 set fish_greeting
 
 function fish_prompt
