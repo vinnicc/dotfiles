@@ -17,7 +17,7 @@ source $HOME/.config/fish/aliases.fish
 
 # fzf
 source $HOME/.config/fish/fzf.fish
-bind \cr fzf-history-widget # mimic bash incremental search
+fzf_key_bindings
 
 # asdf version manager
 set -x ASDF_DATA_DIR (brew --prefix asdf)
@@ -33,11 +33,11 @@ set -x HOMEBREW_NO_ANALYTICS 1
 set -x LC_ALL en_US.UTF-8
 
 # Append path
-set -x PATH $PATH "./bin" # Local executables
+set -x PATH $PATH "/usr/local/sbin" # Some homebrew executables
 set -x PATH $PATH "/usr/local/share/npm/bin" # Node executables
-set -x PATH $PATH (brew --prefix qt@5.5)"/bin" # Fix capybara-webkit (https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
-set -x PATH $PATH "$HOME/.cargo/bin" # Rust cargo
 set -x PATH $PATH "$HOME/.cabal/bin" # Haskell cabal
 set -x PATH $PATH "$HOME/.local/bin" # Haskell stack (and other things)
-set -x PATH $PATH "$PWD/node_modules/.bin"
+set -x PATH $PATH "$HOME/.cargo/bin" # Rust cargo
+set -x PATH $PATH "$PWD/bin" # Local executables
 set -x PATH $PATH "$PWD/assets/node_modules/.bin"
+set -x PATH $PATH "$PWD/node_modules/.bin" 
