@@ -372,7 +372,7 @@ command! InsertTime :normal a<C-r>=strftime('%F %H:%M:%S.0 %z')<CR>
 nnoremap <Leader>xit :InsertTime<CR>
 
 command! InsertDeployment :normal o<Esc>CDeployed - [staging] @ [<C-r>=strftime('%F %H:%M:%S.0 %z')<CR>]
-nnoremap <Leader>xid :InsertDeployment<CR>dd
+nnoremap <Leader>xid :InsertDeployment<CR>
 
 " Show the MD5 of the current buffer
 command! -range Md5 :echo system('echo '.shellescape(join(getline(<line1>, <line2>), '\n')) . '| md5')
