@@ -1,5 +1,5 @@
-# reload ~/.skhdrc
-ctrl + shift + alt - r : skhd -r
+# reload config (~/.skhdrc and ~/.yabairc)
+ctrl + shift + alt - r : skhd -r; ~/.yabairc
 
 # focus window
 ctrl + shift + alt - h : yabai -m window --focus west
@@ -20,14 +20,18 @@ ctrl + shift + alt + cmd - l : yabai -m window --swap east
 # balance size of windows
 ctrl + shift + alt - 0 : yabai -m space --balance
 
+# change layout of desktop
+ctrl + shift + alt - 1 : yabai -m space --layout bsp
+ctrl + shift + alt - 2 : yabai -m space --layout float
+
 # make floating window fill screen
-# ctrl + shift + alt + cmd - 1 : yabai -m window --grid 1:1:0:0:1:1
+ctrl + shift + alt - s : yabai -m window --grid 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
-# ctrl + shift + alt + cmd - 2 : yabai -m window --grid 1:2:0:0:1:1
+ctrl + shift + alt - a : yabai -m window --grid 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-# ctrl + shift + alt + cmd - 3 : yabai -m window --grid 1:2:1:0:1:1
+ctrl + shift + alt - d : yabai -m window --grid 1:2:1:0:1:1
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 # shift + cmd - n : yabai -m space --create && \
@@ -96,16 +100,16 @@ ctrl + shift + alt + cmd - 0 : yabai -m window --space 10; yabai -m space --focu
 # ctrl + shift + alt - c : yabai -m window --move rel:20:0
 
 # increase window size
-ctrl + shift + alt - a : yabai -m window --resize left:-20:0
-ctrl + shift + alt - s : yabai -m window --resize bottom:0:20
-ctrl + shift + alt - w : yabai -m window --resize top:0:-20
-ctrl + shift + alt - d : yabai -m window --resize right:20:0
+# ctrl + shift + alt - a : yabai -m window --resize left:-20:0
+# ctrl + shift + alt - s : yabai -m window --resize bottom:0:20
+# ctrl + shift + alt - w : yabai -m window --resize top:0:-20
+# ctrl + shift + alt - d : yabai -m window --resize right:20:0
 
 # decrease window size
-ctrl + shift + alt + cmd - a : yabai -m window --resize left:20:0
-ctrl + shift + alt + cmd - s : yabai -m window --resize bottom:0:-20
-ctrl + shift + alt + cmd - w : yabai -m window --resize top:0:20
-ctrl + shift + alt + cmd - d : yabai -m window --resize right:-20:0
+# ctrl + shift + alt + cmd - a : yabai -m window --resize left:20:0
+# ctrl + shift + alt + cmd - s : yabai -m window --resize bottom:0:-20
+# ctrl + shift + alt + cmd - w : yabai -m window --resize top:0:20
+# ctrl + shift + alt + cmd - d : yabai -m window --resize right:-20:0
 
 # set insertion point in focused container
 # ctrl + alt - h : yabai -m window --insert west
@@ -140,9 +144,8 @@ ctrl + shift + alt - b : yabai -m window --toggle border
 # toggle window split type
 ctrl + shift + alt - space : yabai -m window --toggle split
 
-# float / unfloat window and center on screen
-# alt - t : yabai -m window --toggle float;\
-#           yabai -m window --grid 4:4:1:1:2:2
+# float / unfloat window
+ctrl + shift + alt + cmd - f : yabai -m window --toggle float
 
 # toggle sticky (show on all spaces)
 ctrl + shift + alt + cmd - s : yabai -m window --toggle sticky
@@ -154,7 +157,3 @@ ctrl + shift + alt + cmd - t : yabai -m window --toggle topmost
 ctrl + shift + alt + cmd - p : yabai -m window --toggle sticky;\
                                yabai -m window --toggle topmost;\
                                yabai -m window --grid 5:5:4:0:1:1
-
-# change layout of desktop
-# ctrl + alt - a : yabai -m space --layout bsp
-# ctrl + alt - d : yabai -m space --layout float
