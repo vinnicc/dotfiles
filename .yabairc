@@ -1,11 +1,11 @@
 #!/usr/bin/env sh
 
 # bar settings
-yabai -m config status_bar                   off
-yabai -m config status_bar_text_font         "Helvetica Neue:Bold:12.0"
+yabai -m config status_bar                   on
+yabai -m config status_bar_text_font         "Helvetica Neue:Regular:12.0"
 yabai -m config status_bar_icon_font         "FontAwesome:Regular:12.0"
-yabai -m config status_bar_background_color  0xff202020
-yabai -m config status_bar_foreground_color  0xffa8a8a8
+yabai -m config status_bar_background_color  0x00ff0000 # transparent
+yabai -m config status_bar_foreground_color  0xffffffff # opaque white
 yabai -m config status_bar_space_icon_strip  I II III IV V VI VII VIII IX X
 yabai -m config status_bar_power_icon_strip  🔋 🔌
 # yabai -m config status_bar_space_icon        S
@@ -18,14 +18,14 @@ yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
 yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
-yabai -m config window_shadow                on
-yabai -m config window_border                off
-yabai -m config window_border_placement      inset
-yabai -m config window_border_width          4
+yabai -m config window_shadow                off
+yabai -m config window_border                on
+yabai -m config window_border_placement      exterior
+yabai -m config window_border_width          3
 yabai -m config window_border_radius         -1.0
 yabai -m config active_window_border_topmost off
-yabai -m config active_window_border_color   0xff775759
-yabai -m config normal_window_border_color   0xff505050
+yabai -m config active_window_border_color   0xffffffff
+yabai -m config normal_window_border_color   0x00ff0000
 yabai -m config insert_window_border_color   0xffd75f5f
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.90
