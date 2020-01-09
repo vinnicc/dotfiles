@@ -140,9 +140,11 @@ nnoremap <Leader>vi :NeoBundleInstall<CR>
 nnoremap <Leader>vj :tabedit ~/.config/joplin/keymaps.json<CR>
 nnoremap <Leader>vl :NeoBundleLog<CR>
 nnoremap <Leader>vr :tabedit ~/.config/ranger/rc.conf<CR>
+nnoremap <Leader>vs :tabedit ~/.skhdrc<CR>
 nnoremap <Leader>vt :tabedit ~/.tmux.conf<CR>
 nnoremap <Leader>vu :NeoBundleUpdate<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
+nnoremap <Leader>vy :tabedit ~/.yabairc<CR>
 
 NeoBundle 'Shougo/vimproc.vim', {
   \   'build': {
