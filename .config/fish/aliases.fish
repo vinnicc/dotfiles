@@ -42,6 +42,7 @@ alias gcom='git checkout master'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias getnewrelic='curl https://gist.github.com/rwdaigle/2253296/raw/newrelic.yml > config/newrelic.yml'
+alias gfa='git fetch --all'
 alias gl="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gL="git log --graph --all --decorate --stat --date=iso"
 alias google-chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"

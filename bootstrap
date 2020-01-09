@@ -6,6 +6,7 @@ taps=(
   caskroom/cask
   caskroom/fonts
   heroku/brew
+  koekeishiya/formulae
 )
 
 packages=(
@@ -15,6 +16,11 @@ packages=(
   # heroku/brew
   heroku
 
+  # koekeishiya/formulae
+  yabai
+  skhd
+
+  # default tap
   ack
   asdf
   coreutils
@@ -87,9 +93,7 @@ cask_packages=(
   # imagealpha
   # imageoptim
   # steam
-  # virtualbox
   adobe-creative-cloud
-  brave-browser
   colorpicker-hex
   google-backup-and-install
   google-chrome
@@ -100,7 +104,6 @@ cask_packages=(
   showyedge
   skype
   slack
-  slate
   spotify
   the-unarchiver
   totalspaces
