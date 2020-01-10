@@ -37,10 +37,10 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  20
-yabai -m config bottom_padding               20
-yabai -m config left_padding                 20
-yabai -m config right_padding                20
+yabai -m config top_padding                  10
+yabai -m config bottom_padding               10
+yabai -m config left_padding                 10
+yabai -m config right_padding                10
 yabai -m config window_gap                   10
 
 # specific space settings
@@ -53,6 +53,7 @@ yabai -m rule --add app="Google Chrome" space=2
 yabai -m rule --add app="Spotify" space=3
 yabai -m rule --add app="Slack" space=3
 yabai -m rule --add app="Finder" space=4
+yabai -m rule --add app="Telegram" space=4
 yabai -m rule --add app="^System Preferences$" manage=off
 
 # signals
