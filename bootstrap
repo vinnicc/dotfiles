@@ -1,17 +1,101 @@
 #!/usr/bin/env zsh
+#
+# # Setup
+#
+# Putting this here to just to help me set up new hardware. This guide could
+# get outdated pretty quick though.
+#
+# ```sh
+# $ git clone https://github.com/vinnicc/dotfiles.git ~
+# ```
+#
+# Get Homebrew:
+#
+# ```sh
+# $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# ```
+#
+# Run:
+#
+# ```sh
+# $ update && bootstrap
+# ```
+#
+# Set up Vim:
+#
+# ```sh
+# $ curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh && \
+# vim +NeoBundleInstall +qall
+# ```
+#
+# * Review `~/.aliases` for `fish`
+# * Review `~/.skhdrc` for `yabai`
+# * Use `ranger` instead of Finder
+# * Change screenshot directory
+#
+#   ```sh
+#   defaults write com.apple.screencapture location ~/Downloads
+#   ```
+#
+# ## iTerm2
+#
+# * General > Window > Native full screen windows > Uncheck
+# * General > Load preference from a custom folder or URL > Set path to Google Drive
+# * General > Save changes to folder when iTerm2 quits > Check
+# * Create hotkey window and activate with ⌥ + `
+#
+# ## Karabiner-Elements
+#
+# * Enable Simultaneous Vi Mode
+# * Change Caps Lock to Keycode 53 (Escape)
+# * Change Fn Key - Fn to Control_L
+# * Change Control_L Key - Control_L to Fn
+# * Set Delay Until Repeat - 200ms
+# * Set Key Repeat - 23ms
+#
+# ## MacOS Tweaks
+#
+# Pick and choose https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
 taps=(
-  homebrew/dupes
-  homebrew/versions
-  caskroom/cask
-  caskroom/fonts
+  homebrew/cask-fonts
   heroku/brew
   koekeishiya/formulae
 )
 
 packages=(
-  # caskroom/cask
-  brew-cask
+  # default tap
+  asdf
+  coreutils
+  emacs
+  fish
+  freetype
+  fzf
+  git
+  git-extras
+  gnupg
+  gnutls
+  imagemagick
+  joplin
+  lazygit
+  libffi
+  libyaml
+  lynx
+  neovim
+  openssl
+  pkg-config
+  ranger
+  readline
+  reattach-to-user-namespace
+  rename
+  shellcheck
+  ssh-copy-id
+  the_silver_searcher
+  tmux
+  ucspi-tcp # `tcpserver` et al.
+  wget
+  yarn
+  youtube-dl
 
   # heroku/brew
   heroku
@@ -19,89 +103,25 @@ packages=(
   # koekeishiya/formulae
   yabai
   skhd
-
-  # default tap
-  ack
-  asdf
-  coreutils
-  dnstop
-  dos2unix
-  emacs
-  exiftool
-  ffmpeg
-  fish
-  freeimage
-  freetype
-  fzf
-  gist
-  "git --with-pcre --with-brewed-curl --with-blk-sha1 --with-gettext --with-brewed-openssl --with-persistent-https"
-  git-extras
-  gnu-sed
-  gnu-time
-  gnupg
-  gnutls
-  gpgme
-  heroku
-  htop-osx
-  hub
-  "imagemagick --with-webp"
-  ioping
-  jq
-  joplin
-  lazygit
-  libffi
-  libyaml
-  lynx
-  md5sha1sum
-  nmap
-  neovim
-  openssl
-  phantomjs
-  pigz
-  pkg-config
-  proctools
-  psgrep
-  pv
-  pwgen
-  "python --with-brewed-openssl"
-  qt
-  ranger
-  readline
-  reattach-to-user-namespace
-  rename
-  rhino
-  rtmpdump
-  s3cmd
-  shellcheck
-  sqlmap
-  ssh-copy-id
-  the_silver_searcher
-  tmux
-  tree
-  ucspi-tcp # `tcpserver` et al.
-  unrar
-  watch
-  wdiff
-  webkit2png
-  wget
-  yarn
-  youtube-dl
-  zopfli
 )
 
 cask_packages=(
   # imagealpha
   # imageoptim
   # steam
+  # showyedge
   adobe-creative-cloud
+  caprine
   colorpicker-hex
+  firefox
   google-backup-and-install
   google-chrome
   iina
   iterm2
   karabiner-elements
+  licecap
   macs-fan-control
-  showyedge
+  postbird
   skype
   slack
   spotify
@@ -157,9 +177,3 @@ asdf plugin-add redis
 
 log "brew cleanup"
 brew cleanup
-
-log "brew cask cleanup"
-brew cask cleanup
-
-log "brew linkapps"
-brew linkapps
