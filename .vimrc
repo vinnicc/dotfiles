@@ -166,7 +166,7 @@ map g/ <Plug>(incsearch-stay)
 "------------------------------------------------------------------------------
 NeoBundle '/usr/local/opt/fzf'
 NeoBundle 'junegunn/fzf.vim'
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore -l -g ""'
+let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore-vcs --hidden'
 let $FZF_DEFAULT_OPTS = '--reverse --inline-info'
 let g:fzf_layout = { 'window': 'enew' }
 " Selecting mappings
@@ -180,6 +180,7 @@ imap <C-x><C-k> <plug>(fzf-complete-word)
 imap <C-x><C-l> <plug>(fzf-complete-line)
 " Other helpers
 nnoremap <C-b> :Buffers<CR>
+nnoremap <C-f> :Rg<CR>
 nnoremap <C-n> :Lines<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :GFiles?<CR>
@@ -208,9 +209,6 @@ nnoremap <Leader>rs :Estylesheet<Space>
 nnoremap <Leader>rS :Eschema<CR>
 nnoremap <Leader>rt :Esnittest<CR>
 nnoremap <Leader>rv :Eview<CR>
-
-NeoBundle 'rking/ag.vim'
-nnoremap <C-f> :Ag<Space>
 
 NeoBundle 'rizzatti/dash.vim'
 nnoremap - :Dash<CR>

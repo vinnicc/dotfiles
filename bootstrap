@@ -88,9 +88,9 @@ packages=(
   readline
   reattach-to-user-namespace
   rename
+  ripgrep
   shellcheck
   ssh-copy-id
-  the_silver_searcher
   tmux
   ucspi-tcp # `tcpserver` et al.
   wget
