@@ -209,7 +209,7 @@ nnoremap <Leader>rm :Emodel<CR>
 nnoremap <Leader>rM :Emigration<CR>
 nnoremap <Leader>rs :Estylesheet<Space>
 nnoremap <Leader>rS :Eschema<CR>
-nnoremap <Leader>rt :Esnittest<CR>
+nnoremap <Leader>rt :Eunittest<CR>
 nnoremap <Leader>rv :Eview<CR>
 
 NeoBundle 'rizzatti/dash.vim'
