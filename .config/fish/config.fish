@@ -17,6 +17,7 @@ function fish_prompt
 end
 
 source $HOME/.config/fish/aliases.fish
+source $HOME/.config/fish/functions.fish
 
 # fzf
 source $HOME/.config/fish/fzf.fish
