@@ -21,6 +21,7 @@ source $HOME/.config/fish/aliases.fish
 # fzf
 source $HOME/.config/fish/fzf.fish
 fzf_key_bindings
+set -gx FZF_DEFAULT_COMMAND "rg --files --no-ignore-vcs --hidden"
 
 # asdf version manager
 set -x ASDF_DATA_DIR (brew --prefix asdf)
