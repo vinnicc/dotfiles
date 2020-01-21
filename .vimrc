@@ -166,7 +166,7 @@ map g/ <Plug>(incsearch-stay)
 "------------------------------------------------------------------------------
 NeoBundle '/usr/local/opt/fzf'
 NeoBundle 'junegunn/fzf.vim'
-let $FZF_DEFAULT_COMMAND = 'rg --files --no-ignore-vcs --hidden'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 let $FZF_DEFAULT_OPTS = '--reverse --inline-info'
 let g:fzf_layout = { 'window': 'enew' }
 " Selecting mappings
