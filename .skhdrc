@@ -104,7 +104,7 @@
   ctrl + shift + alt + cmd - f : yabai -m window --toggle float # float / unfloat window
   ctrl + shift + alt + cmd - s : yabai -m window --toggle sticky # toggle sticky (show on all spaces)
   ctrl + shift + alt + cmd - t : yabai -m window --toggle topmost # toggle topmost (keep above other windows)
-  ctrl + shift + alt + cmd - p : yabai -m window --toggle sticky;\ # toggle sticky, topmost and resize to picture-in-picture size
+  ctrl + shift + alt + cmd - p : yabai -m window --toggle sticky;\
                                  yabai -m window --toggle topmost;\
-                                 yabai -m window --grid 5:5:4:0:1:1
+                                 yabai -m window --grid 5:5:4:0:1:1 # toggle sticky, topmost and resize to picture-in-picture size
   ctrl + shift + alt       - space : yabai -m window --toggle split # toggle window split type
