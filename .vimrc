@@ -188,7 +188,6 @@ nnoremap <Leader>/ :History/<CR>
 nnoremap <Leader>; :Commands<CR>
 nnoremap <Leader><C-d> :call fzf#run(fzf#wrap({'source': 'find ~/Work/* -type d -maxdepth 0', 'sink': 'cd'}))<CR>
 nnoremap <Leader><C-h> :History<CR>
-nnoremap <Leader><C-h> :History<CR>
 nnoremap <Leader><C-m> :History:<CR>
 nnoremap <Leader><C-p> :GFiles<CR>
 nnoremap <Leader><C-w> :Windows<CR>
