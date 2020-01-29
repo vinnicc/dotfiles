@@ -25,6 +25,7 @@
 /.composer/
 /.config/*
 !/.config/fish/
+/.config/fish/functions
 !/.config/joplin/
 /.config/joplin/*
 !/.config/joplin/keymap.json
