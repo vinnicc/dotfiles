@@ -6,14 +6,15 @@ set -U EDITOR vim
 set fish_greeting
 
 function fish_prompt
+    set -l git_branch (git branch 2>/dev/null | sed -n '/\* /s///p')
     echo
     jobs
-    set_color F50
-    echo -n (date "+%m/%d/%y %H:%S") ''
+    set_color F80
+    echo -n (date "+%m/%d/%y %I:%S %p") ''
     set_color F30
     echo -n (pwd) ''
     set_color F00
-    echo 'λ '
+    echo '['$git_branch'] λ '
 end
 
 source $HOME/.config/fish/aliases.fish
