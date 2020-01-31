@@ -137,7 +137,7 @@ nnoremap <Leader>va :tabedit ~/.config/fish/aliases.fish<CR>
 nnoremap <Leader>vb :tabedit ~/bootstrap<CR>
 nnoremap <Leader>vc :NeoBundleClean<CR>
 nnoremap <Leader>vi :NeoBundleInstall<CR>
-nnoremap <Leader>vj :tabedit ~/.config/joplin/keymaps.json<CR>
+nnoremap <Leader>vj :tabedit ~/.config/joplin/keymap.json<CR>
 nnoremap <Leader>vl :NeoBundleLog<CR>
 nnoremap <Leader>vr :tabedit ~/.config/ranger/rc.conf<CR>
 nnoremap <Leader>vs :tabedit ~/.skhdrc<CR>
@@ -404,15 +404,3 @@ function! s:ZoomToggle() abort
 endfunction
 command! ZoomToggle call s:ZoomToggle()
 nnoremap <Leader>z :ZoomToggle<CR>
-
-"------------------------------------------------------------------------------
-" GUI-specific
-"------------------------------------------------------------------------------
-if has("gui_running")
-  set guifont=Inconsolata\ for\ Powerline:h12
-  set guioptions-=r " Remove right-hand scrollbar
-  set guioptions-=L " Remove left-hand scrollbar
-  set guioptions-=T " Remove toolbar
-  set guioptions+=c " Use console dialogs instead of popup dialogs
-  set guioptions-=e " Use non-gui tab lines
-endif
