@@ -109,12 +109,12 @@ NeoBundle 'wavded/vim-stylus'
 "------------------------------------------------------------------------------
 " Intellisense/LS
 "------------------------------------------------------------------------------
-NeoBundle 'neoclide/coc.nvim', 'release', { 'build': { 'others': 'git checkout release' } }
+NeoBundle 'neoclide/coc.nvim', 'release', {'build': {'others': 'git checkout release'}}
 " Improved K for documentation
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
+    execute 'h ' . expand('<cword>')
   else
     call CocAction('doHover')
   endif
@@ -160,6 +160,26 @@ NeoBundle 'haya14busa/incsearch.vim'
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
+
+"------------------------------------------------------------------------------
+" Sessions
+"------------------------------------------------------------------------------
+NeoBundle 'mhinz/vim-startify'
+nnoremap <leader>l :SClose<CR>
+nnoremap <leader>lq :Startify<CR>
+nnoremap <leader>ls :SSave<CR>
+let g:startify_enable_special = 0
+let g:startify_change_to_vcs_root = 1
+let g:startify_files_number = 10
+let g:startify_padding_left = 3
+let g:startify_session_persistence = 1
+let g:startify_session_before_save = ['silent! NERDTreeClose']
+let g:startify_custom_header = []
+let g:startify_lists = [
+  \   {'type': 'sessions', 'header': ['   Sessions']},
+  \   {'type': 'dir',      'header': ['   Project']},
+  \   {'type': 'files',    'header': ['   Misc']},
+  \ ]
 
 "------------------------------------------------------------------------------
 " Search
@@ -377,7 +397,7 @@ command! InsertDeployment :normal o<Esc>CDeployed - [staging] @ [<C-r>=strftime(
 nnoremap <Leader>xid :InsertDeployment<CR>
 
 " Show the MD5 of the current buffer
-command! -range Md5 :echo system('echo '.shellescape(join(getline(<line1>, <line2>), '\n')) . '| md5')
+command! -range Md5 :echo system('echo ' . shellescape(join(getline(<line1>, <line2>), '\n')) . '| md5')
 
 " Promote variable to let
 function! PromoteToLet()
