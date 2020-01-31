@@ -273,6 +273,7 @@ nnoremap <Leader>~ :Dispatch!<Space>
 " Others
 "------------------------------------------------------------------------------
 NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'dhruvasagar/vim-table-mode'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'michaeljsmith/vim-indent-object'
