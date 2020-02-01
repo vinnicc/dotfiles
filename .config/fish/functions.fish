@@ -18,3 +18,7 @@ function fpass -d "Find LastPass entry and copy the password"
   end
   lpass ls | fzf | string replace -r -a '.+\[id: (\d+)\]' '$1' | read -l result; and lpass show -c --password "$result"
 end
+
+function top-commands
+  history | awk '{a[$1]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -n 20
+end
