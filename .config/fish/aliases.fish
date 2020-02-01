@@ -7,6 +7,7 @@ else if [ $platform = 'Darwin' ]
 end
 
 alias afk='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+alias al='alias | cut -f 2- -d " " | fzf'
 alias b='bundle'
 alias bake='bundle exec rake'
 alias be='bundle exec'
@@ -20,8 +21,8 @@ alias bru='brew uninstall'
 alias bu='bundle update'
 alias cb="cargo build"
 alias cc="cargo check"
-alias cr="cargo run"
 alias cellar="cd (brew --cellar)"
+alias cr="cargo run"
 alias ctags=(brew --prefix)"/bin/ctags"
 alias doi='docker images'
 alias dops='docker ps'
@@ -118,7 +119,7 @@ alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres
 alias stopspotlight='sudo mdutil -a -i on'
 alias t='tmux'
 alias tma='tmux attach'
-alias torrents='~/Downloads/_completed'
+alias torrents='mkdir -p ~/Downloads/Torrents; cd ~/Downloads/Torrents'
 alias tsp='killall ruby; killall tmux'
 alias u='cd ..'
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; brew cask cleanup; npm update npm -g; npm update -g; upgrade_oh_my_zsh; ~/.fzf/install'
