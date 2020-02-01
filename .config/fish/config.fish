@@ -1,6 +1,8 @@
 # Prioritize speed
 set -x SHELL bash
+
 set -U EDITOR vim
+set -l EMAIL vinnicc@gmail.com
 
 # Remove welcome message
 set fish_greeting
