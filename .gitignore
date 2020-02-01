@@ -25,6 +25,7 @@
 /.composer/
 /.config/*
 !/.config/fish/
+/.config/fish/fish_variables
 /.config/fish/functions
 !/.config/joplin/
 /.config/joplin/*
