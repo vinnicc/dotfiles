@@ -83,6 +83,7 @@ alias l='ls -l $colorflag'
 alias la='ls -la $colorflag'
 alias lg=lazygit
 alias localip='ipconfig getifaddr en1'
+alias lp='fpass'
 alias ls='command ls $colorflag'
 alias lsd='ls -l $colorflag | grep "^d"'
 alias n='joplin'

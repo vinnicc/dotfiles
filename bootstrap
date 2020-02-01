@@ -78,6 +78,7 @@ packages=(
   gnutls
   imagemagick
   joplin
+  lastpass-cli
   lazygit
   libffi
   libyaml

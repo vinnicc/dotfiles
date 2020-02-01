@@ -136,6 +136,7 @@ nnoremap <Leader>V :tabedit ~/.vimrc<CR>
 nnoremap <Leader>va :tabedit ~/.config/fish/aliases.fish<CR>
 nnoremap <Leader>vb :tabedit ~/bootstrap<CR>
 nnoremap <Leader>vc :NeoBundleClean<CR>
+nnoremap <Leader>vg :tabedit ~/.gitignore<CR>
 nnoremap <Leader>vi :NeoBundleInstall<CR>
 nnoremap <Leader>vj :tabedit ~/.config/joplin/keymap.json<CR>
 nnoremap <Leader>vl :NeoBundleLog<CR>

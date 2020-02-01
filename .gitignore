@@ -70,6 +70,7 @@
 /.lesshst
 /.linkchecker/
 /.local/
+/.lpass/
 /.mix/
 /.mongorc.js
 /.mongotron/

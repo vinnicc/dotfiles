@@ -8,3 +8,13 @@ function install -d "Interactive package installer"
     brew install $choice
   end
 end
+
+function fpass -d "Find LastPass entry and copy the password"
+  if not lpass status -q
+    lpass login $EMAIL
+  end
+  if not lpass status -q
+    exit
+  end
+  lpass ls | fzf | string replace -r -a '.+\[id: (\d+)\]' '$1' | read -l result; and lpass show -c --password "$result"
+end
