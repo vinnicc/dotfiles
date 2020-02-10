@@ -391,7 +391,7 @@ if has("autocmd")
 endif
 
 " Insert the current time
-command! InsertTime :normal a<C-r>=strftime('%F %H:%M:%S.0 %z')<CR>
+command! InsertTime :normal a<C-r>=strftime('%FT%T%z')<CR>
 nnoremap <Leader>xit :InsertTime<CR>
 
 command! InsertDeployment :normal o<Esc>CDeployed - [staging] @ [<C-r>=strftime('%F %H:%M:%S.0 %z')<CR>]
