@@ -28,6 +28,7 @@
 # vim +NeoBundleInstall +qall
 # ```
 #
+# * Add `/usr/local/bin/fish` to `/etc/shells`
 # * Review `~/.aliases` for `fish`
 # * Review `~/.skhdrc` for `yabai`
 # * Use `ranger` instead of Finder
