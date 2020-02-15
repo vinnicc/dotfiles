@@ -3,6 +3,7 @@
 # directory.
 
 .DS_Store
+.tmuxinator.yml
 /.CFUserTextEncoding
 /.NERDTreeBookmarks
 /.Trash/
