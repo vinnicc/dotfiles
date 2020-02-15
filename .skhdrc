@@ -1,9 +1,9 @@
-#-RELOAD-CONFIG-(~/.skhdrc and ~/.yabairc)-------------------------------------
+#-RELOAD-CONFIG-(~/.skhdrc and ~/.yabairc)------------------------------------
   ctrl + shift + alt       - r : skhd -r; ~/.yabairc
-#-CREATE-OR-DESTROY-SPACE------------------------------------------------------
+#-CREATE-OR-DESTROY-SPACE-----------------------------------------------------
   ctrl + shift + alt       - n : yabai -m space --create create desktop
   ctrl + shift + alt + cmd - x : yabai -m space --destroy destroy desktop
-#-FOCUS-SPACE------------------------------------------------------------------
+#-FOCUS-SPACE-----------------------------------------------------------------
                  alt       - 1 : yabai -m space --focus 1
                  alt       - 2 : yabai -m space --focus 2
                  alt       - 3 : yabai -m space --focus 3
@@ -17,7 +17,7 @@
 #                alt       -   : yabai -m space --focus recent
 #                alt       -   : yabai -m space --focus prev
 #                alt       -   : yabai -m space --focus next
-#-FOCUS-DISPLAY-OR-SEND-WINDOW-------------------------------------------------
+#-FOCUS-DISPLAY-OR-SEND-WINDOW------------------------------------------------
 # ctrl         + alt       -   : yabai -m display --focus recent
 # ctrl         + alt       -   : yabai -m display --focus prev
 # ctrl         + alt       -   : yabai -m display --focus next
@@ -26,28 +26,33 @@
 # ctrl         + alt       -   : yabai -m display --focus 3
   ctrl + shift + alt       - o : yabai -m display --focus recent
   ctrl + shift + alt + cmd - o : yabai -m window --display recent; yabai -m display --focus recent
-#-LAYOUT-----------------------------------------------------------------------
+#-LAYOUT----------------------------------------------------------------------
   ctrl + shift + alt       - 0 : yabai -m space --balance
   ctrl + shift + alt       - 1 : yabai -m space --layout bsp
   ctrl + shift + alt       - 2 : yabai -m space --layout float
-#-FOCUS-WINDOW-----------------------------------------------------------------
+#-FOCUS-WINDOW----------------------------------------------------------------
   ctrl + shift + alt       - h : yabai -m window --focus west
   ctrl + shift + alt       - j : yabai -m window --focus south
   ctrl + shift + alt       - k : yabai -m window --focus north
   ctrl + shift + alt       - l : yabai -m window --focus east
-#-SWAP-WINDOW------------------------------------------------------------------
+#-SWAP-WINDOW-----------------------------------------------------------------
   ctrl + shift + alt + cmd - h : yabai -m window --swap west
   ctrl + shift + alt + cmd - j : yabai -m window --swap south
   ctrl + shift + alt + cmd - k : yabai -m window --swap north
   ctrl + shift + alt + cmd - l : yabai -m window --swap east
-#-MOVE-WINDOW------------------------------------------------------------------
+#-MOVE-WINDOW-----------------------------------------------------------------
 # ctrl + shift + alt + cmd -   : yabai -m window --warp west
 # ctrl + shift + alt + cmd -   : yabai -m window --warp east
-#-RESIZE-FLOATING-WINDOW-------------------------------------------------------
+#-RESIZE-FLOATING-WINDOW------------------------------------------------------
 # ctrl + shift + alt + cmd -   : yabai -m window --grid 1:1:0:0:1:1 # fill screen
 # ctrl + shift + alt + cmd -   : yabai -m window --grid 1:2:0:0:1:1 # fill left-half of screen
 # ctrl + shift + alt + cmd -   : yabai -m window --grid 1:2:1:0:1:1 # fill right-half of screen
-#-SEND-WINDOW-TO-SPACE---------------------------------------------------------
+#-FLOAT-WINDOW-IN-CORNER-(<rows>:<cols>:<start-x>:<start-y>:<width>:<height>--
+  ctrl + shift + alt + cmd - q : yabai -m window --toggle sticky; yabai -m window --toggle topmost; yabai -m window --grid 10:10:0:0:3:4
+  ctrl + shift + alt + cmd - e : yabai -m window --toggle sticky; yabai -m window --toggle topmost; yabai -m window --grid 10:10:7:0:3:4
+  ctrl + shift + alt + cmd - c : yabai -m window --toggle sticky; yabai -m window --toggle topmost; yabai -m window --grid 10:10:7:6:3:4
+  ctrl + shift + alt + cmd - z : yabai -m window --toggle sticky; yabai -m window --toggle topmost; yabai -m window --grid 10:10:0:6:3:4
+#-SEND-WINDOW-TO-SPACE--------------------------------------------------------
   ctrl + shift + alt + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
   ctrl + shift + alt + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
   ctrl + shift + alt + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
@@ -66,13 +71,13 @@
                                  index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
                                  yabai -m window --space "${index}" && \
                                  yabai -m space --focus "${index}"
-#-SEND-WINDOW-TO-DISPLAY-------------------------------------------------------
-# ctrl + shift + alt + cmd - z : yabai -m window --display prev; yabai -m display --focus prev
-# ctrl + shift + alt + cmd - c : yabai -m window --display next; yabai -m display --focus next
-# ctrl + shift + alt + cmd - 1 : yabai -m window --display 1; yabai -m display --focus 1
-# ctrl + shift + alt + cmd - 2 : yabai -m window --display 2; yabai -m display --focus 2
-# ctrl + shift + alt + cmd - 3 : yabai -m window --display 3; yabai -m display --focus 3
-#-MOVE-WINDOW------------------------------------------------------------------
+#-SEND-WINDOW-TO-DISPLAY------------------------------------------------------
+# ctrl + shift + alt + cmd -   : yabai -m window --display prev; yabai -m display --focus prev
+# ctrl + shift + alt + cmd -   : yabai -m window --display next; yabai -m display --focus next
+# ctrl + shift + alt + cmd -   : yabai -m window --display 1; yabai -m display --focus 1
+# ctrl + shift + alt + cmd -   : yabai -m window --display 2; yabai -m display --focus 2
+# ctrl + shift + alt + cmd -   : yabai -m window --display 3; yabai -m display --focus 3
+#-MOVE-WINDOW-----------------------------------------------------------------
 # ctrl + shift + alt + cmd -   : yabai -m window --move rel:-100:0
 # ctrl + shift + alt + cmd -   : yabai -m window --move rel:0:100
 # ctrl + shift + alt + cmd -   : yabai -m window --move rel:0:-100
@@ -96,9 +101,6 @@
   ctrl + shift + alt + cmd - f : yabai -m window --toggle float # float / unfloat window
   ctrl + shift + alt + cmd - s : yabai -m window --toggle sticky # toggle sticky (show on all spaces)
   ctrl + shift + alt + cmd - t : yabai -m window --toggle topmost # toggle topmost (keep above other windows)
-  ctrl + shift + alt + cmd - p : yabai -m window --toggle sticky;\
-                                 yabai -m window --toggle topmost;\
-                                 yabai -m window --grid 5:5:4:0:1:1 # toggle sticky, topmost and resize to picture-in-picture size
   ctrl + shift + alt       - space : yabai -m window --toggle split # toggle window split type
   ctrl + shift + alt + cmd - space : yabai -m space --rotate 270 # rotate tree
 #                alt       -       : yabai -m space --mirror y-axis # mirror tree y-axis
