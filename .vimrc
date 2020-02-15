@@ -163,26 +163,6 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 "------------------------------------------------------------------------------
-" Sessions
-"------------------------------------------------------------------------------
-NeoBundle 'mhinz/vim-startify'
-nnoremap <leader>l :SClose<CR>
-nnoremap <leader>lq :Startify<CR>
-nnoremap <leader>ls :SSave<CR>
-let g:startify_enable_special = 0
-let g:startify_change_to_vcs_root = 1
-let g:startify_files_number = 10
-let g:startify_padding_left = 3
-let g:startify_session_persistence = 1
-let g:startify_session_before_save = ['silent! NERDTreeClose']
-let g:startify_custom_header = []
-let g:startify_lists = [
-  \   {'type': 'sessions', 'header': ['   Sessions']},
-  \   {'type': 'dir',      'header': ['   Project']},
-  \   {'type': 'files',    'header': ['   Misc']},
-  \ ]
-
-"------------------------------------------------------------------------------
 " Search
 "------------------------------------------------------------------------------
 NeoBundle '/usr/local/opt/fzf'
