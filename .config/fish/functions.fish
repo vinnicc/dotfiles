@@ -22,3 +22,12 @@ end
 function top-commands
   history | awk '{a[$1]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -n 20
 end
+
+function posix-source
+  for i in (cat $argv)
+    if test (echo $i | sed -E 's/^[[:space:]]*(.).+$/\\1/g') != "#"
+      set arr (echo $i |tr = \n)
+      set -gx $arr[1] $arr[2]
+    end
+  end
+end
