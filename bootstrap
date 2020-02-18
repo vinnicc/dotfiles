@@ -57,14 +57,7 @@
 #
 # Pick and choose https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
-taps=(
-  homebrew/cask-fonts
-  heroku/brew
-  koekeishiya/formulae
-)
-
 packages=(
-  # default tap
   asdf
   coreutils
   emacs
@@ -99,12 +92,10 @@ packages=(
   yarn
   youtube-dl
 
-  # heroku/brew
-  heroku
-
-  # koekeishiya/formulae
-  yabai
-  skhd
+  heroku/brew/heroku
+  koekeishiya/formulae/yabai
+  koekeishiya/formulae/skhd
+  Rigellute/tap/spotify-tui
 )
 
 cask_packages=(
@@ -112,9 +103,8 @@ cask_packages=(
   # showyedge
   adobe-creative-cloud
   caprine
-  colorpicker-hex
   firefox
-  google-backup-and-install
+  google-backup-and-sycn
   google-chrome
   iina
   imagealpha
@@ -130,12 +120,11 @@ cask_packages=(
   the-unarchiver
   transmit
 
-  # caskroom/fonts
-  font-inconsolata
-  font-liberation-sans
-  font-open-sans
-  font-source-code-pro
-  font-source-sans-pro
+  homebrew/cask-fonts/font-inconsolata
+  homebrew/cask-fonts/font-liberation-sans
+  homebrew/cask-fonts/font-open-sans
+  homebrew/cask-fonts/font-source-code-pro
+  homebrew/cask-fonts/font-source-sans-pro
 )
 
 function log() {
@@ -149,13 +138,6 @@ brew update
 
 log "brew upgrade"
 brew upgrade
-
-log "Tapping..."
-for name in $taps
-do
-  log "brew tap ${name}"
-  brew tap $name
-done
 
 log "Installing..."
 for name_and_args in $packages
