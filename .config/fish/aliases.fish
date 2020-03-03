@@ -124,8 +124,9 @@ alias stopspotlight='sudo mdutil -a -i on'
 alias t='tmux'
 alias tma='tmux attach'
 alias torrents='mkdir -p ~/Downloads/Torrents; cd ~/Downloads/Torrents'
-alias ts='env ASDF_RUBY_VERSION=2.7.0 tmuxinator start'
+alias ts='tmuxinator start'
 alias tsp='killall ruby; killall tmux'
+alias tst='tmuxinator stop .'
 alias u='cd ..'
 alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; brew cask cleanup; npm update npm -g; npm update -g; upgrade_oh_my_zsh; ~/.fzf/install'
 alias v='nvim'
@@ -244,12 +245,12 @@ else
     alias fs="stat -f \"%z bytes\""
 end
 
-alias emptytrash='sudo rm -rfv /Volumes/*/.Trashes;
-                  sudo rm -rfv ~/.Trash;
+alias emptytrash='sudo rm -rfv ~/.Trash;
                   sudo rm -rfv ~/Movies/*;
                   sudo rm -rfv ~/Music/*;
                   sudo rm -rfv ~/Public/*;
-                  sudo rm -rfv /private/var/log/asl/*.asl'; 
+                  sudo rm -rfv /private/var/log/asl/*.asl;
+                  sudo rm -rfv /Volumes/*/.Trashes';
                   sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
 
 # Show/hide hidden files in Finder
