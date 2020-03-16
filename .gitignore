@@ -126,8 +126,6 @@
 /.tilemill/
 /.tmp/
 /.tmuxinator/
-/.tool-versions
-/.tool-versions-e
 /.travis/
 /.v8flags.*
 /.vegas/
