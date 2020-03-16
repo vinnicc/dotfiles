@@ -157,7 +157,7 @@ log "Adding asdf plugins..."
 asdf plugin-add ruby
 asdf plugin-add erlang
 asdf plugin-add elixir
-asdf plugin-add postgres
+asdf plugin-add postgres # Enable SSL when installing like so: POSTGRES_EXTRA_CONFIGURE_OPTIONS="--with-openssl --with-includes=/usr/local/Cellar/openssl@1.1/1.1.1d/include --with-libraries=/usr/local/Cellar/openssl@1.1/1.1.1d/lib" asdf install postgres 12.2
 asdf plugin-add redis
 
 log "brew cleanup"
