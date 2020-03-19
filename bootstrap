@@ -71,7 +71,7 @@ packages=(
   gnupg
   gnutls
   imagemagick
-  joplin
+  jrnl
   lastpass-cli
   lazygit
   libffi

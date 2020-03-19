@@ -138,7 +138,6 @@ nnoremap <Leader>vb :tabedit ~/bootstrap<CR>
 nnoremap <Leader>vc :NeoBundleClean<CR>
 nnoremap <Leader>vg :tabedit ~/.gitignore<CR>
 nnoremap <Leader>vi :NeoBundleInstall<CR>
-nnoremap <Leader>vj :tabedit ~/.config/joplin/keymap.json<CR>
 nnoremap <Leader>vl :NeoBundleLog<CR>
 nnoremap <Leader>vr :tabedit ~/.config/ranger/rc.conf<CR>
 nnoremap <Leader>vs :tabedit ~/.skhdrc<CR>
