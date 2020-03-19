@@ -49,3 +49,7 @@ set -x PATH $PATH "$HOME/.cargo/bin" # Rust cargo
 set -x PATH $PATH "$PWD/bin" # Local executables
 set -x PATH $PATH "$PWD/assets/node_modules/.bin"
 set -x PATH $PATH "$PWD/node_modules/.bin" 
+
+# Android
+set -x ANDROID_SDK_ROOT "/usr/local/share/android-sdk"
+set -gx JAVA_HOME /Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home

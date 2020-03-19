@@ -76,21 +76,23 @@ let g:elm_setup_keybindings = 0
 NeoBundle 'powerman/vim-plugin-AnsiEsc'
 let g:no_plugin_maps = 1
 
-" Javascript
+" JavaScript
 NeoBundle 'isRuslan/vim-es6'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'pangloss/vim-javascript'
 
+" Flutter/Dart - :CocInstall coc-flutter
+NeoBundle 'dart-lang/dart-vim-plugin'
+" NeoBundle 'thosakwe/vim-flutter'
+
 " Rest
 NeoBundle 'LnL7/vim-nix'
 NeoBundle 'ap/vim-css-color'
-NeoBundle 'c-brenn/phoenix.vim'
 NeoBundle 'cespare/vim-toml'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'elixir-editors/vim-elixir'
-NeoBundle 'heartsentwined/vim-emblem'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'neovimhaskell/haskell-vim'
@@ -99,8 +101,6 @@ NeoBundle 'pbrisbin/vim-syntax-shakespeare'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'slashmili/alchemist.vim'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'slime-lang/vim-slime-syntax'
 NeoBundle 'tomlion/vim-solidity'
 NeoBundle 'tpope/vim-haml'
 NeoBundle 'vim-ruby/vim-ruby'
@@ -185,37 +185,33 @@ nnoremap <C-n> :Lines<CR>
 nnoremap <C-p> :Files<CR>
 nnoremap <C-s> :GFiles?<CR>
 nnoremap <Leader>/ :History/<CR>
+nnoremap <Leader>: :History:<CR>
 nnoremap <Leader>; :Commands<CR>
 nnoremap <Leader><C-d> :call fzf#run(fzf#wrap({'source': 'find ~/Work/* -type d -maxdepth 0', 'sink': 'cd'}))<CR>
 nnoremap <Leader><C-h> :History<CR>
-nnoremap <Leader><C-m> :History:<CR>
+nnoremap <Leader><C-l> :Commits<CR>
+nnoremap <Leader><C-n> :FZF ~/Google\ Drive/Personal/Notes<CR>
 nnoremap <Leader><C-p> :GFiles<CR>
 nnoremap <Leader><C-w> :Windows<CR>
 nnoremap <Leader>D :FZF ~/.docs<CR>
 nnoremap <Leader>L :BCommits<CR>
-nnoremap <Leader><C-l> :Commits<CR>
 nnoremap <Leader>m :Marks<CR>
 
 NeoBundle 'Lokaltog/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
-nmap s <Plug>(easymotion-s)
+nmap s <Plug>(easymotion-overwin-f)
 
 NeoBundle 'tpope/vim-rails'
 nnoremap <Leader>. :A<CR>
 nnoremap <Leader>rc :Econtroller<CR>
 nnoremap <Leader>rf :Efixtures<CR>
+nnoremap <Leader>rl :Elocale<CR>
 nnoremap <Leader>rm :Emodel<CR>
 nnoremap <Leader>rM :Emigration<CR>
 nnoremap <Leader>rs :Estylesheet<Space>
 nnoremap <Leader>rS :Eschema<CR>
 nnoremap <Leader>rt :Eunittest<CR>
 nnoremap <Leader>rv :Eview<CR>
-
-NeoBundle 'rizzatti/dash.vim'
-nnoremap - :Dash<CR>
-vnoremap - "0y:<C-u>Dash <C-r>0<CR>
-nnoremap <Leader>- :Dash<Space>
-nnoremap <Leader>_ :DashKeywords<Space>
 
 "------------------------------------------------------------------------------
 " Files
@@ -266,6 +262,7 @@ nmap [h <Plug>(GitGutterPrevHunk)
 " Remote Commands
 "------------------------------------------------------------------------------
 NeoBundle 'tpope/vim-dispatch'
+let g:dispatch_no_maps = 1
 nnoremap <Leader>` :Dispatch<Space>
 nnoremap <Leader>~ :Dispatch!<Space>
 
@@ -282,7 +279,6 @@ NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-projectionist'
-NeoBundle 'tpope/vim-rake'
 NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
@@ -381,11 +377,11 @@ command! -range Md5 :echo system('echo ' . shellescape(join(getline(<line1>, <li
 
 " Promote variable to let
 function! PromoteToLet()
-  :normal! dd
-  " :exec '?^\s*it\>'
-  :normal! P
-  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
-  :normal ==
+  normal! dd
+  " exec '?^\s*it\>'
+  normal! P
+  .s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  normal ==
 endfunction
 command! PromoteToLet :call PromoteToLet()
 nnoremap <Leader>let :PromoteToLet<CR>
