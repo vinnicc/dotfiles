@@ -36,6 +36,8 @@
 /.cpan/
 /.ctags
 /.cups/
+/.dart/
+/.dartServer/
 /.dbshell
 /.designer/
 /.discourse_theme
@@ -45,8 +47,11 @@
 /.emacs.d/
 /.ember-data/
 /.ember/
+/.emulator_console_auth_token
 /.erlang.cookie
 /.ethash/
+/.flutter
+/.flutter_tool_state
 /.fontconfig/
 /.fonts/
 /.fzf.bash
@@ -57,6 +62,7 @@
 /.ghc/
 /.gitk
 /.gnupg/
+/.gradle/
 /.guard_history
 /.heroku/
 /.hex/
@@ -137,6 +143,7 @@
 /.vimperator/
 /.vscode/
 /.weechat/
+/.wget-hsts
 /.wgetrc
 /.yarnrc
 /.zcompdump*
