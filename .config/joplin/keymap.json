@@ -5,7 +5,7 @@
   { "keys": ["j", "CTRL_J", "CTRL_Wj"], "type": "function", "command": "move_down" },
   { "keys": ["u"], "type": "function", "command": "page_up" },
   { "keys": ["d"], "type": "function", "command": "page_down" },
-  { "keys": ["/"], "type": "prompt", "command": "search \"\"", "cursorPosition": -2 },
+  { "keys": ["/", "CTRL_F"], "type": "prompt", "command": "search \"\"", "cursorPosition": -2 },
 
   { "keys": ["ENTER", "o"], "type": "function", "command": "activate" },
   { "keys": ["ma"], "type": "prompt", "command": "mknote \"\"", "cursorPosition": -2 },
