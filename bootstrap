@@ -2,8 +2,9 @@
 #
 # # Setup
 #
-# Putting this here to just to help me set up new hardware. This guide could
-# get outdated pretty quick though.
+# Install important packages via Homebrew (avoiding separate Taps) and asdf-vm
+# on MacOS. Putting this here to help me set up new hardware. It could get
+# outdated pretty quick though.
 #
 # ```sh
 # $ git clone https://github.com/vinnicc/dotfiles.git ~
@@ -15,7 +16,7 @@
 # $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 # ```
 #
-# Run:
+# Update OS and run this script:
 #
 # ```sh
 # $ update && bootstrap
@@ -28,15 +29,23 @@
 # vim +NeoBundleInstall +qall
 # ```
 #
-# * Add `/usr/local/bin/fish` to `/etc/shells`
-# * Review `~/.aliases` for `fish`
+# And:
+#
+# * Add `/usr/local/bin/fish` to `/etc/shells`>
+# * Review `~/.aliases` for `fish`. The alias `al` displays a searchable list.
 # * Review `~/.skhdrc` for `yabai`
 # * Use `ranger` instead of Finder
 # * Change screenshot directory
 #
 #   ```sh
-#   defaults write com.apple.screencapture location ~/Downloads
+#   $ defaults write com.apple.screencapture location ~/Downloads
 #   ```
+#
+# ## Alacritty
+#
+#  ```sh
+#  $ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO 
+#  ```
 #
 # ## iTerm2
 #
@@ -56,8 +65,8 @@
 #
 # ## MacOS Tweaks
 #
-# Pick and choose https://github.com/mathiasbynens/dotfiles/blob/master/.macos
-
+# Pick and choose from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+#
 packages=(
   asdf
   coreutils
@@ -103,9 +112,10 @@ cask_packages=(
   # steam
   # showyedge
   adobe-creative-cloud
+  alacritty
   caprine
   firefox
-  google-backup-and-sycn
+  google-backup-and-sync
   google-chrome
   iina
   imagealpha
@@ -122,17 +132,15 @@ cask_packages=(
   transmit
 
   homebrew/cask-fonts/font-inconsolata
-  homebrew/cask-fonts/font-liberation-sans
+  homebrew/cask-fonts/font-jetbrains-mono
   homebrew/cask-fonts/font-open-sans
   homebrew/cask-fonts/font-source-code-pro
   homebrew/cask-fonts/font-source-sans-pro
 )
 
 function log() {
-  echo $* > /dev/stderr
+  echo "--> "$* > /dev/stderr
 }
-
-###########################################################################
 
 log "brew update"
 brew update
