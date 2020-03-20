@@ -25,6 +25,7 @@
 /.cargo/
 /.composer/
 /.config/*
+!/.config/alacritty/
 !/.config/fish/
 /.config/fish/fish_variables
 /.config/fish/functions

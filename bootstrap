@@ -47,13 +47,6 @@
 #  $ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO 
 #  ```
 #
-# ## iTerm2
-#
-# * General > Window > Native full screen windows > Uncheck
-# * General > Load preference from a custom folder or URL > Set path to Google Drive
-# * General > Save changes to folder when iTerm2 quits > Check
-# * Create hotkey window and activate with ⌥ + `
-#
 # ## Karabiner-Elements
 #
 # * Enable Simultaneous Vi Mode
@@ -120,7 +113,6 @@ cask_packages=(
   iina
   imagealpha
   imageoptim
-  iterm2
   karabiner-elements
   licecap
   macs-fan-control
