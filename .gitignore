@@ -30,6 +30,9 @@
 /.config/fish/fish_variables
 /.config/fish/functions
 !/.config/jrnl/
+!/.config/nvim/
+/.config/nvim/*
+!/.config/nvim/coc-settings.json
 !/.config/ranger/
 /.cordova
 /.cpan/
