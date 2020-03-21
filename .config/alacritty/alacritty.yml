@@ -1,6 +1,8 @@
 # Vinni Carlo Caños's alacritty.yml file
 #
-# Rely on defaults use tmux when we can.
+# Rely on defaults and use tmux functionality as much as possible.
+#
+# Reference: https://github.com/alacritty/alacritty/blob/master/alacritty.yml
 #
 window:
   decorations: none
@@ -10,7 +12,7 @@ font:
   size: 14.0
   offset:
     x: 0
-    y: 2
+    y: 1
 colors:
   primary:
     background: "#0a0f14"
@@ -24,5 +26,46 @@ colors:
     magenta: "#4e5165"
     cyan:    "#33859d"
     white:   "#98d1ce"
+#
+# Use `xxd -ps` to get escape sequence in hex.
+# Or: https://www.csee.umbc.edu/portal/help/theory/ascii.txt
+#
 key_bindings:
-  - { key: Return, mods: Super, action: ToggleSimpleFullscreen }
+  #
+  # General
+  #
+  - { key: Return, mods: Super,         action: ToggleSimpleFullscreen }
+  - { key: K,      mods: Command,       chars: "\x01\x1B" } # <C-a>[ - copy mode
+  #
+  # Sessions
+  #
+  - { key: Grave,  mods: Alt,           chars: "\x01\x29" } # <C-a>) - cycle through sessions
+  - { key: I,      mods: Shift|Command, chars: "\x01\x24" } # <C-a>$ - rename session
+  #
+  # Windows
+  #
+  - { key: Key1,   mods: Command,       chars: "\x01\x31" } # <C-a>1 - window #1
+  - { key: Key2,   mods: Command,       chars: "\x01\x32" } # <C-a>2 - window #2
+  - { key: Key3,   mods: Command,       chars: "\x01\x33" } # <C-a>3 - window #3
+  - { key: Key4,   mods: Command,       chars: "\x01\x34" } # <C-a>4 - window #4
+  - { key: Key5,   mods: Command,       chars: "\x01\x35" } # <C-a>5 - window #5
+  - { key: Key6,   mods: Command,       chars: "\x01\x36" } # <C-a>6 - window #6
+  - { key: Key7,   mods: Command,       chars: "\x01\x37" } # <C-a>7 - window #7
+  - { key: Key8,   mods: Command,       chars: "\x01\x38" } # <C-a>8 - window #8
+  - { key: Key9,   mods: Command,       chars: "\x01\x39" } # <C-a>9 - window #9
+  - { key: P,      mods: Command,       chars: "\x01\x77" } # <C-a>w - browse windows
+  - { key: T,      mods: Command,       chars: "\x01\x63" } # <C-a>c - new window
+  - { key: H,      mods: Command,       chars: "\x01\x70" } # <C-a>p - prev window
+  - { key: L,      mods: Command,       chars: "\x01\x6E" } # <C-a>n - next window
+  - { key: W,      mods: Command,       chars: "\x01\x26" } # <C-a>& - kill window
+  - { key: I,      mods: Command,       chars: "\x01\x2C" } # <C-a>, - rename window
+  - { key: Comma,  mods: Command,       chars: "\x01\x3C" } # <C-a>< - swap window to the left
+  - { key: Period, mods: Command,       chars: "\x01\x3E" } # <C-a>> - swap window to the right
+  #
+  # Panes
+  #
+  - { key: D,      mods: Command,       chars: "\x01\x78" } # <C-a>x - kill pane
+  - { key: H,      mods: Shift|Command, chars: "\x01\x68" } # <C-a>h - resize panes left
+  - { key: J,      mods: Shift|Command, chars: "\x01\x6A" } # <C-a>j - resize panes bottom
+  - { key: K,      mods: Shift|Command, chars: "\x01\x6B" } # <C-a>k - resize panes top
+  - { key: L,      mods: Shift|Command, chars: "\x01\x6C" } # <C-a>l - resize panes right
