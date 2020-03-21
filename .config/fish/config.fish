@@ -38,7 +38,7 @@ fzf_key_bindings
 set -gx FZF_DEFAULT_COMMAND "rg --files --no-ignore-vcs --hidden"
 
 # asdf version manager
-set -x ASDF_DATA_DIR (brew --prefix asdf)
+set -x ASDF_DATA_DIR /usr/local/opt/asdf # same as (brew --prefix asdf)
 source $ASDF_DATA_DIR"/asdf.fish"
 
 # Link Homebrew casks in "/Applications" rather than "~/Applications"
