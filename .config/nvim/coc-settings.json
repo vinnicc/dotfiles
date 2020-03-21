@@ -1,5 +1,5 @@
 {
-  "rust-client.channel": "nightly",
+  "rust-client.channel": "nightly-2020-03-19",
   "languageserver": {
     "sorbet": {
       "command": "srb",
