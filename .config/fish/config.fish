@@ -19,15 +19,17 @@ function fish_prompt
     echo '['$git_branch'] λ '
 end
 
+# TODO: Make <C-p> work while in insert mode
+#
 # Enable vi-like key bindings for fish
-function fish_user_key_bindings
-  fish_vi_key_bindings
-end
-
+# function fish_user_key_bindings
+#   fish_vi_key_bindings
+# end
+#
 # Don't show vi mode within prompt
-function fish_mode_prompt
-  # NOOP
-end
+# function fish_mode_prompt
+#   # NOOP
+# end
 
 source $HOME/.config/fish/aliases.fish
 source $HOME/.config/fish/functions.fish
