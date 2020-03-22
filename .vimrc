@@ -31,10 +31,10 @@ vnoremap / /\v
 vnoremap ? ?\v
 
 " Send or cancel command to tmux pane
-nnoremap <Leader>1 :silent !tmux send-keys -t 1 '' Enter<Left><Left><Left><Left><Left><Left><Left>
-nnoremap <Leader>2 :silent !tmux send-keys -t 2 '' Enter<Left><Left><Left><Left><Left><Left><Left>
-nnoremap <Leader>3 :silent !tmux send-keys -t 3 '' Enter<Left><Left><Left><Left><Left><Left><Left>
-nnoremap <Leader>4 :silent !tmux send-keys -t 4 '' Enter<Left><Left><Left><Left><Left><Left><Left>
+nnoremap <Leader>1 :silent !tmux send-keys -t 1 Up Enter<CR>
+nnoremap <Leader>2 :silent !tmux send-keys -t 2 Up Enter<CR>
+nnoremap <Leader>3 :silent !tmux send-keys -t 3 Up Enter<CR>
+nnoremap <Leader>4 :silent !tmux send-keys -t 4 Up Enter<CR>
 nnoremap <Leader>! :silent !tmux send-keys -t 1 'C-c' Enter<CR>
 nnoremap <Leader>@ :silent !tmux send-keys -t 2 'C-c' Enter<CR>
 nnoremap <Leader># :silent !tmux send-keys -t 3 'C-c' Enter<CR>
