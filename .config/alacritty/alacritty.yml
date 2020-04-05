@@ -35,6 +35,7 @@ key_bindings:
   # General
   #
   - { key: Return, mods: Super,         action: ToggleSimpleFullscreen }
+  - { key: N,      mods: Command,       action: SpawnNewInstance }
   - { key: K,      mods: Command,       chars: "\x01\x1B" } # <C-a>[ - copy mode
   #
   # Sessions
