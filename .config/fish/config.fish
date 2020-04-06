@@ -11,10 +11,8 @@ function fish_prompt
     set -l git_branch (git branch 2>/dev/null | sed -n '/\* /s///p')
     echo
     jobs
-    set_color F80
-    echo -n (date "+%m/%d/%y %I:%S %p") ''
     set_color F30
-    echo -n (pwd) ''
+    echo -n (basename $PWD) ''
     set_color F00
     echo '['$git_branch'] λ '
 end
