@@ -274,12 +274,12 @@ nmap [h <Plug>(GitGutterPrevHunk)
 NeoBundle 'vimwiki/vimwiki'
 let g:vimwiki_global_ext = 0
 let g:vimwiki_list = [{
-  'path': '~/Google\ Drive/Personal/Notes/',
-  'syntax': 'markdown',
-  'ext': '.md',
-  'auto_tags': 1,
-  'auto_toc': 1,
-}]
+  \   'path': '~/Google\ Drive/Personal/Notes/',
+  \   'syntax': 'markdown',
+  \   'ext': '.md',
+  \   'auto_tags': 1,
+  \   'auto_toc': 1,
+  \ }]
 
 "------------------------------------------------------------------------------
 " Remote Commands
