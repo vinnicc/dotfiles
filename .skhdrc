@@ -33,6 +33,8 @@
   ctrl + shift + alt       - 0x1E : yabai -m display --focus next # key=]
   ctrl + shift + alt + cmd - 0x32 : yabai -m window --display recent; yabai -m display --focus recent # key=`
 #-LAYOUT----------------------------------------------------------------------
+                 alt       - space : yabai -m window --toggle split # toggle window split type
+  ctrl + shift + alt       - space : yabai -m space --rotate 270 # rotate tree
   ctrl + shift + alt       - 0x18 : yabai -m space --balance # key==
   ctrl + shift + alt       - t : yabai -m space --layout bsp # tiling (default)
   ctrl + shift + alt       - f : yabai -m space --layout float
@@ -92,7 +94,5 @@
   ctrl + shift + alt + cmd - f : yabai -m window --toggle float # float / unfloat window
   ctrl + shift + alt + cmd - s : yabai -m window --toggle sticky # toggle sticky (show on all spaces)
   ctrl + shift + alt + cmd - t : yabai -m window --toggle topmost # toggle topmost (keep above other windows)
-                 alt       - space : yabai -m window --toggle split # toggle window split type
-  ctrl + shift + alt       - space : yabai -m space --rotate 270 # rotate tree
 #                alt       -   : yabai -m space --mirror y-axis # mirror tree y-axis
 #                alt       -   : yabai -m space --mirror x-axis # mirror tree x-axis
