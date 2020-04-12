@@ -44,8 +44,10 @@ yabai -m config window_gap                   0
 # yabai -m config --space 7 layout             float
 
 # Window rules
-yabai -m rule --add app="Spotify" space=3
-yabai -m rule --add app="Finder" space=4
+yabai -m rule --add space=3 app="Slack"
+yabai -m rule --add space=3 app="Telegram"
+yabai -m rule --add space=4 app="Spotify"
+yabai -m rule --add space=5 app="Finder"
 yabai -m rule --add app="^System Preferences$" manage=off
 
 # Signals
