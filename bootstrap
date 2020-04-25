@@ -106,10 +106,8 @@ cask_packages=(
   # showyedge
   adobe-creative-cloud
   alacritty
-  caprine
   firefox
   google-backup-and-sync
-  google-chrome
   iina
   imagealpha
   imageoptim
@@ -122,6 +120,7 @@ cask_packages=(
   spotify
   the-unarchiver
   transmit
+  vivaldi
 
   homebrew/cask-fonts/font-inconsolata
   homebrew/cask-fonts/font-jetbrains-mono
