@@ -106,6 +106,8 @@ cask_packages=(
   # showyedge
   adobe-creative-cloud
   alacritty
+  blender
+  discord
   firefox
   google-backup-and-sync
   iina
@@ -120,6 +122,7 @@ cask_packages=(
   spotify
   the-unarchiver
   transmit
+  unity
   vivaldi
 
   homebrew/cask-fonts/font-inconsolata
