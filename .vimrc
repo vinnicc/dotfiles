@@ -86,14 +86,21 @@ let g:elm_setup_keybindings = 0
 NeoBundle 'powerman/vim-plugin-AnsiEsc'
 let g:no_plugin_maps = 1
 
-" JavaScript
+" JavaScript/TypeScript - :CocInstall coc-tsserver
 NeoBundle 'isRuslan/vim-es6'
+NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'peitalin/vim-jsx-typescript'
 
 " Flutter/Dart - :CocInstall coc-flutter
 NeoBundle 'dart-lang/dart-vim-plugin'
 " NeoBundle 'thosakwe/vim-flutter'
+
+" Elixir
+NeoBundle 'elixir-editors/vim-elixir'
+NeoBundle 'mhinz/vim-mix-format'
+let g:mix_format_on_save = 1
 
 " Rest
 NeoBundle 'LnL7/vim-nix'
@@ -102,7 +109,6 @@ NeoBundle 'cespare/vim-toml'
 NeoBundle 'dag/vim-fish'
 NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'elixir-editors/vim-elixir'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'neovimhaskell/haskell-vim'
