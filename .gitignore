@@ -9,6 +9,7 @@
 /.Trash/
 /.Xauthority
 /.adobe/
+/.Xclients
 /.android/
 /.asdf/
 /.atom/
@@ -42,6 +43,7 @@
 /.dartServer/
 /.dbshell
 /.designer/
+/.dir_colors
 /.discourse_theme
 /.docker/
 /.dropbox/
@@ -52,6 +54,8 @@
 /.emulator_console_auth_token
 /.erlang.cookie
 /.ethash/
+/.face
+/.face.icon
 /.flutter
 /.flutter_tool_state
 /.fontconfig/
@@ -65,6 +69,7 @@
 /.gitk
 /.gnupg/
 /.gradle/
+/.gtkrc-2.0
 /.guard_history
 /.heroku/
 /.hex/
@@ -76,6 +81,7 @@
 /.irb-history
 /.irssi/
 /.jspm/
+/.kde4/
 /.kube/
 /.lbryum/
 /.lesshst
@@ -85,6 +91,7 @@
 /.mix/
 /.mongorc.js
 /.mongotron/
+/.mozilla/
 /.mpd/
 /.mpdconf
 /.multirust
@@ -98,6 +105,7 @@
 /.node-gyp/
 /.node_repl_history
 /.npm/
+/.nv/
 /.nviminfo
 /.nvimlog
 /.nvimrc
@@ -109,6 +117,7 @@
 /.pearrc
 /.php_history
 /.pip/
+/.pki/
 /.pm2/
 /.profile
 /.pry_history
@@ -128,6 +137,9 @@
 /.sqlite_history
 /.ssh/
 /.stack/
+/.steam/
+/.steampath
+/.steampid
 /.stratisnode/
 /.subversion/
 /.swp
@@ -147,6 +159,7 @@
 /.weechat/
 /.wget-hsts
 /.wgetrc
+/.xinitrc
 /.yarnrc
 /.zcompdump*
 /.zlogin
