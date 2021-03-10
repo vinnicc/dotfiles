@@ -1,6 +1,22 @@
 #!/usr/bin/env zsh
 #
-# # Setup
+# # Setup - Manjaro
+#
+# ```sh
+# sudo pacman -S alacritty fish fzf gcc inxi lm_sensors make neovim postgresql-libs ripgrep tmux xclip yarn youtube-dl wine winetricks wine-mono wine_gecko
+# pacmac build slack-desktop spotify telegram-desktop vivaldi
+# chsh -S /bin/fish
+# ```
+#
+# Run on startup (i.e., .bashrc)
+#
+# ```sh
+# xset r rate 200 60
+# xmodmap ~/.xmodmap
+# xcape -e 'Mode_switch=Escape'
+# ```
+#
+# # Setup - MacOS
 #
 # Install important packages via Homebrew (avoiding separate Taps) and asdf-vm
 # on MacOS. Putting this here to help me set up new hardware. It could get
@@ -44,7 +60,7 @@
 # ## Alacritty
 #
 #  ```sh
-#  $ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO 
+#  $ defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 #  ```
 #
 # ## Karabiner-Elements

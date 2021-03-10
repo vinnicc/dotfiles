@@ -162,15 +162,15 @@ nnoremap <Leader>vu :NeoBundleUpdate<CR>
 nnoremap <Leader>vv :source ~/.vimrc<CR>
 nnoremap <Leader>vy :tabedit ~/.yabairc<CR>
 
-NeoBundle 'Shougo/vimproc.vim', {
-  \   'build': {
-  \     'windows': 'tools\\update-dll-mingw',
-  \     'cygwin': 'make -f make_cygwin.mak',
-  \     'mac': 'make',
-  \     'linux': 'make',
-  \     'unix': 'gmake',
-  \   },
-  \ }
+" NeoBundle 'Shougo/vimproc.vim', {
+"   \   'build': {
+"   \     'windows': 'tools\\update-dll-mingw',
+"   \     'cygwin': 'make -f make_cygwin.mak',
+"   \     'mac': 'make',
+"   \     'linux': 'make',
+"   \     'unix': 'gmake',
+"   \   },
+"   \ }
 
 NeoBundle 'haya14busa/incsearch.vim'
 map /  <Plug>(incsearch-forward)
@@ -180,7 +180,7 @@ map g/ <Plug>(incsearch-stay)
 "------------------------------------------------------------------------------
 " Search
 "------------------------------------------------------------------------------
-NeoBundle '/usr/local/opt/fzf'
+" NeoBundle '/usr/bin/fzf'
 NeoBundle 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'rg --files --hidden'
 let $FZF_DEFAULT_OPTS = '--reverse --inline-info'
@@ -313,7 +313,7 @@ NeoBundle 'tpope/vim-sensible'
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'vim-scripts/taglist.vim'
+" NeoBundle 'vim-scripts/taglist.vim'
 
 call neobundle#end()
 filetype plugin indent on
@@ -327,6 +327,7 @@ color gruvbox
 set t_Co=256
 set background=dark
 set clipboard=unnamed
+set clipboard+=unnamedplus
 set hidden                                 " Unsaved changes causes buffers to be hidden instead of closed
 set linespace=1                            " Fix line height
 set mouse=                                 " Prioritize mouse from tmux

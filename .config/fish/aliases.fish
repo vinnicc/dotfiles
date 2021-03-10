@@ -23,7 +23,7 @@ alias cb="cargo build"
 alias cc="cargo check"
 alias cellar="cd (brew --cellar)"
 alias cr="cargo run"
-alias ctags=(brew --prefix)"/bin/ctags"
+# alias ctags=(brew --prefix)"/bin/ctags"
 alias doi='docker images'
 alias dops='docker ps'
 alias e='emacs'
@@ -136,7 +136,7 @@ alias v='nvim'
 alias va='v ~/.config/fish/aliases.fish'
 alias val='v ~/.config/alacritty/alacritty.yml'
 alias vb='v ~/bootstrap'
-alias vd='cd (find ~/Work/* -type d -maxdepth 0 | fzf )'
+alias vd='cd (find ~/Work/* -maxdepth 0 -type d | fzf )'
 alias vD='v (ag ~/.docs -g "" | fzf)'
 alias ve='v ~/.emacs.d/init.el'
 alias vf='v ~/.functions'
@@ -214,11 +214,11 @@ alias db-url-production='heroku pg:backups public-url --remote production'
 alias deploy-to-both='echo "-> rs && gpom && staging && git push production master"; rs && gpom && staging && git push production master'
 
 # Detect which `ls` flavor is in use
-if ls --color > /dev/null 2>&1; then # GNU `ls`
+# if ls --color > /dev/null 2>&1; then # GNU `ls`
 #     colorflag='--color'
-else # OS X `ls`
+# else # OS X `ls`
 #     colorflag='-G'
-end
+# end
 
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS
     alias "$method"="lwp-request -m '$method'"
@@ -240,21 +240,21 @@ alias c="tr -d '\n' | pbcopy"
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # File size
-if stat -c '' . > /dev/null 2>&1; then
-    # GNU `stat`
-    alias fs="stat -c \"%s bytes\""
-else
-    # OS X `stat`
-    alias fs="stat -f \"%z bytes\""
-end
+# if stat -c '' . > /dev/null 2>&1; then
+#     # GNU `stat`
+#     alias fs="stat -c \"%s bytes\""
+# else
+#     # OS X `stat`
+#     alias fs="stat -f \"%z bytes\""
+# end
 
-alias emptytrash='sudo rm -rfv ~/.Trash;
-                  sudo rm -rfv ~/Movies/*;
-                  sudo rm -rfv ~/Music/*;
-                  sudo rm -rfv ~/Public/*;
-                  sudo rm -rfv /private/var/log/asl/*.asl;
-                  sudo rm -rfv /Volumes/*/.Trashes';
-                  sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
+# alias emptytrash='sudo rm -rfv ~/.Trash;
+#                   sudo rm -rfv ~/Movies/*;
+#                   sudo rm -rfv ~/Music/*;
+#                   sudo rm -rfv ~/Public/*;
+#                   sudo rm -rfv /private/var/log/asl/*.asl;
+#                   sudo rm -rfv /Volumes/*/.Trashes';
+#                   sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
 
 # Show/hide hidden files in Finder
 alias show='defaults write com.apple.Finder AppleShowAllFiles -bool true && killall Finder'

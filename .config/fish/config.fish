@@ -38,7 +38,8 @@ fzf_key_bindings
 set -gx FZF_DEFAULT_COMMAND "rg --files --no-ignore-vcs --hidden"
 
 # asdf version manager
-set -x ASDF_DATA_DIR /usr/local/opt/asdf # same as (brew --prefix asdf)
+# set -x ASDF_DATA_DIR /usr/local/opt/asdf # same as (brew --prefix asdf)
+set -x ASDF_DATA_DIR "$HOME/.asdf"
 source $ASDF_DATA_DIR"/asdf.fish"
 
 # Link Homebrew casks in "/Applications" rather than "~/Applications"
@@ -59,7 +60,16 @@ set -x PATH $PATH "$HOME/.cargo/bin" # Rust cargo
 set -x PATH $PATH "$PWD/bin" # Local executables
 set -x PATH $PATH "$PWD/assets/node_modules/.bin"
 set -x PATH $PATH "$PWD/node_modules/.bin" 
+set -x PATH $PATH "/var/lib/snapd/snap/bin" # Linux Snap packages
 
 # Android
 set -x ANDROID_SDK_ROOT "/usr/local/share/android-sdk"
 set -gx JAVA_HOME /Applications/Android\ Studio.app/Contents/jre/jdk/Contents/Home
+
+
+# Arch - Start X at login
+if status is-login
+    if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+        exec startx -- -keeptty
+    end
+end
